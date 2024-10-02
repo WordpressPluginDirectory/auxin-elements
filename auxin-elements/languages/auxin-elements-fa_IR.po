@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Auxin Essential Elements\n"
 "Report-Msgid-Bugs-To: http://averta.net/phlox/wordpress-theme/\n"
-"POT-Creation-Date: 2024-09-07 03:22:07+00:00\n"
+"POT-Creation-Date: 2024-10-02 10:20:43+00:00\n"
 "PO-Revision-Date: 2016-11-09 12:50+0330\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -120,6 +120,7 @@ msgid "Successfully Imported."
 msgstr ""
 
 #: admin/includes/admin-ajax.php:467 admin/includes/admin-the-functions.php:179
+#: admin/includes/admin-the-functions.php:357
 msgid "Sorry. You don't have sufficient permission to import a template!"
 msgstr ""
 
@@ -271,24 +272,31 @@ msgstr ""
 msgid "Connection error, please check your connection."
 msgstr ""
 
-#: admin/includes/admin-the-functions.php:269
-msgid "Not a valid template file extension."
-msgstr ""
-
-#: admin/includes/admin-the-functions.php:280
-msgid "Not a valid template file type."
-msgstr ""
-
-#: admin/includes/admin-the-functions.php:293
+#: admin/includes/admin-the-functions.php:267
+#: admin/includes/admin-the-functions.php:405
 msgid "Template ID must be numeric or valid filepath."
 msgstr ""
 
-#: admin/includes/admin-the-functions.php:353
+#: admin/includes/admin-the-functions.php:327
+#: admin/includes/admin-the-functions.php:465
 msgid "Template Imported Successfully"
 msgstr ""
 
-#: admin/includes/admin-the-functions.php:365
+#: admin/includes/admin-the-functions.php:339
+#: admin/includes/admin-the-functions.php:477
 msgid "Error while saving the template."
+msgstr ""
+
+#: admin/includes/admin-the-functions.php:369
+msgid "Template path or type is required."
+msgstr ""
+
+#: admin/includes/admin-the-functions.php:381
+msgid "Not a valid template file extension."
+msgstr ""
+
+#: admin/includes/admin-the-functions.php:392
+msgid "Not a valid template file type."
 msgstr ""
 
 #: admin/includes/classes/class-auxels-system-check.php:20

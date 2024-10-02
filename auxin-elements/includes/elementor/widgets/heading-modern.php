@@ -1165,7 +1165,7 @@ class ModernHeading extends Widget_Base {
                 if( ! empty( $settings['link']['url'] ) ){
 
                     // Make Link attributes
-                    $this->add_render_attribute( 'link-primary', 'href', $settings['link']['url'] );
+                    $this->add_render_attribute( 'link-primary', 'href', esc_url( $settings['link']['url'] ) );
                     $this->add_render_attribute( 'link-primary', 'class', 'aux-modern-heading-primary-link' );
                     if ( $settings['link']['is_external'] ) {
                         $this->add_render_attribute( 'link-primary', 'target', '_blank' );
@@ -1202,7 +1202,7 @@ class ModernHeading extends Widget_Base {
                     if( ! empty( $settings['link_secondary']['url'] ) ){
 
                         // Make Link attributes
-                        $this->add_render_attribute( 'link-secondary', 'href', $settings['link_secondary']['url'] );
+                        $this->add_render_attribute( 'link-secondary', 'href', esc_url( $settings['link_secondary']['url'] ) );
                         $this->add_render_attribute( 'link-secondary', 'class', 'aux-modern-heading-secondary-link' );
                         if ( $settings['link_secondary']['is_external'] ) {
                             $this->add_render_attribute( 'link-secondary', 'target', '_blank' );

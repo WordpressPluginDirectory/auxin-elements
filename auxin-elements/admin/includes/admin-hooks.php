@@ -859,7 +859,7 @@ function auxin_maybe_set_default_header_template() {
         return;
     }
 
-    $template_data = auxin_template_importer( AUXELS_ADMIN_DIR . '/assets/json/header.json', 'header', 'update_menu' );
+    $template_data = auxin_template_importer_by_path( AUXELS_ADMIN_DIR . '/assets/json/header.json', 'header', 'update_menu' );
 
     if ( $template_data['success'] == true ) {
         auxin_update_option( 'site_elementor_header_edit_template', $template_data['data']['postId'] );
@@ -895,7 +895,7 @@ function auxin_maybe_set_default_footer_template() {
         return;
     }
 
-    $template_data = auxin_template_importer( AUXELS_ADMIN_DIR . '/assets/json/footer.json', 'footer', 'update_menu' ); // 7183 is the ID of agency footer template
+    $template_data = auxin_template_importer_by_path( AUXELS_ADMIN_DIR . '/assets/json/footer.json', 'footer', 'update_menu' ); // 7183 is the ID of agency footer template
 
     if ( $template_data['success'] == true ) {
         auxin_update_option( 'site_elementor_footer_edit_template', $template_data['data']['postId'] );

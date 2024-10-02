@@ -260,9 +260,121 @@ if ( ! function_exists('auxin_template_importer') ) {
                 // Set transient for 48h
                 auxin_set_transient( $template_data_key, $template_data, WEEK_IN_SECONDS );
             }
-        } elseif ( file_exists( $template_ID ) ) {
+        } else {
+            return [
+                'success'   => false,
+                'data'      => [
+                    'message' => __( 'Template ID must be numeric or valid filepath.', 'auxin-elements')
+                ]
+            ];
+        }
+
+
+        $post_type = "elementor_library";
+        $args = [
+            'post_title'    => wp_strip_all_tags( $template['title'] ),
+            'post_status'   => 'publish',
+            'post_type'     => $post_type
+        ];
+
+        // Inserting template into database
+        $post_id = wp_insert_post( $args );
+
+        if( ! is_wp_error( $post_id ) ){
+
+            // update menu name to use menu created by user
+            if ( $action == 'update_menu' ) {
+                if ( has_nav_menu('header-primary') && $template_type == 'header'){
+                    $location = 'header-primary';
+                } else if ( has_nav_menu('footer') && $template_type == 'footer' ){
+                    $location = 'footer';
+                } else {
+                    $location = '';
+                }
+
+                $header_menu = ( ! empty( $location ) ) ? get_term( get_nav_menu_locations()[$location], 'nav_menu' ) : '';
+                $template_data = ( ! empty( $header_menu ) ) ? preg_replace( '#"menu_slug":".+?(?=")"#', '"menu_slug":"'.$header_menu->name.'"', $template_data ) : $template_data;
+            }
+
+            $json_content = json_decode( $template_data , true );
+            $elementor_version = defined( 'ELEMENTOR_VERSION' ) ? ELEMENTOR_VERSION : '2.9.0';
+
+            update_post_meta( $post_id, '_elementor_edit_mode', 'builder' );
+            update_post_meta( $post_id, '_elementor_data', $json_content['content'] );
+            update_post_meta( $post_id, '_elementor_version', $elementor_version );
+
+            // Set page template
+            if( ! empty( $template['page_tmpl'] ) ){
+                update_post_meta( $post_id, '_wp_page_template', $template['page_tmpl'] );
+            }
+
+            // Set template type
+            if( $post_type === 'elementor_library' ) {
+                update_post_meta( $post_id, '_elementor_template_type', $template_type );
+            }
+
+            if ( $template_imported_id_key ) {
+                auxin_set_transient( $template_imported_id_key, $post_id, MONTH_IN_SECONDS );
+            }
+
+            // Force to generate CSS file for this template
+            Auxin_Demo_Importer::get_instance()->maybe_flush_post( $post_id );
+
+            // NOTE: Here we can set new header or footer template az main header or footer
+            return [
+                'success'   => true,
+                'data'      => [
+                    'message' => __( 'Template Imported Successfully', 'auxin-elements'),
+                    'postId' => $post_id,
+                    'isImported' => false,
+                    'postTitle'  => get_the_title( $post_id )
+                ]
+            ];
+
+        } else {
+
+            return [
+                'success'   => false,
+                'data'      => [
+                    'message' => __( 'Error while saving the template.', 'auxin-elements')
+                ]
+            ];
+        }
+    }
+}
+
+/**
+ * Import requested template from server
+ *
+ */
+if ( ! function_exists('auxin_template_importer_by_path') ) {
+    function auxin_template_importer_by_path( $template_path = '', $template_type = '', $action = '' ) {
+
+        if ( ! user_can( wp_get_current_user(), 'manage_options' ) ) {
+            return [
+                'success'   => false,
+                'data'      => [
+                    'message' => __( 'Sorry. You don\'t have sufficient permission to import a template!', 'auxin-elements')
+                ]
+            ];
+        }
+
+        $template_path = sanitize_text_field( trim( $template_path ) );
+        $template_type = sanitize_text_field( trim( $template_type ) );
+
+        if ( empty( $template_path ) || empty( $template_type ) )
+            return [
+                'success'   => false,
+                'data'      => [
+                    'message' => __( 'Template path or type is required.', 'auxin-elements')
+                ]
+            ];
+
+        $template_imported_id_key = false;
+        
+        if ( file_exists( $template_path ) ) {
             // make sure uploaded file has json extension
-            if( pathinfo( $template_ID, PATHINFO_EXTENSION) !== 'json' ){
+            if( pathinfo( $template_path, PATHINFO_EXTENSION) !== 'json' ){
                 return [
                     'success'   => false,
                     'data'      => [
@@ -272,7 +384,7 @@ if ( ! function_exists('auxin_template_importer') ) {
             }
 
             // make sure uploaded file is JSON
-            $template_data = file_get_contents( $template_ID );
+            $template_data = file_get_contents( $template_path );
             if ( ! auxin_is_json( $template_data ) ) {
                 return [
                     'success'   => false,
@@ -283,7 +395,7 @@ if ( ! function_exists('auxin_template_importer') ) {
             }
 
             $template = [
-                'title' => basename( $template_ID, '.json' )
+                'title' => basename( $template_path, '.json' )
             ];
 
         } else {

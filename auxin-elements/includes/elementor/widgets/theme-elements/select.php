@@ -676,7 +676,7 @@ class Select extends Widget_Base {
 				<span class="selected">
 					<?php 
 					if ( !empty( $settings['select_items'][ $current_item ]['item_icon']['library'] ) && $settings['select_items'][ $current_item ]['item_icon']['library'] == 'svg'  ) {
-						$icon = '<img src="' . $settings['select_items'][ $current_item ]['item_icon']['value']['url'] . '">';
+						$icon = '<img src="' . esc_url( $settings['select_items'][ $current_item ]['item_icon']['value']['url'] ) . '">';
 					} elseif ( !empty( $settings['select_items'][ $current_item ]['item_icon']['value'] ) ) {
 						$icon = '<span class="element-icon ' . $settings['select_items'][ $current_item ]['item_icon']['value'] . '"></span>';
 					} else {

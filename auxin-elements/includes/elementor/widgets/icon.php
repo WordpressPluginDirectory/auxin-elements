@@ -394,7 +394,7 @@ class Icon extends Widget_Base {
         $icon_tag = 'div';
 
         if ( ! empty( $settings['link']['url'] ) ) {
-            $this->add_render_attribute( 'icon-wrapper', 'href', $settings['link']['url'] );
+            $this->add_render_attribute( 'icon-wrapper', 'href', esc_url( $settings['link']['url'] ) );
             $icon_tag = 'a';
 
             if ( ! empty( $settings['link']['is_external'] ) ) {

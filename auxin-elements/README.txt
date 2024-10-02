@@ -7,11 +7,11 @@ Tags: phlox, elementor, auxin, averta, fullwidth
 Requires PHP: 5.4
 Requires at least: 5.0
 Tested up to: 6.6.2
-Stable tag: 2.16.2
+Stable tag: 2.16.4
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 
-Powerful and comprehensive plugin that extends the functionality of Phlox theme by adding one-click demo importer, page builder elements (Elementor and Site Origin Page builder), shortcodes and theme options.
+Powerful and comprehensive plugin that extends the functionality of Phlox Elementor theme.
 
 == Description ==
 
@@ -154,7 +154,7 @@ Bugs can be reported in our [support forums](https://docs.phlox.pro).
 
 == Changelog ==
 
-= Version 2.16.2 / (07.09.2024) =
+= Version 2.16.4 / (02.10.2024) =
 - [Improvement]: Minor security improvements applied.
 
 = Version 2.16.0 / (16.06.2024) =
