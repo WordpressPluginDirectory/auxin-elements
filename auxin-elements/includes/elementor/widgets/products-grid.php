@@ -1,17 +1,10 @@
 <?php
 namespace Auxin\Plugin\CoreElements\Elementor\Elements;
 
-use Elementor\Plugin;
-use Elementor\Core\Files\CSS\Post;
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
-use Elementor\Group_Control_Image_Size;
 use Elementor\Group_Control_Typography;
-use Elementor\Core\Schemes\Color;
-use Elementor\Core\Schemes\Typography;
-use Elementor\Utils;
-use Elementor\Control_Media;
-use Elementor\Group_Control_Border;
+use Elementor\Core\Kits\Documents\Tabs\Global_Typography;
 use Elementor\Group_Control_Box_Shadow;
 use Elementor\Group_Control_Text_Shadow;
 use Elementor\Group_Control_Background;
@@ -440,7 +433,9 @@ class ProductsGrid extends Widget_Base {
             Group_Control_Typography::get_type(),
             array(
                 'name' => 'title_typography',
-                'scheme' => Typography::TYPOGRAPHY_1,
+                'global' => [
+					'default' => Global_Typography::TYPOGRAPHY_PRIMARY,
+				],
                 'selector' => '{{WRAPPER}} .auxshp-loop-title, {{WRAPPER}} .woocommerce-loop-product__title',
             )
         );
@@ -507,7 +502,9 @@ class ProductsGrid extends Widget_Base {
             Group_Control_Typography::get_type(),
             array(
                 'name' => 'price_typography',
-                'scheme' => Typography::TYPOGRAPHY_1,
+                'global' => [
+					'default' => Global_Typography::TYPOGRAPHY_PRIMARY,
+				],
                 'selector' => '{{WRAPPER}} .woocommerce-Price-amount',
             )
         );
@@ -576,7 +573,9 @@ class ProductsGrid extends Widget_Base {
                 Group_Control_Typography::get_type(),
                 array(
                     'name' => 'info_typography',
-                    'scheme' => Typography::TYPOGRAPHY_1,
+                    'global' => [
+					'default' => Global_Typography::TYPOGRAPHY_PRIMARY,
+				],
                     'selector' => '{{WRAPPER}} .aux-shop-meta-terms, {{WRAPPER}} .aux-shop-meta-terms a',
                 )
             );
@@ -643,7 +642,9 @@ class ProductsGrid extends Widget_Base {
                 Group_Control_Typography::get_type(),
                 array(
                     'name' => 'desc_typography',
-                    'scheme' => Typography::TYPOGRAPHY_1,
+                    'global' => [
+					'default' => Global_Typography::TYPOGRAPHY_PRIMARY,
+				],
                     'selector' => '{{WRAPPER}} .aux-shop-desc-wrapper',
                 )
             );
@@ -710,7 +711,9 @@ class ProductsGrid extends Widget_Base {
                 Group_Control_Typography::get_type(),
                 array(
                     'name' => 'meta_fields_typography',
-                    'scheme' => Typography::TYPOGRAPHY_1,
+                    'global' => [
+					'default' => Global_Typography::TYPOGRAPHY_PRIMARY,
+				],
                     'selector' => '{{WRAPPER}} .aux-shop-meta-field span',
                 )
             );
@@ -847,7 +850,9 @@ class ProductsGrid extends Widget_Base {
             Group_Control_Typography::get_type(),
             array(
                 'name' => 'badge_typography',
-                'scheme' => Typography::TYPOGRAPHY_1,
+                'global' => [
+					'default' => Global_Typography::TYPOGRAPHY_PRIMARY,
+				],
                 'selector' => '{{WRAPPER}} .onsale, {{WRAPPER}} .auxin-onsale-badge',
             )
         );
@@ -938,7 +943,9 @@ class ProductsGrid extends Widget_Base {
                 Group_Control_Typography::get_type(),
                 array(
                     'name' => 'feat_badge_typography',
-                    'scheme' => Typography::TYPOGRAPHY_1,
+                    'global' => [
+					'default' => Global_Typography::TYPOGRAPHY_PRIMARY,
+				],
                     'selector' => '{{WRAPPER}} .aux-product-featured-badge',
                 )
             );
@@ -1031,7 +1038,9 @@ class ProductsGrid extends Widget_Base {
             Group_Control_Typography::get_type(),
             array(
                 'name' => 'btn_text_typography',
-                'scheme' => Typography::TYPOGRAPHY_1,
+                'global' => [
+					'default' => Global_Typography::TYPOGRAPHY_PRIMARY,
+				],
                 'selector' => '{{WRAPPER}} .add_to_cart_button, {{WRAPPER}} a.button'
             )
         );
@@ -1087,7 +1096,9 @@ class ProductsGrid extends Widget_Base {
             Group_Control_Typography::get_type(),
             array(
                 'name' => 'btn_text_typography_hover',
-                'scheme' => Typography::TYPOGRAPHY_1,
+                'global' => [
+					'default' => Global_Typography::TYPOGRAPHY_PRIMARY,
+				],
                 'selector' => '{{WRAPPER}} .add_to_cart_button, {{WRAPPER}} a.button'
             )
         );

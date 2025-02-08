@@ -187,10 +187,10 @@ class Auxin_SVG_Support {
             }
 
             $possible_sizes = apply_filters( 'image_size_names_choose', array(
-                'full'      => __( 'Full Size' ),
-                'thumbnail' => __( 'Thumbnail' ),
-                'medium'    => __( 'Medium' ),
-                'large'     => __( 'Large' ),
+                'full'      => __( 'Full Size', 'auxin-elements' ),
+                'thumbnail' => __( 'Thumbnail', 'auxin-elements' ),
+                'medium'    => __( 'Medium', 'auxin-elements' ),
+                'large'     => __( 'Large', 'auxin-elements' ),
             ) );
 
             $sizes = array();

@@ -5,7 +5,7 @@ use Elementor\Plugin;
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
-use Elementor\Core\Schemes\Typography;
+use Elementor\Core\Kits\Documents\Tabs\Global_Typography;
 
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -355,7 +355,9 @@ class TouchSlider extends Widget_Base {
             Group_Control_Typography::get_type(),
             array(
                 'name' => 'title_typography',
-                'scheme' => Typography::TYPOGRAPHY_1,
+                'global' => [
+					'default' => Global_Typography::TYPOGRAPHY_PRIMARY,
+				],
                 'selector' => '{{WRAPPER}}  .aux-slide-title h3',
                 'condition' => array(
                     'add_title' => 'yes',
@@ -413,7 +415,9 @@ class TouchSlider extends Widget_Base {
             Group_Control_Typography::get_type(),
             array(
                 'name'      => 'caption_typography',
-                'scheme'    => Typography::TYPOGRAPHY_1,
+                'global' => [
+					'default' => Global_Typography::TYPOGRAPHY_PRIMARY,
+				],
                 'selector'  => '{{WRAPPER}}  .aux-slide-info',
                 'condition' => array(
                     'add_caption' => 'yes',

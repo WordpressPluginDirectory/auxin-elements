@@ -212,7 +212,7 @@ class Auxin_Welcome_Sections {
                         <form class="aux-feedback-form" action="<?php echo esc_url( admin_url( 'admin.php?page=auxin-welcome&tab=feedback') ); ?>" method="post" >
 
                             <div class="aux-rating-section">
-                                <h3 class="aux-content-title"><?php echo wp_sprintf( esc_html__( 'How likely are you to recommend %s to a friend?', THEME_DOMAIN ), THEME_NAME_I18N ); ?></h3>
+                                <h3 class="aux-content-title"><?php echo wp_sprintf( esc_html__( 'How likely are you to recommend %s to a friend?', 'auxin-elements' ), THEME_NAME_I18N ); ?></h3>
                                 <div class="aux-theme-ratings">
                                 <?php
                                     for( $i = 1; $i <= 10; $i++ ){
@@ -234,7 +234,7 @@ class Auxin_Welcome_Sections {
                                 <div class="aux-notice-box aux-notice-blue aux-rate-us-offer aux-hide">
                                     <img src="<?php echo esc_url( AUXELS_ADMIN_URL.'/assets/images/welcome/rate-like.svg' ); ?>" />
                                     <p><?php printf(
-                                        esc_html__('Thanks for using Phlox theme. If you are enjoying this theme, please support us by %s submitting 5 star rate here%s. That would be a huge help for us to continue developing this theme.'),
+                                        esc_html__('Thanks for using Phlox theme. If you are enjoying this theme, please support us by %s submitting 5 star rate here%s. That would be a huge help for us to continue developing this theme.', 'auxin-elements'),
                                         '<a href="' . esc_url( 'http://phlox.pro/rate/' .THEME_ID ) . '" target="_black">',
                                         '</a>'
                                     ); ?>
@@ -494,7 +494,7 @@ class Auxin_Welcome_Sections {
                         <form class="aux-popup-feedback-form" action="<?php echo esc_url( admin_url( 'admin.php?page=auxin-welcome&tab=feedback') ); ?>" method="post" >
 
                             <div class="aux-rating-section">
-                                <h3 class="aux-content-title"><?php echo wp_sprintf( esc_html__( 'How likely are you to recommend %s to a friend?', THEME_DOMAIN ), THEME_NAME_I18N ); ?></h3>
+                                <h3 class="aux-content-title"><?php echo wp_sprintf( esc_html__( 'How likely are you to recommend %s to a friend?', 'auxin-elements' ), THEME_NAME_I18N ); ?></h3>
                                 <div class="aux-ratings-measure">
                                     <p><?php esc_html_e( "Don't like it", 'auxin-elements' ); ?></p>
                                     <p><?php esc_html_e( "Neither likely nor unlikely", 'auxin-elements' ); ?></p>

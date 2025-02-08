@@ -201,7 +201,7 @@
                 return;
             }
             e.preventDefault();
-            var $widgetWrapper = $(this).parents('.elementor-widget-container'),
+            var $widgetWrapper = $(this).parents('.elementor-widget-container').length ? $(this).parents('.elementor-widget-container') : $(this).parents('.elementor-widget'),
                 widgetData = $widgetWrapper.find('.aux-recent-products-wrapper').data('widget-data'),
                 paged = $(this).data('paged');
 

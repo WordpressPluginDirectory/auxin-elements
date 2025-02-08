@@ -5,7 +5,7 @@ use Elementor\Plugin;
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
-use Elementor\Core\Schemes\Typography;
+use Elementor\Core\Kits\Documents\Tabs\Global_Typography;
 use Elementor\Group_Control_Border;
 use Elementor\Group_Control_Box_Shadow;
 use Elementor\Group_Control_Background;
@@ -602,7 +602,9 @@ class Accordion extends Widget_Base {
             Group_Control_Typography::get_type(),
             array(
                 'name'      => 'title_typography',
-                'scheme'    => Typography::TYPOGRAPHY_1,
+                'global' => [
+					'default' => Global_Typography::TYPOGRAPHY_PRIMARY,
+				],
                 'selector'  => '{{WRAPPER}} .aux-toggle-header'
             )
         );
@@ -635,7 +637,9 @@ class Accordion extends Widget_Base {
             Group_Control_Typography::get_type(),
             array(
                 'name'     => 'content_typography',
-                'scheme'   => Typography::TYPOGRAPHY_1,
+                'global' => [
+					'default' => Global_Typography::TYPOGRAPHY_PRIMARY,
+				],
                 'selector' => '{{WRAPPER}} .aux-toggle-content'
             )
         );

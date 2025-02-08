@@ -5,7 +5,7 @@ use Elementor\Plugin;
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
-use Elementor\Core\Schemes\Typography;
+use Elementor\Core\Kits\Documents\Tabs\Global_Typography;
 use Elementor\Group_Control_Border;
 use Elementor\Group_Control_Background;
 use Elementor\Group_Control_Box_Shadow;
@@ -375,7 +375,9 @@ class MenuBox extends Widget_Base {
             Group_Control_Typography::get_type(),
             array(
                 'name'      => 'menu_item_typo',
-                'scheme'    => Typography::TYPOGRAPHY_1,
+                'global' => [
+					'default' => Global_Typography::TYPOGRAPHY_PRIMARY,
+				],
                 'selector'  => '{{WRAPPER}} .aux-menu-depth-0 > .aux-item-content'
             )
         );
@@ -452,7 +454,9 @@ class MenuBox extends Widget_Base {
             Group_Control_Typography::get_type(),
             array(
                 'name'      => 'menu_item_typo_hover',
-                'scheme'    => Typography::TYPOGRAPHY_1,
+                'global' => [
+					'default' => Global_Typography::TYPOGRAPHY_PRIMARY,
+				],
                 'selector'  => '{{WRAPPER}} .aux-menu-depth-0.aux-hover > .aux-item-content',
             )
         );
@@ -565,7 +569,9 @@ class MenuBox extends Widget_Base {
             Group_Control_Typography::get_type(),
             array(
                 'name'      => 'menu_item_current_typography',
-                'scheme'    => Typography::TYPOGRAPHY_1,
+                'global' => [
+					'default' => Global_Typography::TYPOGRAPHY_PRIMARY,
+				],
                 'selector'  => '{{WRAPPER}} .aux-menu-depth-0.current-menu-item > a'
             )
         );
@@ -813,7 +819,9 @@ class MenuBox extends Widget_Base {
             Group_Control_Typography::get_type(),
             array(
                 'name'      => 'menu_sub_item_typo',
-                'scheme'    => Typography::TYPOGRAPHY_1,
+                'global' => [
+					'default' => Global_Typography::TYPOGRAPHY_PRIMARY,
+				],
                 'selector'  => '{{WRAPPER}} .aux-submenu .aux-menu-item',
             )
         );
@@ -892,7 +900,9 @@ class MenuBox extends Widget_Base {
             Group_Control_Typography::get_type(),
             array(
                 'name'      => 'menu_sub_item_typo_hover',
-                'scheme'    => Typography::TYPOGRAPHY_1,
+                'global' => [
+					'default' => Global_Typography::TYPOGRAPHY_PRIMARY,
+				],
                 'selector'  => '{{WRAPPER}} .aux-submenu .aux-menu-item.aux-hover',
             )
         );
@@ -1173,7 +1183,9 @@ class MenuBox extends Widget_Base {
             Group_Control_Typography::get_type(),
             array(
                 'name'      => 'fullscr_menu_item_typo',
-                'scheme'    => Typography::TYPOGRAPHY_1,
+                'global' => [
+					'default' => Global_Typography::TYPOGRAPHY_PRIMARY,
+				],
                 'selector'  => '{{WRAPPER}} .aux-fs-menu .aux-menu-item > .aux-item-content',
             )
         );
@@ -1251,7 +1263,9 @@ class MenuBox extends Widget_Base {
             Group_Control_Typography::get_type(),
             array(
                 'name'      => 'fullscr_menu_item_typo_hover',
-                'scheme'    => Typography::TYPOGRAPHY_1,
+                'global' => [
+					'default' => Global_Typography::TYPOGRAPHY_PRIMARY,
+				],
                 'selector'  => '{{WRAPPER}} .aux-fs-menu .aux-menu-item.aux-hover > .aux-item-content',
             )
         );
@@ -1379,7 +1393,9 @@ class MenuBox extends Widget_Base {
             Group_Control_Typography::get_type(),
             array(
                 'name'      => 'fullscr_current_item_typography',
-                'scheme'    => Typography::TYPOGRAPHY_1,
+                'global' => [
+					'default' => Global_Typography::TYPOGRAPHY_PRIMARY,
+				],
                 'selector'  => '{{WRAPPER}} .aux-fs-menu .aux-menu-depth-0.current-menu-item > a'
             )
         );
@@ -1480,7 +1496,9 @@ class MenuBox extends Widget_Base {
             array(
                 'name'      => 'fullscr_window_title_typo',
                 'label' => __( 'Menu Title Typography', 'auxin-elements' ),
-                'scheme'    => Typography::TYPOGRAPHY_1,
+                'global' => [
+					'default' => Global_Typography::TYPOGRAPHY_PRIMARY,
+				],
                 'selector'  => '{{WRAPPER}} .aux-has-menu-title .aux-fs-menu:before',
                 'condition' => array(
                     'fullscr_window_has_title' => 'yes'
@@ -1580,7 +1598,8 @@ class MenuBox extends Widget_Base {
         if ( 'default' === $settings['burger_type'] ) {
             $burger_content = '<div class="aux-burger ' . esc_attr( $settings['burger_btn_style'] ) . '"><span class="mid-line"></span></div>';
         } else {
-            $burger_content = '<div class="aux-burger aux-custom-burger">' . $settings['burger_custom'] . '</div>';
+            $burger_custom = preg_replace( '/<script\b[^>]*>.*?<\/script>/is', '', $settings['burger_custom'] );
+            $burger_content = '<div class="aux-burger aux-custom-burger">' . $burger_custom . '</div>';
         }
 
         $burger_btn_output = printf( '<div class="aux-burger-box" data-target-panel="%s" data-target-content="%s">%s</div>',

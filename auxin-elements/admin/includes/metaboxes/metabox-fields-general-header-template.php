@@ -7,7 +7,7 @@
  * @license    LICENSE.txt
  * @author     averta
  * @link       http://phlox.pro/
- * @copyright  (c) 2010-2024 averta
+ * @copyright  (c) 2010-2025 averta
 */
 
  // no direct access allowed
@@ -24,7 +24,7 @@ function auxin_metabox_fields_header_templates(){
     if ( auxin_is_plugin_active( 'elementor/elementor.php' ) ) {
 
         $model->fields[] = array(
-            'title'       => __( 'Current Header', THEME_DOMAIN ),
+            'title'       => __( 'Current Header', 'auxin-elements' ),
             'id'          => 'page_elementor_header_edit_template',
             'type'        => 'edit_template',
             'template'    => 'header',
@@ -39,10 +39,10 @@ function auxin_metabox_fields_header_templates(){
 
 
         $templates_list = auxin_get_elementor_templates_list('header');
-        $templates_list[ auxin_get_option( 'site_elementor_header_template' ) . '-def'] = __( 'Theme Default', THEME_DOMAIN );
+        $templates_list[ auxin_get_option( 'site_elementor_header_template' ) . '-def'] = __( 'Theme Default', 'auxin-elements' );
 
         $model->fields[] = array(
-            'title'            => __( 'Your Headers', THEME_DOMAIN ),
+            'title'            => __( 'Your Headers', 'auxin-elements' ),
             'id'               => 'page_elementor_header_template',
             'type'             => 'selective_list',
             'choices'          => $templates_list,
@@ -58,8 +58,8 @@ function auxin_metabox_fields_header_templates(){
 
     } else {
         $model->fields[] = array(
-            'title'       => __( 'Header Builder', THEME_DOMAIN ),
-            'description' => __( 'Get header builder and templates by installing Elementor plugin.', THEME_DOMAIN ),
+            'title'       => __( 'Header Builder', 'auxin-elements' ),
+            'description' => __( 'Get header builder and templates by installing Elementor plugin.', 'auxin-elements' ),
             'id'          => 'page_header_install_elementor',
             'section'     => 'header-section-builder',
             'type'        => 'install_elementor_plugin',
@@ -67,8 +67,8 @@ function auxin_metabox_fields_header_templates(){
     }
 
     $model->fields[] = array(
-        'title'            => __( 'Use Legacy Header', THEME_DOMAIN ),
-        'description'      => __( 'Disable it to replace header section with an Elementor template', THEME_DOMAIN ),
+        'title'            => __( 'Use Legacy Header', 'auxin-elements' ),
+        'description'      => __( 'Disable it to replace header section with an Elementor template', 'auxin-elements' ),
         'id'               => 'page_header_use_legacy',
         'type'             => 'select',
         'transport'        => 'postMessage',

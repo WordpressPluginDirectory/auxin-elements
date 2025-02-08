@@ -1,18 +1,6 @@
 <?php
 namespace Auxin\Plugin\CoreElements\Elementor\Settings\Page;
 
-use Elementor\Controls_Manager;
-use Elementor\Core\Base\Document;
-use Elementor\Plugin;
-use Elementor\Widget_Base;
-use Elementor\Group_Control_Image_Size;
-use Elementor\Group_Control_Typography;
-use Elementor\Core\Schemes\Color;
-use Elementor\Core\Schemes\Typography;
-use Elementor\Control_Media;
-use Elementor\Group_Control_Border;
-use Elementor\Group_Control_Box_Shadow;
-use Elementor\Group_Control_Background;
 use Auxin\Plugin\CoreElements\Elementor\Settings\Base\Manager as baseManager;
 
 

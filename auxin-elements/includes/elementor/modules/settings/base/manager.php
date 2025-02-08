@@ -2,18 +2,6 @@
 namespace Auxin\Plugin\CoreElements\Elementor\Settings\Base;
 
 use Elementor\Core\Base\Document;
-use Elementor\Widget_Base;
-use Elementor\Controls_Manager;
-use Elementor\Group_Control_Image_Size;
-use Elementor\Group_Control_Typography;
-use Elementor\Core\Schemes\Color;
-use Elementor\Core\Schemes\Typography;
-use Elementor\Control_Media;
-use Elementor\Group_Control_Border;
-use Elementor\Group_Control_Box_Shadow;
-use Elementor\Group_Control_Background;
-use Elementor\Core\Kits\Controls\Repeater as Global_Style_Repeater;
-use Elementor\Repeater;
 
 
 abstract class Manager {

@@ -7,7 +7,7 @@
  * @license    LICENSE.txt
  * @author     averta
  * @link       http://phlox.pro/
- * @copyright  (c) 2010-2024 averta
+ * @copyright  (c) 2010-2025 averta
 */
 
 // no direct access allowed
@@ -1073,7 +1073,7 @@ class Auxin_Demo_Importer {
         preg_match_all( '#[\w\/\-\.\:]+?([\w\-]+?)\/wp-content#', $custom_css, $matches, PREG_SET_ORDER );
         if ( ! empty( $matches ) ) {
             $site_url = trailingslashit( get_site_url() );
-            $site_url_path = parse_url( $site_url, PHP_URL_PATH );
+            $site_url_path = wp_parse_url( $site_url, PHP_URL_PATH );
             $site_url_path = $site_url_path ? rtrim( $site_url_path, '/' ) : '';
             foreach( $matches as $key => $match ) {
                 if ( !empty( $match[1] ) ) {
@@ -1327,7 +1327,7 @@ class Auxin_Demo_Importer {
                 continue;
             }
 
-            $url_filenames = basename( parse_url( $import_url['url'], PHP_URL_PATH ) );
+            $url_filenames = basename( wp_parse_url( $import_url['url'], PHP_URL_PATH ) );
 
             if ( ! isset( $tmpname[$import_url['url']] ) ) {
                 $tmpname[$import_url['url']] = ! defined('WP_PROXY_HOST') ? wp_tempnam( $url_filenames ) : '';
@@ -1349,7 +1349,7 @@ class Auxin_Demo_Importer {
 
         if( ! empty( $requests ) && ! defined('WP_PROXY_HOST') ) {
             // Split requests
-            return Requests::request_multiple( $requests );
+            return \WpOrg\Requests\Requests::request_multiple( $requests );
         }
 
         if (  ! empty( $requests ) && defined('WP_PROXY_HOST') ) {

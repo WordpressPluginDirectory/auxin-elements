@@ -6,7 +6,7 @@ use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Image_Size;
 use Elementor\Group_Control_Typography;
-use Elementor\Core\Schemes\Typography;
+use Elementor\Core\Kits\Documents\Tabs\Global_Typography;
 use Elementor\Utils;
 use Elementor\Group_Control_Border;
 use Elementor\Group_Control_Box_Shadow;
@@ -381,7 +381,9 @@ class Testimonial extends Widget_Base {
             Group_Control_Typography::get_type(),
             array(
                 'name'      => 'title_typography',
-                'scheme'    => Typography::TYPOGRAPHY_1,
+                'global' => [
+					'default' => Global_Typography::TYPOGRAPHY_PRIMARY,
+				],
                 'selector'  => '{{WRAPPER}} .col-title, {{WRAPPER}} .col-title a',
                 'condition' => array(
                     'title!' => ''
@@ -420,7 +422,9 @@ class Testimonial extends Widget_Base {
             Group_Control_Typography::get_type(),
             array(
                 'name'      => 'title_hover_typography',
-                'scheme'    => Typography::TYPOGRAPHY_1,
+                'global' => [
+					'default' => Global_Typography::TYPOGRAPHY_PRIMARY,
+				],
                 'selector'  => '{{WRAPPER}} .aux-widget-testimonial:hover .col-title, {{WRAPPER}} .aux-widget-testimonial:hover .col-title a',
                 'condition' => array(
                     'title!' => ''
@@ -495,7 +499,9 @@ class Testimonial extends Widget_Base {
             Group_Control_Typography::get_type(),
             array(
                 'name'      => 'subtitle_typography',
-                'scheme'    => Typography::TYPOGRAPHY_1,
+                'global' => [
+					'default' => Global_Typography::TYPOGRAPHY_PRIMARY,
+				],
                 'selector'  => '{{WRAPPER}} .col-subtitle',
                 'condition' => array(
                     'subtitle!' => ''
@@ -533,7 +539,9 @@ class Testimonial extends Widget_Base {
             Group_Control_Typography::get_type(),
             array(
                 'name'      => 'subtitle_hover_typography',
-                'scheme'    => Typography::TYPOGRAPHY_1,
+                'global' => [
+					'default' => Global_Typography::TYPOGRAPHY_PRIMARY,
+				],
                 'selector'  => '{{WRAPPER}} .aux-widget-testimonial:hover .col-subtitle',
                 'condition' => array(
                     'subtitle!' => ''
@@ -613,7 +621,9 @@ class Testimonial extends Widget_Base {
             Group_Control_Typography::get_type(),
             array(
                 'name'     => 'content_typography',
-                'scheme'   => Typography::TYPOGRAPHY_1,
+                'global' => [
+					'default' => Global_Typography::TYPOGRAPHY_PRIMARY,
+				],
                 'selector' => '{{WRAPPER}} .aux-testimonial-content',
                 'condition' => array(
                     'content!' => ''
@@ -651,7 +661,9 @@ class Testimonial extends Widget_Base {
             Group_Control_Typography::get_type(),
             array(
                 'name'     => 'content_typography_hover',
-                'scheme'   => Typography::TYPOGRAPHY_1,
+                'global' => [
+					'default' => Global_Typography::TYPOGRAPHY_PRIMARY,
+				],
                 'selector' => '{{WRAPPER}} .aux-widget-testimonial:hover .aux-testimonial-content',
                 'condition' => array(
                     'content!' => ''

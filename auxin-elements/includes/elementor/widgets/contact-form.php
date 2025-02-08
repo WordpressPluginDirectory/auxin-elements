@@ -7,7 +7,7 @@ use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
 use Elementor\Group_Control_Background;
 use Elementor\Group_Control_Box_Shadow;
-use Elementor\Core\Schemes\Typography;
+use Elementor\Core\Kits\Documents\Tabs\Global_Typography;
 use Elementor\Group_Control_Border;
 
 
@@ -168,7 +168,9 @@ class ContactForm extends Widget_Base {
             [
                 'name' => 'general_input_typography',
                 'label' => __( 'Typography', 'auxin-elements' ),
-                'scheme' => Typography::TYPOGRAPHY_1,
+                'global' => [
+					'default' => Global_Typography::TYPOGRAPHY_PRIMARY,
+				],
                 'selector' => '{{WRAPPER}} input:not([type="submit"])'
             ]
         );
@@ -453,7 +455,9 @@ class ContactForm extends Widget_Base {
             [
                 'name' => 'placeholder_typography',
                 'label' => __( 'Typography', 'auxin-elements' ),
-                'scheme' => Typography::TYPOGRAPHY_1,
+                'global' => [
+					'default' => Global_Typography::TYPOGRAPHY_PRIMARY,
+				],
                 'selector' => '{{WRAPPER}} input:not([type="submit"])::placeholder'
             ]
         );
@@ -927,7 +931,9 @@ class ContactForm extends Widget_Base {
             [
                 'name' => 'dropdown_typography',
                 'label' => __( 'Typography', 'auxin-elements' ),
-                'scheme' => Typography::TYPOGRAPHY_1,
+                'global' => [
+					'default' => Global_Typography::TYPOGRAPHY_PRIMARY,
+				],
                 'selector' => '{{WRAPPER}} select',
             ]
         );
@@ -1170,7 +1176,9 @@ class ContactForm extends Widget_Base {
             [
                 'name' => 'textarea_typography',
                 'label' => __( 'Typography', 'auxin-elements' ),
-                'scheme' => Typography::TYPOGRAPHY_1,
+                'global' => [
+					'default' => Global_Typography::TYPOGRAPHY_PRIMARY,
+				],
                 'selector' => '{{WRAPPER}} textarea',
             ]
         );
@@ -1453,7 +1461,9 @@ class ContactForm extends Widget_Base {
             [
                 'name' => 'textarea_placeholder_typography',
                 'label' => __( 'Typography', 'auxin-elements' ),
-                'scheme' => Typography::TYPOGRAPHY_1,
+                'global' => [
+					'default' => Global_Typography::TYPOGRAPHY_PRIMARY,
+				],
                 'selector' => '{{WRAPPER}} textarea::placeholder'
             ]
         );
@@ -1488,7 +1498,9 @@ class ContactForm extends Widget_Base {
             [
                 'name' => 'labels_typography',
                 'label' => __( 'Typography', 'auxin-elements' ),
-                'scheme' => Typography::TYPOGRAPHY_1,
+                'global' => [
+					'default' => Global_Typography::TYPOGRAPHY_PRIMARY,
+				],
                 'selector' => '{{WRAPPER}} label'
             ]
         );
@@ -1523,7 +1535,9 @@ class ContactForm extends Widget_Base {
             [
                 'name' => 'submit_input_typography',
                 'label' => __( 'Typography', 'auxin-elements' ),
-                'scheme' => Typography::TYPOGRAPHY_1,
+                'global' => [
+					'default' => Global_Typography::TYPOGRAPHY_PRIMARY,
+				],
                 'selector' => '{{WRAPPER}} input[type="submit"]',
             ]
         );

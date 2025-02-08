@@ -754,7 +754,7 @@ class Auxin_Welcome extends Auxin_Welcome_Base {
             <div class="aux-templates-list aux-grid-list aux-isotope-templates" data-search-filter="true" data-grouping="<?php echo esc_attr( $activeIsoGroup ); ?> ">
             <?php
                 if( ! is_array( $template_list['templates'] ) ){
-                    echo '<p class="aux-grid-item grid_12">'. esc_html__( 'An error occurred while downloading the list of templates. Please try again later.' ) .'</p>';
+                    echo '<p class="aux-grid-item grid_12">'. esc_html__( 'An error occurred while downloading the list of templates. Please try again later.', 'auxin-elements' ) .'</p>';
                 } else {
                     foreach ( $template_list['templates'] as $key => $args ) {
 
@@ -942,7 +942,7 @@ class Auxin_Welcome extends Auxin_Welcome_Base {
             <div class="aux-demo-list aux-grid-list aux-isotope-list" data-search-filter="true">
 			    <?php
                 if( ! is_array( $demo_list ) ){
-                    echo '<p class="aux-grid-item grid_12">'. esc_html__( 'An error occurred while downloading the list of demo sites. Please try again later.' ) .'</p>';
+                    echo '<p class="aux-grid-item grid_12">'. esc_html__( 'An error occurred while downloading the list of demo sites. Please try again later.', 'auxin-elements' ) .'</p>';
                 } else {
     				foreach ( $demo_list['items'] as $key => $args ) {
                         // Checking the last imported demo...
@@ -1707,7 +1707,7 @@ class Auxin_Welcome extends Auxin_Welcome_Base {
 		ob_start();
 		?>
 			<div class="aux-setup-demo-content aux-content-col aux-install-demos">
-				<h2><?php esc_html_e( 'Import Demo Content of Phlox Theme.' ); ?></h2>
+				<h2><?php esc_html_e( 'Import Demo Content of Phlox Theme.', 'auxin-elements' ); ?></h2>
 
 				<form id="aux-import-data-<?php echo esc_attr( $args['id'] ); ?>" class="aux-import-parts">
 					<div class="complete aux-border is-checked">
@@ -1767,7 +1767,7 @@ class Auxin_Welcome extends Auxin_Welcome_Base {
 			</div>
             <div class="aux-setup-demo-content aux-content-col aux-install-demos-waiting hide">
                 <img src="<?php echo esc_url( AUXELS_ADMIN_URL . '/assets/images/welcome/importing-cloud.svg' ); ?>" />
-                <h2><?php esc_html_e( 'Importing Demo Content is in Progress...' ); ?></h2>
+                <h2><?php esc_html_e( 'Importing Demo Content is in Progress...', 'auxin-elements' ); ?></h2>
                 <p class="aux-step-description"><?php esc_html_e( 'This process may take 5 to 10 minutes to complete, please do not close or refresh this page.', 'auxin-elements' ); ?></p>
             </div>
 			<div class="aux-setup-demo-actions">
@@ -1802,7 +1802,7 @@ class Auxin_Welcome extends Auxin_Welcome_Base {
         ?>
             <div class="aux-setup-demo-content aux-content-col aux-step-import-completed">
                 <img src="<?php echo esc_url( AUXELS_ADMIN_URL . '/assets/images/welcome/completed.svg' ); ?>" />
-                <div><h2 class="aux-step-import-title"><?php esc_html_e( 'Congratulations!' ); ?></h2></div>
+                <div><h2 class="aux-step-import-title"><?php esc_html_e( 'Congratulations!', 'auxin-elements' ); ?></h2></div>
                 <p class="aux-step-description"><?php esc_html_e( "Demo has been successfully imported.", 'auxin-elements' ); ?></p>
             </div>
             <div class="aux-setup-demo-actions">
@@ -1810,7 +1810,7 @@ class Auxin_Welcome extends Auxin_Welcome_Base {
                     <a href="<?php echo esc_url( self_admin_url('customize.php') ); ?>" class="aux-button aux-primary aux-medium" target="_blank">
                         <?php esc_html_e( 'Customize', 'auxin-elements' ); ?>
                     </a>
-                    <a href="<?php echo home_url(); ?>" class="aux-button aux-round aux-green aux-medium" target="_blank">
+                    <a href="<?php echo esc_url( home_url() ); ?>" class="aux-button aux-round aux-green aux-medium" target="_blank">
                         <?php esc_html_e( 'Preview', 'auxin-elements' ); ?>
                     </a>
                     <a href="#" class="aux-button aux-outline aux-round aux-transparent aux-medium aux-pp-close">

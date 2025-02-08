@@ -7,7 +7,7 @@
  * @license    LICENSE.txt
  * @author     averta
  * @link       http://phlox.pro/
- * @copyright  (c) 2010-2024 averta
+ * @copyright  (c) 2010-2025 averta
  */
 function auxin_get_gmap_master_array( $master_array ) {
 
@@ -263,8 +263,7 @@ function auxin_widget_gmaps_callback( $atts, $shortcode_content = null ){
         $style = auxin_get_gmap_style();
     } elseif ( base64_decode( $style, true ) === false) {
     } else {
-        $style = rawurldecode( base64_decode( strip_tags( $style ) ) );
-        $style = auxin_is_json( $style ) ? $style : auxin_get_gmap_style();
+        $style = rawurldecode( base64_decode( wp_strip_all_tags( $style ) ) );
     }
 
     $zoom_wheel = auxin_is_true( $zoom_wheel ) ? 'true' : 'false';
@@ -281,11 +280,11 @@ function auxin_widget_gmaps_callback( $atts, $shortcode_content = null ){
                     return;
                 }
                 var map = new GMaps({
-                    el: "#<?php echo esc_attr( $mapid     ); ?>",
-                    lat:  <?php echo esc_attr( $latitude  ); ?>,
-                    lng:  <?php echo esc_attr( $longitude ); ?>,
-                    zoom: <?php echo esc_attr( $zoom      ); ?>,
-                    scrollwheel: <?php echo esc_attr( $zoom_wheel ) ;?>,
+                    el: "#<?php echo esc_js( esc_attr( $mapid ) ); ?>",
+                    lat:  <?php echo floatval( $latitude  ); ?>,
+                    lng:  <?php echo floatval( $longitude ); ?>,
+                    zoom: <?php echo floatval( $zoom      ); ?>,
+                    scrollwheel: <?php echo floatval( $zoom_wheel ) ;?>,
                     <?php if( $type == "SATELLITE" ){ ?>
                     mapTypeId: google.maps.MapTypeId.SATELLITE,
                     <?php } else { ?>
@@ -299,7 +298,7 @@ function auxin_widget_gmaps_callback( $atts, $shortcode_content = null ){
                 <?php if( $type == "ROADMAP" ){ ?>
                 map.addStyle({
                     styledMapName:"Auxin custom style map",
-                    styles: <?php echo $style; ?>,
+                    styles: <?php echo ( auxin_is_json( $style ) ? $style : auxin_get_gmap_style() ); ?>,
                     mapTypeId: "aux_map_style"
                 });
 
@@ -307,12 +306,12 @@ function auxin_widget_gmaps_callback( $atts, $shortcode_content = null ){
                 <?php } ?>
                 map.addMarker({
                     <?php if ( ! empty( $marker_info ) ) { ?>
-                        infoWindow: { content: "<?php echo esc_html( $marker_info ); ?>" },
+                        infoWindow: { content: "<?php echo esc_js( esc_html( $marker_info ) ); ?>" },
                     <?php } ?>
-                    lat : <?php echo esc_attr( $latitude  ); ?>,
-                    lng : <?php echo esc_attr( $longitude ); ?>,
+                    lat : <?php echo floatval( $latitude  ); ?>,
+                    lng : <?php echo floatval( $longitude ); ?>,
                     <?php if ( ! empty( $attach_id ) ) { ?>
-                        icon: "<?php echo esc_attr( auxin_get_attachment_url( $attach_id, 'full' ) ); ?>"
+                        icon: "<?php echo esc_js( esc_url( auxin_get_attachment_url( $attach_id, 'full' ) ) ); ?>"
                     <?php } ?>
 
                 });

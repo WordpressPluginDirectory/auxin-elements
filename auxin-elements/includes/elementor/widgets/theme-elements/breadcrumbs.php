@@ -4,8 +4,8 @@ namespace Auxin\Plugin\CoreElements\Elementor\Elements\Theme_Elements;
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
-use Elementor\Core\Schemes\Color;
-use Elementor\Core\Schemes\Typography;
+use Elementor\Core\Kits\Documents\Tabs\Global_Colors;
+use Elementor\Core\Kits\Documents\Tabs\Global_Typography;
 use Elementor\Group_Control_Border;
 use Elementor\Group_Control_Background;
 use Elementor\Group_Control_Box_Shadow;
@@ -142,13 +142,6 @@ class Breadcrumbs extends Widget_Base {
 						'fa-solid' => [
 							'home'
 						],
-						'auxicon' =>[
-							'home-house-streamline',
-							'home',
-							'home-1',
-							'home-2',
-							'home-3'
-						]
 					],
 					'exclude_inline_options' => [ 'svg' ],
 					'default' => [
@@ -167,25 +160,6 @@ class Breadcrumbs extends Widget_Base {
 					'label'       => __( 'Custom Separator', 'auxin-elements' ),
 					'label_block' => true,
 					'type'        => Controls_Manager::ICONS,
-					'recommended' => [
-						'auxicon2' => [
-							"arrows-right-double-chevron",
-							"arrows-chevron-thin-right",
-							"arrow-slim-right-dashed",
-							"arrow-slim-right",
-							"arrow-chevron-med-right",
-							"arrow-chevron-fat-right",
-							"arrow-chevron-slim-right",
-							"arrow-chevron-pixel-right",
-							"arrow-line-med-right",
-							"arrow-line-right",
-							"arrow-chevron-pixel-right2",
-							"arrow-pixel-fat-right",
-							"arrow-thin-right",
-							"arrow-chevron-small-right",
-							"arrow-circle-right"
-						]
-					],
 					'separator'   => 'before'
 				]
 			);
@@ -252,12 +226,11 @@ class Breadcrumbs extends Widget_Base {
 				[
 					'label' => __( 'Icon Color', 'auxin-elements' ),
 					'type' => Controls_Manager::COLOR,
-					'scheme' => [
-						'type' => Color::get_type(),
-						'value' => Color::COLOR_1,
+					'global' => [
+						'default' => Global_Colors::COLOR_PRIMARY,
 					],
 					'selectors' => [
-						'{{WRAPPER}} span.aux-breadcrumb-home' => 'color: {{VALUE}};',
+						'{{WRAPPER}} span.aux-breadcrumb-home' => 'color: {{VALUE}}; fill: {{VALUE}};',
 					]
 				]
 			);
@@ -269,7 +242,7 @@ class Breadcrumbs extends Widget_Base {
 					'type' => Controls_Manager::SLIDER,
 					'size_units' => [ 'px', '%', 'em' ],
 					'selectors' => [
-						'{{WRAPPER}} .aux-breadcrumb-home' => 'font-size:{{SIZE}}{{UNIT}};'
+						'{{WRAPPER}} .aux-breadcrumb-home' => 'font-size:{{SIZE}}{{UNIT}};height: {{SIZE}}{{UNIT}};'
 					]
 				]
 			);
@@ -294,9 +267,8 @@ class Breadcrumbs extends Widget_Base {
 			[
 				'label' => __( 'Link Color', 'auxin-elements' ),
 				'type' => Controls_Manager::COLOR,
-				'scheme' => [
-					'type' => Color::get_type(),
-					'value' => Color::COLOR_1,
+				'global' => [
+					'default' => Global_Colors::COLOR_PRIMARY,
 				],
 				'selectors' => [
 					'{{WRAPPER}} span:not(.aux-breadcrumb-sep) a' => 'color: {{VALUE}};',
@@ -309,9 +281,8 @@ class Breadcrumbs extends Widget_Base {
 			[
 				'label' => __( 'Link Hover Color', 'auxin-elements' ),
 				'type' => Controls_Manager::COLOR,
-				'scheme' => [
-					'type' => Color::get_type(),
-					'value' => Color::COLOR_1,
+				'global' => [
+					'default' => Global_Colors::COLOR_PRIMARY,
 				],
 				'selectors' => [
 					'{{WRAPPER}} span:not(.aux-breadcrumb-sep) a:hover' => 'color: {{VALUE}};',
@@ -324,9 +295,8 @@ class Breadcrumbs extends Widget_Base {
 			[
 				'label' => __( 'Text Color', 'auxin-elements' ),
 				'type' => Controls_Manager::COLOR,
-				'scheme' => [
-					'type' => Color::get_type(),
-					'value' => Color::COLOR_1,
+				'global' => [
+					'default' => Global_Colors::COLOR_PRIMARY,
 				],
 				'selectors' => [
 					'{{WRAPPER}} span:not(.aux-breadcrumb-sep)' => 'color: {{VALUE}};',
@@ -338,7 +308,9 @@ class Breadcrumbs extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'typography',
-				'scheme' => Typography::TYPOGRAPHY_1,
+				'global' => [
+					'default' => Global_Typography::TYPOGRAPHY_PRIMARY,
+				],
 				'selector' => '{{WRAPPER}} span'
 			]
 		);
@@ -384,12 +356,11 @@ class Breadcrumbs extends Widget_Base {
 				[
 					'label' => __( 'Icon Color', 'auxin-elements' ),
 					'type' => Controls_Manager::COLOR,
-					'scheme' => [
-						'type' => Color::get_type(),
-						'value' => Color::COLOR_1,
+					'global' => [
+						'default' => Global_Colors::COLOR_PRIMARY,
 					],
 					'selectors' => [
-						'{{WRAPPER}} span.aux-breadcrumb-sep' => 'color: {{VALUE}};',
+						'{{WRAPPER}} span.aux-breadcrumb-sep' => 'color: {{VALUE}};fill: {{VALUE}};',
 					]
 				]
 			);
@@ -401,7 +372,7 @@ class Breadcrumbs extends Widget_Base {
 					'type' => Controls_Manager::SLIDER,
 					'size_units' => [ 'px', '%', 'em' ],
 					'selectors' => [
-						'{{WRAPPER}} .aux-breadcrumb-sep' => 'font-size:{{SIZE}}{{UNIT}};'
+						'{{WRAPPER}} .aux-breadcrumb-sep' => 'font-size:{{SIZE}}{{UNIT}};height:{{SIZE}}{{UNIT}};'
 					]
 				]
 			);
@@ -574,8 +545,8 @@ class Breadcrumbs extends Widget_Base {
   	protected function render() {
 		$settings = $this->get_settings_for_display();
 
-		$home_icon = isset( $settings['show_home_icon'] ) && auxin_is_true( $settings['show_home_icon'] ) ? $settings['home_icon']['value'] : '';
-		$separator_icon = isset( $settings['separator_icon']['value'] ) ? $settings['separator_icon']['value'] : '';
+		$home_icon = isset( $settings['show_home_icon'] ) && auxin_is_true( $settings['show_home_icon'] ) ? $settings['home_icon'] : '';
+		$separator_icon = isset( $settings['separator_icon']['value'] ) ? $settings['separator_icon'] : '';
 
 		echo '<div class="aux-elementor-breadcrumbs">';
 		auxin_the_breadcrumbs( $home_icon, $separator_icon );

@@ -6,7 +6,7 @@ use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Image_Size;
 use Elementor\Group_Control_Typography;
-use Elementor\Core\Schemes\Typography;
+use Elementor\Core\Kits\Documents\Tabs\Global_Typography;
 use Elementor\Group_Control_Border;
 use Elementor\Group_Control_Background;
 use Elementor\Group_Control_Box_Shadow;
@@ -188,19 +188,19 @@ class Shopping_Cart extends Widget_Base {
         $this->add_responsive_control(
             'align',
             array(
-                'label' => __( 'Alignment', 'elementor' ),
+                'label' => __( 'Alignment', 'auxin-elements' ),
                 'type' => Controls_Manager::CHOOSE,
                 'options' => array(
                     'start' => array(
-                        'title' => __( 'Left', 'elementor' ),
+                        'title' => __( 'Left', 'auxin-elements' ),
                         'icon' => 'eicon-text-align-left',
                     ),
                     'center' => array(
-                        'title' => __( 'Center', 'elementor' ),
+                        'title' => __( 'Center', 'auxin-elements' ),
                         'icon' => 'eicon-text-align-center',
                     ),
                     'end' => array(
-                        'title' => __( 'Right', 'elementor' ),
+                        'title' => __( 'Right', 'auxin-elements' ),
                         'icon' => 'eicon-text-align-right',
                     ),
                 ),
@@ -258,7 +258,9 @@ class Shopping_Cart extends Widget_Base {
             Group_Control_Typography::get_type(),
             array(
                 'name'      => 'bubble_typography',
-                'scheme'    => Typography::TYPOGRAPHY_1,
+                'global' => [
+					'default' => Global_Typography::TYPOGRAPHY_PRIMARY,
+				],
                 'selector'  => '{{WRAPPER}} .aux-cart-contents > span'
             )
         );
@@ -353,6 +355,30 @@ class Shopping_Cart extends Widget_Base {
             array(
                 'label'      => __('Dropdown', 'auxin-elements' ),
                 'tab'       => Controls_Manager::TAB_STYLE,
+            )
+        );
+
+        $this->add_responsive_control(
+            'icon_size',
+            array(
+                'label'      => __( 'Size', 'auxin-elements' ),
+                'type'       => Controls_Manager::SLIDER,
+                'size_units' => array( 'px', 'em' ),
+                'range'      => array(
+                    'px' => array(
+                        'max' => 100
+                    ),
+                    'em' => array(
+                        'max' => 10
+                    )
+                ),
+                'default' => [
+					'unit' => 'px',
+					'size' => 16,
+				],
+                'selectors' => array(
+                    '{{WRAPPER}} svg' => 'font-size: {{SIZE}}{{UNIT}};height: {{SIZE}}{{UNIT}};width: auto;',
+                )
             )
         );
 
@@ -528,7 +554,9 @@ class Shopping_Cart extends Widget_Base {
             array(
                 'label'     => __('Title Typography', 'auxin-elements' ),
                 'name'      => 'title_typography',
-                'scheme'    => Typography::TYPOGRAPHY_1,
+                'global' => [
+					'default' => Global_Typography::TYPOGRAPHY_PRIMARY,
+				],
                 'selector'  => '{{WRAPPER}} .aux-cart-wrapper .aux-card-item h3'
             )
         );
@@ -550,7 +578,9 @@ class Shopping_Cart extends Widget_Base {
             array(
                 'label'     => __('Price Typography', 'auxin-elements' ),
                 'name'      => 'price_typography',
-                'scheme'    => Typography::TYPOGRAPHY_1,
+                'global' => [
+					'default' => Global_Typography::TYPOGRAPHY_PRIMARY,
+				],
                 'selector'  => '{{WRAPPER}} .aux-cart-wrapper .aux-card-item span'
             )
         );
@@ -581,7 +611,7 @@ class Shopping_Cart extends Widget_Base {
         $dropdown_class .= ' aux-modern-dropdown';
     }
 
-    $icon_value = ! empty( $settings['aux_shopping_cart_icon']['value'] ) ? $settings['aux_shopping_cart_icon']['value'] : ( ! empty( $settings['icon'] ) ? $settings['icon'] : 'auxicon-shopping-bag-4' ) ;
+    $icon_value = ! empty( $settings['aux_shopping_cart_icon']['value'] ) ? $settings['aux_shopping_cart_icon'] : ( ! empty( $settings['icon'] ) ? $settings['icon'] : 'auxicon-shopping-bag-4' ) ;
 
     $settings['image_custom_dimension']['width'] = empty( $settings['image_custom_dimension']['width'] ) ? '' : $settings['image_custom_dimension']['width'];
     $settings['image_custom_dimension']['height'] = empty( $settings['image_custom_dimension']['height'] ) ? '' : $settings['image_custom_dimension']['height'];

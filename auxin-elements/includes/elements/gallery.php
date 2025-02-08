@@ -7,7 +7,7 @@
  * @license    LICENSE.txt
  * @author     averta
  * @link       http://phlox.pro/
- * @copyright  (c) 2010-2024 averta
+ * @copyright  (c) 2010-2025 averta
  */
 function auxin_get_gallery_master_array( $master_array ) {
 
@@ -574,7 +574,7 @@ function auxin_widget_gallery_callback( $attr, $shortcode_content = null ){
 
         if ( $add_lightbox ) {
             $lightbox_attrs .= 'data-original-width="' . esc_attr( $attachment_meta['width'] ) . '" data-original-height="' . esc_attr( $attachment_meta['height'] ) . '" ' .
-                              'data-caption="' . esc_attr( strip_tags( auxin_attachment_caption( $id ) ) ) . '"';
+                              'data-caption="' . esc_attr( wp_strip_all_tags( auxin_attachment_caption( $id ) ) ) . '"';
         }
 
         if ( 'tiles' == $layout ) {

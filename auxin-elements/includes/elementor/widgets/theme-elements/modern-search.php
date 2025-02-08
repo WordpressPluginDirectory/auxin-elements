@@ -4,7 +4,7 @@ namespace Auxin\Plugin\CoreElements\Elementor\Elements\Theme_Elements;
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
-use Elementor\Core\Schemes\Typography;
+use Elementor\Core\Kits\Documents\Tabs\Global_Typography;
 use Elementor\Group_Control_Text_Shadow;
 use Elementor\Group_Control_Background;
 use Elementor\Group_Control_Box_Shadow;
@@ -253,7 +253,7 @@ class ModernSearch extends Widget_Base {
                 'label'     => __( 'Color', 'auxin-elements' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .aux-search-submit i' => 'color: {{VALUE}};'
+                    '{{WRAPPER}} .aux-search-submit svg' => 'color: {{VALUE}}; fill: {{VALUE}};'
                 ]
             ]
         );
@@ -280,7 +280,7 @@ class ModernSearch extends Widget_Base {
                     'unit' => 'px'
                 ],
                 'selectors'  => [
-                    '{{WRAPPER}} .aux-search-submit i' => 'font-size: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .aux-search-submit svg' => 'font-size: {{SIZE}}{{UNIT}};height: {{SIZE}}{{UNIT}};',
                 ],
             ]
         );
@@ -300,7 +300,7 @@ class ModernSearch extends Widget_Base {
                 'label'     => __( 'Color', 'auxin-elements' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .aux-search-submit:hover i' => 'color: {{VALUE}};'
+                    '{{WRAPPER}} .aux-search-submit:hover svg' => 'color: {{VALUE}};fill: {{VALUE}};'
                 ]
             ]
         );
@@ -323,7 +323,7 @@ class ModernSearch extends Widget_Base {
                     ],
                 ],
                 'selectors'  => [
-                    '{{WRAPPER}} .aux-search-submit:hover i' => 'font-size: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .aux-search-submit:hover svg' => 'font-size: {{SIZE}}{{UNIT}};height: {{SIZE}}{{UNIT}};',
                 ],
             ]
         );
@@ -369,7 +369,9 @@ class ModernSearch extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name'      => 'text_typo_normal',
-                'scheme'    => Typography::TYPOGRAPHY_1,
+                'global' => [
+					'default' => Global_Typography::TYPOGRAPHY_PRIMARY,
+				],
                 'selector'  => '{{WRAPPER}} .aux-search-submit'
             ]
         );
@@ -406,7 +408,9 @@ class ModernSearch extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name'      => 'text_typo_hover',
-                'scheme'    => Typography::TYPOGRAPHY_1,
+                'global' => [
+					'default' => Global_Typography::TYPOGRAPHY_PRIMARY,
+				],
                 'selector'  => '{{WRAPPER}} .aux-search-submit:hover'
             ]
         );
@@ -628,7 +632,9 @@ class ModernSearch extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name'      => 'input_typo',
-                'scheme'    => Typography::TYPOGRAPHY_1,
+                'global' => [
+					'default' => Global_Typography::TYPOGRAPHY_PRIMARY,
+				],
                 'selector'  => '{{WRAPPER}} .aux-search-popup .aux-search-field',
                 'separator'  => 'before'
             ]
@@ -858,7 +864,9 @@ class ModernSearch extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name'      => 'title_typo',
-                'scheme'    => Typography::TYPOGRAPHY_1,
+                'global' => [
+					'default' => Global_Typography::TYPOGRAPHY_PRIMARY,
+				],
                 'selector'  => '{{WRAPPER}} .aux-search-form-legend'
             ]
         );
@@ -919,9 +927,9 @@ class ModernSearch extends Widget_Base {
     ?>
         <div <?php echo $this->get_render_attribute_string( 'wrapper' );?> >
             <button <?php echo $this->get_render_attribute_string( 'button' );?> >
-                <?php if ( empty( $args['icon']['library'] ) || $args['icon']['library'] != 'svg'  ) { ?>
-                    <i <?php echo $this->get_render_attribute_string( 'icon' );?>></i>
-                <?php } else { ?>
+                <?php if ( empty( $args['icon']['library'] ) || $args['icon']['library'] != 'svg'  ) {
+                    echo \Elementor\Icons_Manager::render_font_icon( $args['icon'], [ 'aria-hidden' => 'true' ] );
+                } else { ?>
                     <img src="<?php echo esc_url( $args['icon']['value']['url'] ); ?>">
                 <?php } ?>
                 <span <?php echo $this->get_render_attribute_string( 'submit_text' );?> ><?php echo esc_html( $args['submit_text'] ); ?></span>
@@ -1028,7 +1036,7 @@ class ModernSearch extends Widget_Base {
                     <?php };?>
                     <?php if ( $args['display_submit'] ) { ;?>
                         <?php if ( $args['display_fill'] ) { ;?>
-                            <input type="submit" class="aux-fill-search-submit" value="<?php esc_attr_e( 'Search', THEME_DOMAIN ); ?> " >
+                            <input type="submit" class="aux-fill-search-submit" value="<?php esc_attr_e( 'Search', 'auxin-elements' ); ?> " >
                         <?php } else { ;?>
                             <div class="aux-submit-icon-container auxicon-search-4">
                                 <input type="submit" class="aux-iconic-search-submit" value="<?php esc_attr_e( 'Search', 'auxin-elements' ); ?>" >
@@ -1066,7 +1074,7 @@ class ModernSearch extends Widget_Base {
 
         }
 
-        $options_output = '<option value="all" data-taxonomy="' . esc_attr ( wp_json_encode( $taxonomies ) ) . '" data-post-type="' . esc_attr ( wp_json_encode( $post_types ) ) . '">' . __('All Categories', THEME_DOMAIN) . '</option>' . $options_output ;
+        $options_output = '<option value="all" data-taxonomy="' . esc_attr ( wp_json_encode( $taxonomies ) ) . '" data-post-type="' . esc_attr ( wp_json_encode( $post_types ) ) . '">' . __('All Categories', 'auxin-elements') . '</option>' . $options_output ;
 
         echo '<div class="aux-search-cats">';
             echo '<select class="aux-modern-search-cats" name="cat">' . wp_kses_post( $options_output ) . '</select>';

@@ -5,7 +5,7 @@ use Elementor\Plugin;
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
-use Elementor\Core\Schemes\Typography;
+use Elementor\Core\Kits\Documents\Tabs\Global_Typography;
 use Elementor\Group_Control_Box_Shadow;
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -88,7 +88,12 @@ class RecentPostsLand extends Widget_Base {
      * @return string Widget icon.
      */
     public function get_terms() {
-        $terms = get_terms( 'category', 'orderby=count&hide_empty=0' );
+        $terms = get_terms([
+            'taxonomy'   => 'category',  
+            'orderby'    => 'count',  
+            'hide_empty' => false
+        ]);  
+        
         $list  = array( ' ' => __('All Categories', 'auxin-elements' ) ) ;
         foreach ( $terms as $key => $value ) {
             $list[$value->term_id] = $value->name;
@@ -664,7 +669,9 @@ class RecentPostsLand extends Widget_Base {
             Group_Control_Typography::get_type(),
             array(
                 'name' => 'title_typography',
-                'scheme' => Typography::TYPOGRAPHY_1,
+                'global' => [
+					'default' => Global_Typography::TYPOGRAPHY_PRIMARY,
+				],
                 'selector' => '{{WRAPPER}} .entry-title',
                 'condition' => array(
                     'display_title' => 'yes',
@@ -768,7 +775,9 @@ class RecentPostsLand extends Widget_Base {
             Group_Control_Typography::get_type(),
             array(
                 'name' => 'info_typography',
-                'scheme' => Typography::TYPOGRAPHY_1,
+                'global' => [
+					'default' => Global_Typography::TYPOGRAPHY_PRIMARY,
+				],
                 'selector' => '{{WRAPPER}} .entry-info, {{WRAPPER}} .entry-info a',
                 'condition' => array(
                     'show_info' => 'yes',
@@ -850,7 +859,9 @@ class RecentPostsLand extends Widget_Base {
             Group_Control_Typography::get_type(),
             array(
                 'name' => 'content_typography',
-                'scheme' => Typography::TYPOGRAPHY_1,
+                'global' => [
+					'default' => Global_Typography::TYPOGRAPHY_PRIMARY,
+				],
                 'selector' => '{{WRAPPER}} .entry-content',
                 'condition' => array(
                     'show_excerpt' => 'yes',
@@ -939,7 +950,9 @@ class RecentPostsLand extends Widget_Base {
             Group_Control_Typography::get_type(),
             array(
                 'name' => 'meta_typography',
-                'scheme' => Typography::TYPOGRAPHY_1,
+                'global' => [
+					'default' => Global_Typography::TYPOGRAPHY_PRIMARY,
+				],
                 'selector' => '{{WRAPPER}} .entry-meta, {{WRAPPER}} .entry-meta a, {{WRAPPER}} .entry-meta span'
             )
         );

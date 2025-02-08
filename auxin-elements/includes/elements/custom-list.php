@@ -7,7 +7,7 @@
  * @license    LICENSE.txt
  * @author     averta
  * @link       http://phlox.pro/
- * @copyright  (c) 2010-2024 averta
+ * @copyright  (c) 2010-2025 averta
  */
 
 function auxin_get_list_master_array( $master_array ) {
@@ -290,8 +290,12 @@ function auxin_widget_list_callback( $atts, $shortcode_content = null ){
             }
 
             // a fix to prevent unwanted default value 'check-1' which is set in elementor
-            if( ! empty( $list_item['icon'] ) && 'check-1' != $list_item['icon'] ){
-                $output .= '<span '. auxin_make_html_attributes( array( 'class' => array( 'aux-icon-list-icon', esc_attr( $list_item['icon'] ) ) ) ) .'></span>';
+            if( ( ! empty( $list_item['icon'] ) && 'check-1' != $list_item['icon'] ) || is_array( $list_item['icon'] ) ){
+                if ( is_array( $list_item['icon'] ) ) {
+                    $output .= \Elementor\Icons_Manager::render_font_icon( $list_item['icon'], [ 'aria-hidden' => 'true', 'class' => 'aux-icon-list-icon' ] );
+                } else {
+                    $output .= '<span '. auxin_make_html_attributes( array( 'class' => array( 'aux-icon-list-icon', esc_attr( $list_item['icon'] ) ) ) ) .'></span>';
+                }
             }
             if( ! empty( $list_item['text_primary'] ) ){
                 $output .= "<$item_text_tag ". auxin_make_html_attributes( array( 'class' => array( 'aux-icon-list-text' ) ) ) .'>' . auxin_kses( $list_item['text_primary'] ) . "</$item_text_tag>";

@@ -7,7 +7,7 @@
  * @license    LICENSE.txt
  * @author     averta
  * @link       http://phlox.pro/
- * @copyright  (c) 2010-2024 averta
+ * @copyright  (c) 2010-2025 averta
 */
 
 function auxin_metabox_fields_page_template(){
@@ -30,7 +30,7 @@ function auxin_metabox_fields_page_template(){
                 'below-in-frame' => __( 'After Content', 'auxin-elements' ),                        // Page builder content right after template content
                 'below-boxed'    => __( 'Below Content, Boxed Layout', 'auxin-elements' ),          // Page builder content below template content with boxed width
                 'below-full'     => __( 'Below Content, FullWidth Layout', 'auxin-elements' ),       // Page builder content below template content with full width
-                'none'           => __( 'Hide it' )                                              // Skip Page builder content
+                'none'           => __( 'Hide it', 'auxin-elements' )                                              // Skip Page builder content
             )
         )
 

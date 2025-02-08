@@ -7,7 +7,7 @@
  * @license    LICENSE.txt
  * @author     averta
  * @link       http://phlox.pro/
- * @copyright  (c) 2010-2024 averta
+ * @copyright  (c) 2010-2025 averta
  */
 function  auxin_get_text_master_array( $master_array ) {
 
@@ -1109,7 +1109,7 @@ function auxin_widget_column_callback( $atts, $shortcode_content = null ){
     $icon_box_classnames .= ! empty ( $image ) ? 'aux-img-box aux-ico-shape-' . esc_attr( $img_shape ) . ' ' : '';
     $icon_box_classnames .= empty( $icon_bg_color ) ? 'aux-ico-clear' : '';
 
-    $icon_classname       = empty( $icon ) ? '' : $icon ;
+    $icon_classname       = empty( $icon ) ? '' : ( is_array( $icon ) ? $icon['value'] : $icon );
 
     //---------------------------------------------
     // Footer Classnames
@@ -1155,9 +1155,16 @@ function auxin_widget_column_callback( $atts, $shortcode_content = null ){
             <?php if( ! empty( $icon ) || ! empty( $image ) ||  ! empty( $header_bg_img ) || ! empty( $icon_svg_inline ) ) { ?>
                 <div class="aux-text-widget-header <?php echo esc_attr( $header_classess ) ;?>" <?php echo wp_kses_post( $header_styles ) ; ?> >
                         <div class="aux-ico-box <?php echo esc_attr( $icon_box_classnames ) ;?> ">
-                            <?php if ( ! empty( $icon ) ){ ;?>
-                                <span class="aux-ico <?php echo esc_attr( $icon_classname ) ;?>" > </span>
-                            <?php } elseif ( ! empty( $image ) ) { ?>
+                            <?php 
+                            if ( ! empty( $icon ) ){ 
+                                if ( is_array( $icon ) ) {
+                                    echo \Elementor\Icons_Manager::render_font_icon( $icon, [ 'aria-hidden' => 'true', 'class' => 'aux-ico' ] );
+                                } else {
+                                    ?>
+                                    <span class="aux-ico <?php echo esc_attr( $icon_classname ) ;?>" > </span>
+                                    <?php
+                                } 
+                            } elseif ( ! empty( $image ) ) { ?>
                                     <?php echo wp_kses_post( $image ); ?>
                             <?php } else { ?>
                                     <?php echo wp_kses_post( $icon_svg_inline ) ;?>

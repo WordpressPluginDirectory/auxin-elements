@@ -12,4 +12,17 @@ function auxin_disable_automatic_page_creation( $pages ) {
     return [];
 }
 
+/**
+ * Preload customizer controls script because of an issue with global color and typography controller
+ *
+ * @return void
+ */
+function auxin_preload_customizer_controls_script() {
+    if (function_exists('WC')) {
+        $handle = 'load-custom-controls';
+        wp_register_script( $handle, false, array( 'auxin_plugins', 'auxin_script' ), AUXELS_VERSION, false );
+        wp_enqueue_script( $handle );
+    }
+}
+add_action('customize_controls_init', 'auxin_preload_customizer_controls_script');
 ?>

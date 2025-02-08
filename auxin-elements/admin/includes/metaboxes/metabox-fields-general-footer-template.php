@@ -19,7 +19,7 @@ function auxin_metabox_fields_footer_templates(){
     if ( auxin_is_plugin_active( 'elementor/elementor.php' ) ) {
 
         $model->fields[] = array(
-            'title'       => __( 'Current Footer', THEME_DOMAIN ),
+            'title'       => __( 'Current Footer', 'auxin-elements' ),
             'id'          => 'page_elementor_footer_edit_template',
             'type'        => 'edit_template',
             'template'    => 'footer',
@@ -34,10 +34,10 @@ function auxin_metabox_fields_footer_templates(){
 
 
         $templates_list = auxin_get_elementor_templates_list('footer');
-        $templates_list[ auxin_get_option( 'site_elementor_footer_template' ) . '-def'] = __( 'Theme Default', THEME_DOMAIN );
+        $templates_list[ auxin_get_option( 'site_elementor_footer_template' ) . '-def'] = __( 'Theme Default', 'auxin-elements' );
 
         $model->fields[] = array(
-            'title'            => __( 'Your Footers', THEME_DOMAIN ),
+            'title'            => __( 'Your Footers', 'auxin-elements' ),
             'id'               => 'page_elementor_footer_template',
             'type'             => 'selective_list',
             'choices'          => $templates_list,
@@ -53,8 +53,8 @@ function auxin_metabox_fields_footer_templates(){
 
     } else {
         $model->fields[] = array(
-            'title'       => __( 'Footer Builder', THEME_DOMAIN ),
-            'description' => __( 'Get footer builder and templates by installing Elementor plugin.', THEME_DOMAIN ),
+            'title'       => __( 'Footer Builder', 'auxin-elements' ),
+            'description' => __( 'Get footer builder and templates by installing Elementor plugin.', 'auxin-elements' ),
             'id'          => 'page_footer_install_elementor',
             'section'     => 'footer-section-builder',
             'type'        => 'install_elementor_plugin',
@@ -62,8 +62,8 @@ function auxin_metabox_fields_footer_templates(){
     }
 
     $model->fields[] = array(
-        'title'            => __( 'Use Legacy Footer', THEME_DOMAIN ),
-        'description'      => __( 'Disable it to replace footer section with an Elementor template', THEME_DOMAIN ),
+        'title'            => __( 'Use Legacy Footer', 'auxin-elements' ),
+        'description'      => __( 'Disable it to replace footer section with an Elementor template', 'auxin-elements' ),
         'id'               => 'page_footer_use_legacy',
         'type'             => 'select',
         'transport'        => 'postMessage',

@@ -117,7 +117,7 @@ class Simple__SVG extends Widget_Base {
         $this->add_control(
             'image',
             array(
-                'label'   => __( 'Choose Image', 'elementor' ),
+                'label'   => __( 'Choose Image', 'auxin-elements' ),
                 'type'    => Controls_Manager::MEDIA,
                 'default' => array(
                     'url' => Utils::get_placeholder_image_src(),
@@ -134,7 +134,7 @@ class Simple__SVG extends Widget_Base {
                 'label'       => '',
                 'type'        => Controls_Manager::CODE,
                 'default'     => '',
-                'placeholder' => __( 'Enter inline SVG content here', 'elementor' ),
+                'placeholder' => __( 'Enter inline SVG content here', 'auxin-elements' ),
                 'show_label'  => false,
                 'condition' => array(
                     'type' => 'inline'

@@ -5,7 +5,7 @@ use Elementor\Plugin;
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
-use Elementor\Core\Schemes\Typography;
+use Elementor\Core\Kits\Documents\Tabs\Global_Typography;
 use Elementor\Group_Control_Text_Shadow;
 
 
@@ -323,7 +323,9 @@ class SiteTitle extends Widget_Base {
             Group_Control_Typography::get_type(),
             array(
                 'name'      => 'title_typography',
-                'scheme'    => Typography::TYPOGRAPHY_1,
+                'global' => [
+					'default' => Global_Typography::TYPOGRAPHY_PRIMARY,
+				],
                 'selector'  => '{{WRAPPER}} .aux-site-title-heading'
             )
         );
@@ -389,7 +391,9 @@ class SiteTitle extends Widget_Base {
             Group_Control_Typography::get_type(),
             array(
                 'name'      => 'before_title_typography',
-                'scheme'    => Typography::TYPOGRAPHY_1,
+                'global' => [
+					'default' => Global_Typography::TYPOGRAPHY_PRIMARY,
+				],
                 'selector'  => '{{WRAPPER}} .aux-site-title-before-heading'
             )
         );
@@ -455,7 +459,9 @@ class SiteTitle extends Widget_Base {
             Group_Control_Typography::get_type(),
             array(
                 'name'      => 'after_title_typography',
-                'scheme'    => Typography::TYPOGRAPHY_1,
+                'global' => [
+					'default' => Global_Typography::TYPOGRAPHY_PRIMARY,
+				],
                 'selector'  => '{{WRAPPER}} .aux-site-title-after-heading'
             )
         );

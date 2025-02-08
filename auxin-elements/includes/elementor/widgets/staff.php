@@ -6,7 +6,7 @@ use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Image_Size;
 use Elementor\Group_Control_Typography;
-use Elementor\Core\Schemes\Typography;
+use Elementor\Core\Kits\Documents\Tabs\Global_Typography;
 use Elementor\Utils;
 use Elementor\Group_Control_Border;
 
@@ -517,7 +517,9 @@ class Staff extends Widget_Base {
             Group_Control_Typography::get_type(),
             array(
                 'name' => 'title_typography',
-                'scheme' => Typography::TYPOGRAPHY_1,
+                'global' => [
+					'default' => Global_Typography::TYPOGRAPHY_PRIMARY,
+				],
                 'selector' => '{{WRAPPER}} .col-title, {{WRAPPER}} .col-title a',
                 'condition' => array(
                     'title!' => '',
@@ -598,7 +600,9 @@ class Staff extends Widget_Base {
             Group_Control_Typography::get_type(),
             array(
                 'name' => 'subtitle_typography',
-                'scheme' => Typography::TYPOGRAPHY_1,
+                'global' => [
+					'default' => Global_Typography::TYPOGRAPHY_PRIMARY,
+				],
                 'selector' => '{{WRAPPER}} .aux-staff-content  .col-subtitle',
                 'condition' => array(
                     'subtitle!' => '',
@@ -660,7 +664,9 @@ class Staff extends Widget_Base {
             Group_Control_Typography::get_type(),
             array(
                 'name' => 'content_typography',
-                'scheme' => Typography::TYPOGRAPHY_1,
+                'global' => [
+					'default' => Global_Typography::TYPOGRAPHY_PRIMARY,
+				],
                 'selector' => '{{WRAPPER}} .entry-content',
                 'condition' => array(
                     'content!' => '',

@@ -7,7 +7,7 @@
  * @license    LICENSE.txt
  * @author     averta
  * @link       http://phlox.pro/
- * @copyright  (c) 2010-2024 averta
+ * @copyright  (c) 2010-2025 averta
 */
 
 // no direct access allowed
@@ -100,7 +100,8 @@ class Auxels_WC_Attribute_Nav_Menu {
         }
 
         foreach ( $taxonomies as $slug => $label ) {
-            $terms = get_terms( 'pa_' . $slug, array(
+            $terms = get_terms( array(
+                'taxonomy' => 'pa_' . $slug,
                 'hide_empty' => false,
             ) );
 
@@ -137,7 +138,8 @@ class Auxels_WC_Attribute_Nav_Menu {
                     <?php
                     $i = -1;
                     foreach ( $taxonomies as $slug => $label ) :
-                        $terms = get_terms( 'pa_' . $slug, array(
+                        $terms = get_terms( array(
+                            'taxonomy' => 'pa_' . $slug,
                             'hide_empty' => false,
                         ) );
                         foreach ( $terms as $term ) {

@@ -6,7 +6,7 @@ use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
 use Elementor\Icons_Manager;
-use Elementor\Core\Schemes\Typography;
+use Elementor\Core\Kits\Documents\Tabs\Global_Typography;
 use Elementor\Group_Control_Background;
 use Elementor\Group_Control_Box_Shadow;
 use Elementor\Group_Control_Text_Shadow;
@@ -116,7 +116,7 @@ class ModernButton extends Widget_Base {
             [
                 'label'        => __('Highlighted Text', 'auxin-elements' ),
                 'type'         => Controls_Manager::TEXT,
-                'default'      => __('','auxin-elements' )
+                'default'      => ''
             ]
         );
 
@@ -125,7 +125,7 @@ class ModernButton extends Widget_Base {
             [
                 'label'        => __('After Text', 'auxin-elements' ),
                 'type'         => Controls_Manager::TEXT,
-                'default'      => __('','auxin-elements' )
+                'default'      => ''
             ]
         );
 
@@ -494,7 +494,9 @@ class ModernButton extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name' => 'text_normal_typo',
-                'scheme' => Typography::TYPOGRAPHY_1,
+                'global' => [
+					'default' => Global_Typography::TYPOGRAPHY_PRIMARY,
+				],
                'selector' => '{{WRAPPER}} .aux-text'
             ]
         );
@@ -533,7 +535,9 @@ class ModernButton extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name'     => 'text_hover_typo',
-                'scheme'   => Typography::TYPOGRAPHY_1,
+                'global' => [
+					'default' => Global_Typography::TYPOGRAPHY_PRIMARY,
+				],
                 'selector' => '{{WRAPPER}} .aux-modern-button:hover .aux-text'
             ]
         );
@@ -594,7 +598,9 @@ class ModernButton extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name' => 'text2_normal_typo',
-                'scheme' => Typography::TYPOGRAPHY_1,
+                'global' => [
+					'default' => Global_Typography::TYPOGRAPHY_PRIMARY,
+				],
                 'selector' => '{{WRAPPER}} .aux-text-highlighted'
             ]
         );
@@ -633,7 +639,9 @@ class ModernButton extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name'     => 'text2_hover_typo',
-                'scheme'   => Typography::TYPOGRAPHY_1,
+                'global' => [
+					'default' => Global_Typography::TYPOGRAPHY_PRIMARY,
+				],
                 'selector' => '{{WRAPPER}} .aux-modern-button:hover .aux-text-highlighted'
             ]
         );
@@ -706,7 +714,9 @@ class ModernButton extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name' => 'text3_normal_typo',
-                'scheme' => Typography::TYPOGRAPHY_1,
+                'global' => [
+					'default' => Global_Typography::TYPOGRAPHY_PRIMARY,
+				],
                'selector' => '{{WRAPPER}} .aux-text-after'
             ]
         );
@@ -745,7 +755,9 @@ class ModernButton extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name'     => 'text3_hover_typo',
-                'scheme'   => Typography::TYPOGRAPHY_1,
+                'global' => [
+					'default' => Global_Typography::TYPOGRAPHY_PRIMARY,
+				],
                 'selector' => '{{WRAPPER}} .aux-modern-button:hover .aux-text-after'
             ]
         );
@@ -1038,6 +1050,7 @@ class ModernButton extends Widget_Base {
       $settings   = $this->get_settings_for_display();
 
     $this->add_render_attribute( 'wrapper', 'class', 'aux-modern-button-wrapper' );
+    $settings['btn_align'] = $settings['btn_align'] ?? 'left';
     $this->add_render_attribute( 'wrapper', 'class', 'aux-modern-button-align-' . $settings['btn_align'] );
 
     $this->add_render_attribute( 'button', 'class', 'aux-modern-button' );

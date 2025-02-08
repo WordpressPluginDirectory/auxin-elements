@@ -19,6 +19,7 @@ class Auxin_License_Activation {
 	protected $api           = 'http://support.averta.net/en/api/?branch=envato&group=items&cat=verify-purchase';
     protected $usermail      = '';
     protected $purchase_code = '';
+	protected $option_prefix = '';
     protected $action        = 'activate';
 
 

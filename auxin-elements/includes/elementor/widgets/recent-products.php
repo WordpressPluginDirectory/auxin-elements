@@ -5,7 +5,7 @@ use Elementor\Plugin;
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
-use Elementor\Core\Schemes\Typography;
+use Elementor\Core\Kits\Documents\Tabs\Global_Typography;
 
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -552,7 +552,9 @@ class RecentProducts extends Widget_Base {
             Group_Control_Typography::get_type(),
             array(
                 'name' => 'title_typography',
-                'scheme' => Typography::TYPOGRAPHY_1,
+                'global' => [
+					'default' => Global_Typography::TYPOGRAPHY_PRIMARY,
+				],
                 'selector' => '{{WRAPPER}} .woocommerce-loop-product__title',
                 'condition' => array(
                     'display_title' => 'yes',
@@ -656,7 +658,9 @@ class RecentProducts extends Widget_Base {
             Group_Control_Typography::get_type(),
             array(
                 'name' => 'category_typography',
-                'scheme' => Typography::TYPOGRAPHY_1,
+                'global' => [
+					'default' => Global_Typography::TYPOGRAPHY_PRIMARY,
+				],
                 'selector' => '{{WRAPPER}} .auxshp-meta-terms, {{WRAPPER}} .auxshp-meta-terms a',
                 'condition' => array(
                     'display_categories' => 'yes',

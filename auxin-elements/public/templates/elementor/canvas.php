@@ -14,7 +14,7 @@ global $post;
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<?php if ( ! current_theme_supports( 'title-tag' ) ) : ?>
-		<title><?php echo wp_get_document_title(); ?></title>
+		<title><?php echo esc_html(wp_get_document_title()); ?></title>
 	<?php endif; ?>
 	<?php wp_head(); ?>
 	<?php

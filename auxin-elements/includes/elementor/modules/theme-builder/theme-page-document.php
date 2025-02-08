@@ -208,7 +208,8 @@ abstract class Theme_Document extends Library_Document {
 		$preview_id = (int) $this->get_settings( 'preview_id' );
 		$post_id = $this->get_main_id();
 
-		list( $preview_category, $preview_object_type ) = array_pad( explode( '/', $this->get_settings( 'preview_type' ) ), 2, '' );
+		$preview_type = $this->get_settings( 'preview_type' );
+		list( $preview_category, $preview_object_type ) = $preview_type ? array_pad( explode( '/', $preview_type ), 2, '' ) : array_pad( [], 2, '' );
 
 		$home_url = trailingslashit( home_url() );
 
@@ -283,7 +284,8 @@ abstract class Theme_Document extends Library_Document {
 	public function get_preview_as_query_args() {
 		$preview_id = (int) $this->get_settings( 'preview_id' );
 
-		list( $preview_category, $preview_object_type ) = array_pad( explode( '/', $this->get_settings( 'preview_type' ) ), 2, '' );
+		$preview_type = $this->get_settings( 'preview_type' );
+		list( $preview_category, $preview_object_type ) = $preview_type ? array_pad( explode( '/', $preview_type ), 2, '' ) : array_pad( [], 2, '' );
 
 		switch ( $preview_category ) {
 			case 'archive':

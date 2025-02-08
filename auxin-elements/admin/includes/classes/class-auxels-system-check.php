@@ -35,10 +35,10 @@ class Auxels_System_Check {
     public function check_php_ini_settings() {
 
         $result = array(
-            'label'       => __( 'Required and recommended php ini settings passed successfully' ),
+            'label'       => __( 'Required and recommended php ini settings passed successfully', 'auxin-elements' ),
             'status'      => 'good',
             'badge'       => array(
-                'label' => __( 'Performance' ),
+                'label' => __( 'Performance', 'auxin-elements' ),
                 'color' => 'blue',
             ),
             'actions'     => '',
@@ -103,10 +103,10 @@ class Auxels_System_Check {
      */
     public function check_connecting_to_averta_servers() {
         $result = array(
-            'label'       => __( 'Connecting to averta servers to get demos and templates passed successfully' ),
+            'label'       => __( 'Connecting to averta servers to get demos and templates passed successfully', 'auxin-elements' ),
             'status'      => 'good',
             'badge'       => array(
-                'label' => __( 'Performance' ),
+                'label' => __( 'Performance', 'auxin-elements' ),
                 'color' => 'blue',
             ),
             'actions'     => '',

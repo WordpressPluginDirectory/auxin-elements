@@ -5,7 +5,7 @@ use Elementor\Plugin;
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
-use Elementor\Core\Schemes\Typography;
+use Elementor\Core\Kits\Documents\Tabs\Global_Typography;
 use Elementor\Group_Control_Background;
 use Elementor\Group_Control_Box_Shadow;
 use Elementor\Group_Control_Text_Shadow;
@@ -402,7 +402,7 @@ class Button extends Widget_Base {
                     ),
                 ),
                 'selectors'  => array(
-                    '{{WRAPPER}} .aux-icon' => 'font-size: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .aux-icon' => 'font-size: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
                 )
             )
         );
@@ -434,7 +434,7 @@ class Button extends Widget_Base {
                 'label' => __( 'Color', 'auxin-elements' ),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => array(
-                    '{{WRAPPER}} .aux-icon' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .aux-icon' => 'color: {{VALUE}}; fill: {{VALUE}};',
                 )
             )
         );
@@ -454,7 +454,7 @@ class Button extends Widget_Base {
                 'label' => __( 'Color', 'auxin-elements' ),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => array(
-                    '{{WRAPPER}} .aux-button:hover .aux-icon' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .aux-button:hover .aux-icon' => 'color: {{VALUE}};fill: {{VALUE}};',
                 )
             )
         );
@@ -522,7 +522,9 @@ class Button extends Widget_Base {
             Group_Control_Typography::get_type(),
             array(
                 'name' => 'text_typography',
-                'scheme' => Typography::TYPOGRAPHY_1,
+                'global' => [
+					'default' => Global_Typography::TYPOGRAPHY_PRIMARY,
+				],
                 'selector' => '{{WRAPPER}} .aux-text'
             )
         );
@@ -560,7 +562,9 @@ class Button extends Widget_Base {
             Group_Control_Typography::get_type(),
             array(
                 'name' => 'hover_text_typography',
-                'scheme' => Typography::TYPOGRAPHY_1,
+                'global' => [
+					'default' => Global_Typography::TYPOGRAPHY_PRIMARY,
+				],
                 'selector' => '{{WRAPPER}} .aux-text'
             )
         );
@@ -584,7 +588,7 @@ class Button extends Widget_Base {
 
     $settings   = $this->get_settings_for_display();
 
-    $icon_value = ! empty( $settings['aux_button_icon']['value'] ) ? $settings['aux_button_icon']['value'] : ( ! empty( $settings['icon'] ) ? $settings['icon'] : '' ) ;
+    $icon_value = ! empty( $settings['aux_button_icon']['value'] ) ? $settings['aux_button_icon'] : ( ! empty( $settings['icon'] ) ? $settings['icon'] : '' ) ;
     
     $btn_target = $settings['link']['is_external'] ? '_blank' : '_self';
 

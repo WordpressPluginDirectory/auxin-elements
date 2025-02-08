@@ -7,7 +7,7 @@ use Elementor\Controls_Manager;
 use Elementor\Group_Control_Image_Size;
 use Elementor\Group_Control_Typography;
 use Elementor\Group_Control_Text_Stroke;
-use Elementor\Core\Schemes\Typography;
+use Elementor\Core\Kits\Documents\Tabs\Global_Typography;
 use Elementor\Group_Control_Border;
 use Elementor\Group_Control_Box_Shadow;
 use Elementor\Group_Control_Text_Shadow;
@@ -442,7 +442,7 @@ class Text extends Widget_Base {
                     ),
                 ),
                 'selectors'  => array(
-                    '{{WRAPPER}} .aux-ico' => 'font-size: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .aux-ico' => 'font-size: {{SIZE}}{{UNIT}};height: {{SIZE}}{{UNIT}};',
                 ),
                 'condition'   => array(
                     'icon_or_image' => array('icon')
@@ -525,7 +525,7 @@ class Text extends Widget_Base {
                 'type'        => Controls_Manager::COLOR,
                 'default'     => '#ffffff',
                 'selectors' => array(
-                    '{{WRAPPER}} .aux-ico-box' => 'color:{{VALUE}};',
+                    '{{WRAPPER}} .aux-ico-box' => 'color:{{VALUE}};fill: {{VALUE}};',
                 ),
                 'condition'   => array(
                     'icon_or_image' => array('icon')
@@ -750,7 +750,9 @@ class Text extends Widget_Base {
             Group_Control_Typography::get_type(),
             array(
                 'name'      => 'title_typography',
-                'scheme'    => Typography::TYPOGRAPHY_1,
+                'global' => [
+					'default' => Global_Typography::TYPOGRAPHY_PRIMARY,
+				],
                 'selector'  => '{{WRAPPER}} .col-title, {{WRAPPER}} .col-title a'
             )
         );
@@ -846,7 +848,9 @@ class Text extends Widget_Base {
             Group_Control_Typography::get_type(),
             array(
                 'name'     => 'subtitle_typography',
-                'scheme'   => Typography::TYPOGRAPHY_1,
+                'global' => [
+					'default' => Global_Typography::TYPOGRAPHY_PRIMARY,
+				],
                 'selector' => '{{WRAPPER}} .col-subtitle'
             )
         );
@@ -957,7 +961,9 @@ class Text extends Widget_Base {
             Group_Control_Typography::get_type(),
             array(
                 'name'     => 'content_typography',
-                'scheme'   => Typography::TYPOGRAPHY_1,
+                'global' => [
+					'default' => Global_Typography::TYPOGRAPHY_PRIMARY,
+				],
                 'selector' => '{{WRAPPER}} .widget-content'
             )
         );
@@ -1285,7 +1291,9 @@ class Text extends Widget_Base {
             Group_Control_Typography::get_type(),
             array(
                 'name' => 'button_typography',
-                'scheme' => Typography::TYPOGRAPHY_1,
+                'global' => [
+					'default' => Global_Typography::TYPOGRAPHY_PRIMARY,
+				],
                 'selector' => '{{WRAPPER}} .aux-text'
             )
         );
@@ -1323,7 +1331,9 @@ class Text extends Widget_Base {
             Group_Control_Typography::get_type(),
             array(
                 'name' => 'hover_button_typography',
-                'scheme' => Typography::TYPOGRAPHY_1,
+                'global' => [
+					'default' => Global_Typography::TYPOGRAPHY_PRIMARY,
+				],
                 'selector' => '{{WRAPPER}} .aux-text'
             )
         );
@@ -1634,10 +1644,10 @@ class Text extends Widget_Base {
         $main_icon  = '';
 
         if( 'icon' == $settings['icon_or_image'] ){
-            $main_icon = ! empty( $settings['aux_text_icon']['value'] ) ? $settings['aux_text_icon']['value'] : ( ! empty( $settings['icon'] ) ? $settings['icon'] : '' ) ;
+            $main_icon = ! empty( $settings['aux_text_icon']['value'] ) ? $settings['aux_text_icon'] : ( ! empty( $settings['icon'] ) ? $settings['icon'] : '' ) ;
         }
 
-        $btn_icon_value = ! empty( $settings['aux_text_btn_icon']['value'] ) ? $settings['aux_text_btn_icon']['value'] : ( ! empty( $settings['btn_icon'] ) ? $settings['btn_icon'] : '' ) ;
+        $btn_icon_value = ! empty( $settings['aux_text_btn_icon']['value'] ) ? $settings['aux_text_btn_icon'] : ( ! empty( $settings['btn_icon'] ) ? $settings['btn_icon'] : '' ) ;
 
         $args       = array(
             'title'              => $settings['title'],
@@ -1659,8 +1669,8 @@ class Text extends Widget_Base {
 
             'icon_or_image'      => $settings['icon_or_image'],
             'icon'               => $main_icon,
-            'icon_color'         => $settings['icon_color'],
-            'icon_bg_color'      => $settings['icon_bg_color'],
+            'icon_color'         => $settings['icon_color'] ?? '#ffffff',
+            'icon_bg_color'      => $settings['icon_bg_color'] ?? '',
             'icon_shape'         => $settings['icon_shape'],
             'image'              => auxin_get_array_value( $settings['image'], 'id' ),
             'size'               => $settings['image_size'],
@@ -1674,7 +1684,7 @@ class Text extends Widget_Base {
             'image_position'     => $settings['image_position'],
             'icon_svg_inline'    => $settings['svg_inline'],
 
-            'text_align'         => $settings['text_align'],
+            'text_align'         => $settings['text_align'] ?? 'center',
             'text_align_resp'    => empty( $settings['text_align_mobile'] ) ? '' : $settings['text_align_mobile'],
             'overlay_color'      => $settings['overlay_color'],
 

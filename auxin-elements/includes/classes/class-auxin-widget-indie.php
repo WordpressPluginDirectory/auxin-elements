@@ -7,7 +7,7 @@
  * @license    LICENSE.txt
  * @author     averta
  * @link       http://phlox.pro/
- * @copyright  (c) 2010-2024 averta
+ * @copyright  (c) 2010-2025 averta
 */
 
 // no direct access allowed
@@ -60,7 +60,7 @@ class Auxin_Widget_Indie extends WP_Widget {
 
         foreach ( $this->fields as $field ) {
             $id = $field["id"];
-            $instance[ $id ] = strip_tags( $new_instance[ $id ] );
+            $instance[ $id ] = wp_strip_all_tags( $new_instance[ $id ] );
         }
 
         return $instance;

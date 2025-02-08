@@ -3,9 +3,7 @@ namespace Auxin\Plugin\CoreElements\Elementor\Elements;
 
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
-use Elementor\Group_Control_Typography;
-use Elementor\Core\Schemes\Color;
-use Elementor\Core\Schemes\Typography;
+use Elementor\Core\Kits\Documents\Tabs\Global_Colors;
 use Elementor\Group_Control_Border;
 
 
@@ -388,7 +386,9 @@ class Gallery extends Widget_Base {
             Group_Control_Typography::get_type(),
             array(
                 'name'      => 'typography',
-                'scheme'    => Typography::TYPOGRAPHY_4,
+                'global' => [
+					'default' => Global_Typography::TYPOGRAPHY_TEXT,
+				],
                 'selector'  => '{{WRAPPER}} .gallery-item .gallery-caption',
                 'condition' => array(
                     'caption_display' => 'yes'
@@ -411,10 +411,9 @@ class Gallery extends Widget_Base {
             array(
                 'label'  => __( 'Image hover overlay color', 'auxin-elements' ),
                 'type'   => Controls_Manager::COLOR,
-                'scheme' => array(
-                    'type' => Color::get_type(),
-                    'value' => Color::COLOR_4,
-                ),
+                'global' => [
+					'default' => Global_Colors::COLOR_ACCENT,
+				],
                 'default'   => 'rgba(0, 0, 0, 0.7)',
                 'selectors' => array(
                     '{{WRAPPER}} .aux-gallery-container .aux-frame-darken::after' => 'background-color: {{VALUE}}'

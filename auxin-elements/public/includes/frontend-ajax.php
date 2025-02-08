@@ -135,10 +135,9 @@ function auxels_remove_product_from_cart() {
 
 	try {
 
-        $nonce 			  = sanitize_text_field( $_POST['verify_nonce'] );
-        $id 			  = absint( $_POST['product_id'] );
-        $cart_item_key    = sanitize_text_field( $_POST['cart_item_key'] );
-
+        $nonce 			  = !empty( $_POST['verify_nonce'] ) ? sanitize_text_field( $_POST['verify_nonce'] ) : '';
+        $id 			  = !empty( $_POST['product_id'] ) ? absint( $_POST['product_id'] ) : '';
+        $cart_item_key    = !empty( $_POST['cart_item_key'] ) ? sanitize_text_field( $_POST['cart_item_key'] ) : '';
 	    if( ! isset( $_POST['product_id'] ) || ! wp_verify_nonce( $nonce, 'remove_cart-' . $id ) ){
 	    	wp_send_json_error( sprintf( '<div class="aux-woocommerce-ajax-notification woocommerce-error">%s</div>',  __('Verification failed!', 'auxin-elements') ) );
 	    }

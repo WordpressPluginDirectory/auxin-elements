@@ -7,7 +7,7 @@
  * @license    LICENSE.txt
  * @author     averta
  * @link       http://phlox.pro/
- * @copyright  (c) 2010-2024 averta
+ * @copyright  (c) 2010-2025 averta
 */
 
  // no direct access allowed
@@ -23,8 +23,8 @@ function auxin_metabox_fields_general_footer(){
     $model->fields = array(
 
         array(
-            'title'            => __( 'Use Legacy Footer', THEME_DOMAIN ),
-            'description'      => __( 'Disable it to replace header section with an Elementor template', THEME_DOMAIN ),
+            'title'            => __( 'Use Legacy Footer', 'auxin-elements' ),
+            'description'      => __( 'Disable it to replace header section with an Elementor template', 'auxin-elements' ),
             'id'               => 'page_general_footer_section_use_legacy',
             'type'             => 'select',
             'transport'        => 'postMessage',

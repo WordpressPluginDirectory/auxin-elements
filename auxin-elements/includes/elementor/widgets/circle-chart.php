@@ -4,7 +4,7 @@ namespace Auxin\Plugin\CoreElements\Elementor\Elements;
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
-use Elementor\Core\Schemes\Typography;
+use Elementor\Core\Kits\Documents\Tabs\Global_Typography;
 
 if ( ! defined( 'ABSPATH' ) ) {
     exit; // Exit if accessed directly.
@@ -270,7 +270,9 @@ class CircleChart extends Widget_Base {
             Group_Control_Typography::get_type(),
             array(
                 'name'      => 'title_typography',
-                'scheme'    => Typography::TYPOGRAPHY_1,
+                'global' => [
+					'default' => Global_Typography::TYPOGRAPHY_PRIMARY,
+				],
                 'selector'  => '{{WRAPPER}} .aux-chart-title'
             )
         );
@@ -299,7 +301,9 @@ class CircleChart extends Widget_Base {
             Group_Control_Typography::get_type(),
             array(
                 'name'      => 'number_typography',
-                'scheme'    => Typography::TYPOGRAPHY_1,
+                'global' => [
+					'default' => Global_Typography::TYPOGRAPHY_PRIMARY,
+				],
                 'selector'  => '{{WRAPPER}} .aux-number'
             )
         );
@@ -328,7 +332,9 @@ class CircleChart extends Widget_Base {
             Group_Control_Typography::get_type(),
             array(
                 'name'      => 'subtitle_typography',
-                'scheme'    => Typography::TYPOGRAPHY_1,
+                'global' => [
+					'default' => Global_Typography::TYPOGRAPHY_PRIMARY,
+				],
                 'selector'  => '{{WRAPPER}} .aux-chart-subtitle'
             )
         );

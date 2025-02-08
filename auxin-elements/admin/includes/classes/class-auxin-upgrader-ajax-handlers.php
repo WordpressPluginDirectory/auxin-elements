@@ -44,7 +44,7 @@ class Auxin_Upgrader_Ajax_Handlers {
         );
 
         if ( ! current_user_can( 'update_plugins' ) || 0 !== validate_file( $plugin ) ) {
-            $status['errorMessage'] = __( 'Sorry, you are not allowed to update plugins for this site.' );
+            $status['errorMessage'] = __( 'Sorry, you are not allowed to update plugins for this site.', 'auxin-elements' );
             wp_send_json_error( $status );
         }
 
@@ -76,17 +76,17 @@ class Auxin_Upgrader_Ajax_Handlers {
              * For now, surface some sort of error here.
              */
             if ( true === $plugin_update_data ) {
-                $status['errorMessage'] = __( 'Plugin update failed.' );
+                $status['errorMessage'] = __( 'Plugin update failed.', 'auxin-elements' );
                 wp_send_json_error( $status );
             }
 
-            $status['successMessage'] = __( 'Plugin updated successfully.' );
+            $status['successMessage'] = __( 'Plugin updated successfully.', 'auxin-elements' );
             wp_send_json_success( $status );
         } elseif ( false === $result ) {
             global $wp_filesystem;
 
             $status['errorCode']    = 'unable_to_connect_to_filesystem';
-            $status['errorMessage'] = __( 'Unable to connect to the filesystem. Please confirm your credentials.' );
+            $status['errorMessage'] = __( 'Unable to connect to the filesystem. Please confirm your credentials.', 'auxin-elements' );
 
             // Pass through the error from WP_Filesystem if one was raised.
             if ( $wp_filesystem instanceof WP_Filesystem_Base && is_wp_error( $wp_filesystem->errors ) && $wp_filesystem->errors->get_error_code() ) {
@@ -97,7 +97,7 @@ class Auxin_Upgrader_Ajax_Handlers {
         }
 
         // An unhandled error occurred.
-        $status['errorMessage'] = __( 'Plugin update failed.' );
+        $status['errorMessage'] = __( 'Plugin update failed.', 'auxin-elements' );
         wp_send_json_error( $status );
     }
 
@@ -117,7 +117,7 @@ class Auxin_Upgrader_Ajax_Handlers {
         );
 
         if ( ! current_user_can( 'update_themes' ) ) {
-            $status['errorMessage'] = __( 'Sorry, you are not allowed to update themes for this site.' );
+            $status['errorMessage'] = __( 'Sorry, you are not allowed to update themes for this site.', 'auxin-elements' );
             wp_send_json_error( $status );
         }
 
@@ -145,13 +145,13 @@ class Auxin_Upgrader_Ajax_Handlers {
                 wp_send_json_error( $status );
             }
 
-            $status['successMessage'] = __( 'Theme updated successfully.' );
+            $status['successMessage'] = __( 'Theme updated successfully.', 'auxin-elements' );
             wp_send_json_success( $status );
         } elseif ( false === $result ) {
             global $wp_filesystem;
 
             $status['errorCode']    = 'unable_to_connect_to_filesystem';
-            $status['errorMessage'] = __( 'Unable to connect to the filesystem. Please confirm your credentials.' );
+            $status['errorMessage'] = __( 'Unable to connect to the filesystem. Please confirm your credentials.', 'auxin-elements' );
 
             // Pass through the error from WP_Filesystem if one was raised.
             if ( $wp_filesystem instanceof WP_Filesystem_Base && is_wp_error( $wp_filesystem->errors ) && $wp_filesystem->errors->get_error_code() ) {
@@ -162,7 +162,7 @@ class Auxin_Upgrader_Ajax_Handlers {
         }
 
         // An unhandled error occurred.
-        $status['errorMessage'] = __( 'Update failed.' );
+        $status['errorMessage'] = __( 'Update failed.', 'auxin-elements' );
         wp_send_json_error( $status );
     }
 

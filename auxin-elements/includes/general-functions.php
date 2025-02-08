@@ -6,7 +6,7 @@
  * @license    LICENSE.txt
  * @author     averta
  * @link       http://phlox.pro/
- * @copyright  (c) 2010-2024 averta
+ * @copyright  (c) 2010-2025 averta
  */
 
 /**
@@ -376,7 +376,7 @@ function auxin_extract_text( $content = null ) {
     // remove extra white spaces
     $content = preg_replace('/[\s]+/', ' ', $content );
     // strip html tags and escape special charecters
-    $content = esc_attr(strip_tags($content));
+    $content = esc_attr(wp_strip_all_tags($content));
     // remove double space
     $content = preg_replace('/\s{3,}/',' ', $content );
     return $content;
@@ -924,7 +924,7 @@ function auxin_extract_embed_provider_name( $src ){
         return '';
     }
 
-    $provider_info = parse_url( $provider );
+    $provider_info = wp_parse_url( $provider );
     if( $provider_info['host'] ){
         $host_parts = explode( '.', $provider_info['host'] );
         $host_parts_num = count( $host_parts );
@@ -1000,7 +1000,7 @@ function auxin_save_custom_js(){
 
 
     if ( auxin_put_contents_dir( $js_string, 'custom.js' ) ) {
-        set_theme_mod( 'custom_js_ver', rand(10, 99)/10 ); // disable inline css output
+        set_theme_mod( 'custom_js_ver', wp_rand(10, 99)/10 ); // disable inline css output
         set_theme_mod( 'use_inline_custom_js' , false ); // disable inline css output
 
         return true;
@@ -1077,7 +1077,7 @@ function auxin_save_custom_css(){
 
     if ( auxin_put_contents_dir( $css_string, 'custom.css' ) ) {
 
-        set_theme_mod( 'custom_css_ver', rand(10, 99)/10 );
+        set_theme_mod( 'custom_css_ver', wp_rand(10, 99)/10 );
         set_theme_mod( 'use_inline_custom_css' , false ); // disable inline css output
 
         return true;
@@ -1821,7 +1821,7 @@ function auxin_remove_all_generate_images( $remove = true ){
         if( 1 == preg_match("#-(\d+)x(\d+).(png|jpg|bmp|gif)$#", $file) ) {
             $generated_images[] = $file;
             if( $remove ){
-                unlink( $file );
+                wp_delete_file( $file );
             }
         }
     }
@@ -1953,7 +1953,7 @@ function auxin_cover() {
             <?php
             if ( ! empty ( $cover_title ) ) { ?>
                 <div class="aux-page-cover-content">
-                    <?php _e( $cover_title, 'auxin-elements' );?>
+                    <?php echo wp_kses_post( $cover_title );?>
                 </div>
             <?php }
             ?>

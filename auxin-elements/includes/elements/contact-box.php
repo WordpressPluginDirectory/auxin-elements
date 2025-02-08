@@ -7,7 +7,7 @@
  * @license    LICENSE.txt
  * @author     averta
  * @link       http://phlox.pro/
- * @copyright  (c) 2010-2024 averta
+ * @copyright  (c) 2010-2025 averta
  */
 
 function  get_auxin_contact_box( $master_array ) {
@@ -428,10 +428,10 @@ function auxin_widget_contact_box( $atts, $shortcode_content = null ){
                     return;
                 }
                 var map = new GMaps({
-                    el: "#<?php echo esc_attr( $mapid     ); ?>",
-                    lat:  <?php echo esc_attr( $latitude  ); ?>,
-                    lng:  <?php echo esc_attr( $longitude ); ?>,
-                    zoom: <?php echo esc_attr( $zoom      ); ?>,
+                    el: "#<?php echo esc_js( esc_attr( $mapid ) ); ?>",
+                    lat:  <?php echo floatval( $latitude  ); ?>,
+                    lng:  <?php echo floatval( $longitude ); ?>,
+                    zoom: <?php echo floatval( $zoom      ); ?>,
                     scrollwheel: <?php echo $zoom_wheel ? '1' : '0'; ?>,
                     <?php if( $type == "SATELLITE" ){ ?>
                           mapTypeId: google.maps.MapTypeId.SATELLITE,
@@ -446,7 +446,7 @@ function auxin_widget_contact_box( $atts, $shortcode_content = null ){
                 <?php if( $type == "ROADMAP" ){ ?>
                 map.addStyle({
                     styledMapName:"Auxin custom style map",
-                    styles: <?php echo wp_kses_post( $style ); ?>,
+                    styles: <?php echo ( auxin_is_json( $style ) ? $style : auxin_get_gmap_style() ); ?>,
                     mapTypeId: "aux_map_style"
                 });
 
@@ -454,10 +454,10 @@ function auxin_widget_contact_box( $atts, $shortcode_content = null ){
                 <?php } ?>
                 map.addMarker({
                     <?php if ( ! empty( $marker_info ) ) { ?>
-                        infoWindow: { content: "<?php echo esc_html( $marker_info ); ?>" },
+                        infoWindow: { content: "<?php echo esc_js( esc_html( $marker_info ) ); ?>" },
                     <?php } ?>
-                    lat: <?php echo esc_attr( $latitude  ); ?>,
-                    lng: <?php echo esc_attr( $longitude ); ?>
+                    lat: <?php echo floatval( $latitude  ); ?>,
+                    lng: <?php echo floatval( $longitude ); ?>
                 });
            });
 

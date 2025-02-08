@@ -7,7 +7,7 @@
  * @license    LICENSE.txt
  * @author     averta
  * @link       http://phlox.pro/
- * @copyright  (c) 2010-2024 averta
+ * @copyright  (c) 2010-2025 averta
  */
 
 function auxin_get_code_master_array( $master_array ) {
@@ -196,7 +196,7 @@ function auxin_widget_code_callback( $atts, $shortcode_content = null ){
     } elseif ( base64_decode( $content, true ) === false ) {
 
     } else {
-        $content = rawurldecode( base64_decode( strip_tags( $content ) ) );
+        $content = rawurldecode( base64_decode( wp_strip_all_tags( $content ) ) );
     }
 
     echo '<div class="hljs-'. esc_attr( $theme ) .'">' .

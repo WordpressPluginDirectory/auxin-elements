@@ -7,7 +7,7 @@ use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
 use Elementor\Group_Control_Background;
 use Elementor\Group_Control_Box_Shadow;
-use Elementor\Core\Schemes\Typography;
+use Elementor\Core\Kits\Documents\Tabs\Global_Typography;
 use Elementor\Group_Control_Border;
 
 
@@ -185,7 +185,9 @@ class MailChimp extends Widget_Base {
             [
                 'name' => 'input_typography',
                 'label' => __( 'Typography', 'auxin-elements' ),
-                'scheme' => Typography::TYPOGRAPHY_1,
+                'global' => [
+					'default' => Global_Typography::TYPOGRAPHY_PRIMARY,
+				],
                 'selector' => '{{WRAPPER}} .mc4wp-form input[type="text"],{{WRAPPER}} .mc4wp-form input[type="email"]',
             ]
         );
@@ -412,7 +414,9 @@ class MailChimp extends Widget_Base {
             [
                 'name' => 'placeholder_typography',
                 'label' => __( 'Typography', 'auxin-elements' ),
-                'scheme' => Typography::TYPOGRAPHY_1,
+                'global' => [
+					'default' => Global_Typography::TYPOGRAPHY_PRIMARY,
+				],
                 'selector' => '{{WRAPPER}} .mc4wp-form input[type="text"]::placeholder,{{WRAPPER}} .mc4wp-form input[type="email"]::placeholder'
             ]
         );
@@ -443,7 +447,9 @@ class MailChimp extends Widget_Base {
             [
                 'name' => 'submit_input_typography',
                 'label' => __( 'Typography', 'auxin-elements' ),
-                'scheme' => Typography::TYPOGRAPHY_1,
+                'global' => [
+					'default' => Global_Typography::TYPOGRAPHY_PRIMARY,
+				],
                 'selector' => '{{WRAPPER}} .mc4wp-form input[type="submit"]',
             ]
         );

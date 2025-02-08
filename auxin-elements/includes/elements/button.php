@@ -7,7 +7,7 @@
  * @license    LICENSE.txt
  * @author     averta
  * @link       http://phlox.pro/
- * @copyright  (c) 2010-2024 averta
+ * @copyright  (c) 2010-2025 averta
  */
 
 function auxin_get_button_master_array( $master_array ) {
@@ -376,7 +376,14 @@ function auxin_widget_button_callback( $atts = array(), $shortcode_content = nul
 
     $btn_content  = '<span class="aux-overlay"></span>';
     $btn_label    = '<span class="aux-text">'. auxin_do_cleanup_shortcode( $label ) .'</span>';
-    $btn_icon     = $icon ? '<span class="aux-icon '. esc_attr($icon) .'"></span>' : '';
+    $btn_icon = '';
+    if ( $icon ) {
+        if ( is_array( $icon ) ) {
+            $btn_icon     = \Elementor\Icons_Manager::render_font_icon( $icon, [ 'aria-hidden' => 'true', 'class' => 'aux-icon' ] );
+        } else {
+            $btn_icon     = $icon ? '<span class="aux-icon '. esc_attr($icon) .'"></span>' : '';
+        }
+    }
 
     // if icon is aligned on left
     if( false !== strpos( $icon_align, 'left') ){
