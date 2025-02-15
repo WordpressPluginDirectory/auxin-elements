@@ -2067,6 +2067,7 @@ class Auxin_Demo_Importer {
         $svg_icon_patterns = [
             'icon',
             'selected_icon',
+            'selected_active_icon',
             'prev_icon',
             'next_icon',
             'aux_new_icon',
@@ -2218,9 +2219,9 @@ class Auxin_Demo_Importer {
             }
 
             $elementor_data = is_array( $elementor_data ) ? wp_json_encode( $elementor_data ) : $elementor_data;
-            preg_match_all( '/\{\"slider_id\":\"(\d+)\"/', $elementor_data, $shortcodes, PREG_SET_ORDER );
+            preg_match_all( '/\"slider_id\":\"(\d+)\"/', $elementor_data, $shortcodes, PREG_SET_ORDER );
             if ( empty( $shortcodes ) ) {
-                preg_match_all( '/\{\"slider_id\":\"#(\d+)\"/', $elementor_data, $shortcodes, PREG_SET_ORDER );
+                preg_match_all( '/\"slider_id\":\"#(\d+)\"/', $elementor_data, $shortcodes, PREG_SET_ORDER );
             }
 
             if ( !empty( $shortcodes ) ) {
@@ -2228,7 +2229,7 @@ class Auxin_Demo_Importer {
                     if ( !empty( $shortcode[1] ) ) {
                         $shortcode[1] = trim( $shortcode[1], '#' );
                         $imported_slider_id = get_transient( 'auxin_depicter_' . $shortcode[1] . '_to', $shortcode[1] );
-                        $elementor_data = str_replace( $shortcode[0], '{"slider_id":"#'.$imported_slider_id.'"', $elementor_data );
+                        $elementor_data = str_replace( $shortcode[0], '"slider_id":"#'.$imported_slider_id.'"', $elementor_data );
                     }
                 }
                 $elementor_data = wp_slash( $elementor_data );

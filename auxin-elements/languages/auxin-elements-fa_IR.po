@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Auxin Essential Elements\n"
 "Report-Msgid-Bugs-To: http://averta.net/phlox/wordpress-theme/\n"
-"POT-Creation-Date: 2025-02-08 07:27:06+00:00\n"
+"POT-Creation-Date: 2025-02-15 07:55:45+00:00\n"
 "PO-Revision-Date: 2016-11-09 12:50+0330\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -1405,7 +1405,7 @@ msgstr "پیش فرض"
 #: includes/elementor/widgets/contact-form.php:1357
 #: includes/elementor/widgets/contact-form.php:1717
 #: includes/elementor/widgets/custom-list.php:926
-#: includes/elementor/widgets/custom-list.php:1084
+#: includes/elementor/widgets/custom-list.php:1083
 #: includes/elementor/widgets/heading-modern.php:410
 #: includes/elementor/widgets/heading-modern.php:597
 #: includes/elementor/widgets/heading-modern.php:770
@@ -4577,8 +4577,8 @@ msgstr ""
 #: includes/elementor/widgets/contact-form.php:1675
 #: includes/elementor/widgets/custom-list.php:204
 #: includes/elementor/widgets/custom-list.php:260
-#: includes/elementor/widgets/custom-list.php:979
-#: includes/elementor/widgets/custom-list.php:1031
+#: includes/elementor/widgets/custom-list.php:978
+#: includes/elementor/widgets/custom-list.php:1030
 #: includes/elementor/widgets/heading-modern.php:450
 #: includes/elementor/widgets/heading-modern.php:637
 #: includes/elementor/widgets/heading-modern.php:810
@@ -4667,7 +4667,7 @@ msgstr "کادربندی شده"
 #: includes/elementor/widgets/contact-form.php:1323
 #: includes/elementor/widgets/contact-form.php:1691
 #: includes/elementor/widgets/custom-list.php:897
-#: includes/elementor/widgets/custom-list.php:1047
+#: includes/elementor/widgets/custom-list.php:1046
 #: includes/elementor/widgets/heading-modern.php:372
 #: includes/elementor/widgets/heading-modern.php:559
 #: includes/elementor/widgets/heading-modern.php:732
@@ -4817,8 +4817,8 @@ msgstr ""
 #: includes/elementor/widgets/contact-form.php:1058
 #: includes/elementor/widgets/contact-form.php:1294
 #: includes/elementor/widgets/contact-form.php:1662
-#: includes/elementor/widgets/custom-list.php:992
-#: includes/elementor/widgets/custom-list.php:1018
+#: includes/elementor/widgets/custom-list.php:991
+#: includes/elementor/widgets/custom-list.php:1017
 #: includes/elementor/widgets/heading-modern.php:463
 #: includes/elementor/widgets/heading-modern.php:650
 #: includes/elementor/widgets/heading-modern.php:823
@@ -6438,7 +6438,7 @@ msgstr "نمایش تصویر"
 msgid "Text Margin"
 msgstr "تراز متن"
 
-#: includes/elementor/widgets/custom-list.php:1010
+#: includes/elementor/widgets/custom-list.php:1009
 #: includes/elements/custom-list.php:58 includes/elements/custom-list.php:61
 #: includes/elements/custom-list.php:74 includes/elements/custom-list.php:90
 #: includes/elements/custom-list.php:93 includes/elements/custom-list.php:106
@@ -6446,13 +6446,13 @@ msgstr "تراز متن"
 msgid "List Item"
 msgstr ""
 
-#: includes/elementor/widgets/custom-list.php:1055
+#: includes/elementor/widgets/custom-list.php:1054
 #: includes/elementor/widgets/tabs.php:297
 #: includes/elementor/widgets/tabs.php:335
 msgid "Box Shadow Normal"
 msgstr ""
 
-#: includes/elementor/widgets/custom-list.php:1092
+#: includes/elementor/widgets/custom-list.php:1091
 msgid "Box Shadow Hover"
 msgstr ""
 
