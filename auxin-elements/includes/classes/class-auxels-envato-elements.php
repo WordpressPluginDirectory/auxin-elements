@@ -85,6 +85,10 @@ class Auxels_Envato_Elements {
             return array( 'status' => true, 'message' => __( 'Token is valid.', 'auxin-elements') );
         }
 
+        if ( ! current_user_can('manage_options') ) {
+            return array( 'status' => false, 'message' => __( "Access Denied: You don't have the required permissions!", 'auxin-elements') );
+        }
+
         $extension_id = md5( get_site_url() );
         $token = sanitize_text_field( $_POST['token'] );
 

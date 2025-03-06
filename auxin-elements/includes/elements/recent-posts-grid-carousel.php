@@ -811,6 +811,7 @@ function auxin_widget_recent_posts_callback( $atts, $shortcode_content = null ){
         'show_badge'                  => false,
         'content_layout'              => '', // entry-boxed
         'excerpt_len'                 => '160',
+        'excerpt_length'              => '',
         'show_excerpt'                => true,
         'show_content'                => true,
         'show_info'                   => true,

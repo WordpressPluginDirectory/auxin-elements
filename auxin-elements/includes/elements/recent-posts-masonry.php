@@ -469,6 +469,7 @@ function auxin_widget_recent_posts_masonry_callback( $atts, $shortcode_content =
         'content_layout'              => '', // entry-boxed
         'post_info_position'          => 'after-title', // entry-boxed
         'excerpt_len'                 => '160',
+        'excerpt_length'              => '',
         'display_title'               => true,
         'show_excerpt'                => true,
         'show_content'                => true,

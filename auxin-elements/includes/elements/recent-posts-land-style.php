@@ -437,6 +437,7 @@ function auxin_widget_recent_posts_land_style_callback( $atts, $shortcode_conten
         'show_excerpt'                => true,
         'show_content'                => true,
         'excerpt_len'                 => '160',
+        'excerpt_length'              => '',
         'display_title'               => true,
         'display_like'                => true,
         'display_comments'            => true,

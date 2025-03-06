@@ -454,6 +454,7 @@ function auxin_widget_recent_posts_timeline_callback( $atts, $shortcode_content 
         'show_excerpt'                => true,
         'show_content'                => true,
         'excerpt_len'                 => 160,
+        'excerpt_length'              => '',
         'image_aspect_ratio'          => 0.75,
         'display_title'               => true,
         'show_info'                   => true,

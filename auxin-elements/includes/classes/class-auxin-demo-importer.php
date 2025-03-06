@@ -60,7 +60,7 @@ class Auxin_Demo_Importer {
     public function templates(){
 
         // Check security issues
-        if ( ! isset( $_POST['ID'] ) || ! isset( $_POST['verify'] ) || ! wp_verify_nonce( $_POST['verify'], 'aux-template-manager' ) ) {
+        if ( ! isset( $_POST['ID'] ) || ! isset( $_POST['verify'] ) || ! wp_verify_nonce( $_POST['verify'], 'aux-template-manager' ) || ! current_user_can('manage_options') ) {
             // This nonce is not valid.
             wp_send_json_error( $this->error_template() );
         }
@@ -206,6 +206,10 @@ class Auxin_Demo_Importer {
      */
     public function import() {
 
+        if ( ! current_user_can('manage_options') ) {
+            wp_send_json_error( array( 'message' => __( "Access Denied: You don't have the required permissions!", 'auxin-elements' ) ) );
+        }
+
         if ( ! isset( $_POST['ID'] ) || ! wp_verify_nonce( $_POST['verify'], 'aux-import-demo-' . $_POST['ID'] ) ) {
             // This nonce is not valid.
             wp_send_json_error( array( 'message' => __( 'Invalid Inputs.', 'auxin-elements' ) ) );
@@ -237,6 +241,10 @@ class Auxin_Demo_Importer {
     }
 
     public function import_step() {
+
+        if ( ! current_user_can('manage_options') ) {
+            wp_send_json_error( array( 'message' => __( "Access Denied: You don't have the required permissions!", 'auxin-elements' ) ) );
+        }
 
         if ( ! isset( $_POST['step'] ) ) {
             wp_send_json_error( array( 'message' => __( 'Step Failed!', 'auxin-elements' ) ) );

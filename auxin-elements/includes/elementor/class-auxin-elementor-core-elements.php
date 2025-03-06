@@ -493,6 +493,10 @@ final class Elements {
                 'class' => 'Modules\Column'
             ),
             array(
+                'file'  => $this->dir_path . '/modules/container.php',
+                'class' => 'Modules\Container'
+            ),
+            array(
                 'file'  => $this->dir_path . '/modules/documents/header.php',
                 'class' => 'Modules\Documents\Header'
             ),
