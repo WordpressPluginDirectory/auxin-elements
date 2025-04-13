@@ -490,6 +490,15 @@ function auxin_template_control_importer() {
         ]);
     }
 
-    wp_send_json( auxin_template_importer( sanitize_text_field( $_POST['id'] ), $template_type, 'update_menu' ) );
+    // Strict validation for ID
+    if ( ! isset( $_POST['id'] ) || ! ctype_digit( $_POST['id'] ) ) {
+        wp_send_json_error([
+            'message' => __('Invalid template ID.', 'auxin-elements')
+        ]);
+    }
+
+    $template_id = absint($_POST['id']);
+
+    wp_send_json( auxin_template_importer( $template_id, $template_type, 'update_menu' ) );
 }
 add_action( 'wp_ajax_auxin_template_control_importer', 'auxin_template_control_importer' );

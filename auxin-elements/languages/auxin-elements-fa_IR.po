@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Auxin Essential Elements\n"
 "Report-Msgid-Bugs-To: http://averta.net/phlox/wordpress-theme/\n"
-"POT-Creation-Date: 2025-03-06 07:09:17+00:00\n"
+"POT-Creation-Date: 2025-04-13 08:02:05+00:00\n"
 "PO-Revision-Date: 2016-11-09 12:50+0330\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -125,6 +125,10 @@ msgstr ""
 
 #: admin/includes/admin-ajax.php:468
 msgid "Successfully Imported."
+msgstr ""
+
+#: admin/includes/admin-ajax.php:496
+msgid "Invalid template ID."
 msgstr ""
 
 #: admin/includes/admin-hooks.php:52
