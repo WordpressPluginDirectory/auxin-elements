@@ -222,7 +222,7 @@ class SearchBox extends Widget_Base {
                     )
                 ),
                 'selectors' => array(
-                    '{{WRAPPER}} .aux-search-icon:before, {{WRAPPER}} .aux-submit-icon-container:before' => 'font-size: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .aux-search-icon:before, {{WRAPPER}} .aux-submit-icon-container:before, {{WRAPPER}} .aux-submit-icon-container i' => 'font-size: {{SIZE}}{{UNIT}};',
                     '{{WRAPPER}} svg' => 'font-size: {{SIZE}}{{UNIT}};height: {{SIZE}}{{UNIT}};width: auto;',
                 )
             )

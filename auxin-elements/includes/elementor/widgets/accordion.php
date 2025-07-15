@@ -551,7 +551,7 @@ class Accordion extends Widget_Base {
                 'label'     => __( 'Color', 'auxin-elements' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => array(
-                    '{{WRAPPER}} .aux-toggle-header' => 'color: {{VALUE}} !important;'
+                    '{{WRAPPER}} .aux-toggle-header' => 'color: {{VALUE}};'
                 )
             )
         );
@@ -571,7 +571,7 @@ class Accordion extends Widget_Base {
                 'label'     => __( 'Color', 'auxin-elements' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => array(
-                    '{{WRAPPER}} .aux-toggle-header:hover' => 'color: {{VALUE}} !important;',
+                    '{{WRAPPER}} .aux-toggle-header:hover' => 'color: {{VALUE}};',
                 )
             )
         );
@@ -591,7 +591,7 @@ class Accordion extends Widget_Base {
                 'label'     => __( 'Color', 'auxin-elements' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => array(
-                    '{{WRAPPER}} .active .aux-toggle-header' => 'color: {{VALUE}} !important;',
+                    '{{WRAPPER}} .active .aux-toggle-header' => 'color: {{VALUE}};',
                 )
             )
         );

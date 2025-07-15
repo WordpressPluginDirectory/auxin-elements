@@ -1273,6 +1273,21 @@ class Auxin_Welcome extends Auxin_Welcome_Base {
             }
         }
 
+        //removed imported depicter documents
+        $imported_documents_ids = get_option( 'auxin_imported_depicter_documents', []);
+        if ( ! empty( $imported_documents_ids ) && class_exists( '\Depicter' ) ) {
+            foreach ( $imported_documents_ids as $old_id => $imported_id ) {
+                $isDeleted = \Depicter::app()->documentRepository()->delete( $imported_id );
+                if ( $isDeleted ) {
+                    \Depicter::metaRepository()->deleteAllMetaByDocumentID( $imported_id );
+                    wp_delete_file( \Depicter::storage()->getPluginUploadsDirectory() . '/preview-images/' . $imported_id . '.png' );
+                    do_action( 'depicter/dashboard/after/delete', $imported_id );
+                }
+            }
+
+            \Depicter::cache('base')->delete('_conditional_document_ids');
+        }
+
         // Remove Menus
         $menus = $wpdb->get_results( "SELECT * FROM {$wpdb->prefix}options WHERE option_name LIKE '%auxin_demo_importer_menu_origin_id_%'", OBJECT );
         foreach ($menus as $key => $menu) {

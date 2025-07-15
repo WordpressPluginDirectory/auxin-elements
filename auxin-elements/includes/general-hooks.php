@@ -2725,21 +2725,6 @@ add_action( 'template_redirect', 'auxin_redirect_custom_404_page' );
 /*-----------------------------------------------------------------------------------*/
 
 /**
- * Loads a PHP file which includes special functionalities for a custom site
- * @return void
- */
-function load_special_demo_functionality(){
-    if( auxin_get_option( 'special_php_file_enabled', 0 ) ){
-        $file_path = THEME_CUSTOM_DIR .'/'. auxin_get_option('special_php_file_name', 'functions') .'.php';
-        if( file_exists( $file_path ) ){
-            include_once $file_path;
-        }
-    }
-}
-add_action( 'auxin_loaded', 'load_special_demo_functionality' );
-
-
-/**
  * Automatically clear autoptimizeCache if it goes beyond 256MB
  *
  * @return void

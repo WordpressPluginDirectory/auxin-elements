@@ -2401,7 +2401,7 @@ function auxin_search_page_results($post_type = 'post',$args = array()) {
             
             if ( class_exists('AUXSHP') ) {
                 $image_aspect_ratio = auxin_get_option( 'product_index_thumb_ratio', '1.33' );
-                $args['image_aspect_ratio'] = $image_aspect_ratio == 'custom' ? (int) auxin_get_option( 'product_index_thumb_ratio_custom', '1' ) : $image_aspect_ratio;
+                $args['image_aspect_ratio'] = $image_aspect_ratio == 'custom' ? (float) auxin_get_option( 'product_index_thumb_ratio_custom', '1' ) : $image_aspect_ratio;
             } else {
                 $sizes = wc_get_image_size( 'woocommerce_thumbnail' );
                 $args['image_aspect_ratio'] = $sizes['width']/$sizes['height'];

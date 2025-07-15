@@ -28,7 +28,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	}
 
 	if ( auxin_is_true( $show_media ) ) {
-		echo wp_kses_post( $the_media );
+		echo auxin_kses( $the_media );
 	}
 
 	if ( auxin_is_true( $display_title ) ) {

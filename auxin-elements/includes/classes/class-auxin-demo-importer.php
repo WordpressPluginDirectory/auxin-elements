@@ -1048,7 +1048,7 @@ class Auxin_Demo_Importer {
                 //Add auxin meta flag
                 add_post_meta( $post_id,  'auxin_import_post', $post['ID'] );
 
-                if( $post['post_thumb'] != "" ){
+                if(  !empty( $post['post_thumb'] ) ){
                     /* Get Attachment ID */
                     $attachment_id    = $this->get_attachment_id( 'auxin_import_id', $post['post_thumb'] );
 
@@ -1464,17 +1464,21 @@ class Auxin_Demo_Importer {
         }
 
         if ( class_exists( 'Depicter' ) && ! empty( $sliders['depicter'] ) ) {
+            $imported_documents_ids = [];
             foreach ( $sliders['depicter'] as $slider ) {
-                $document = Depicter::documentRepository()->create();
-                set_transient( 'auxin_depicter_' . $slider['id'] . '_to', $document->getID() );
+                $document = \Depicter::documentRepository()->create();
+                $imported_documents_ids[ $slider['id'] ] = $document->getID();
                 unset( $slider['id'] );
 
                 $slider['content'] = $this->update_slider_assets_id( $slider['content'] );
 
                 // Download media
-				Depicter::media()->importDocumentAssets( $slider['content'] );
-                Depicter::documentRepository()->update( $document->getID(), $slider );
+				\Depicter::media()->importDocumentAssets( $slider['content'] );
+                \Depicter::documentRepository()->update( $document->getID(), $slider );
             }
+
+            update_option( 'auxin_imported_depicter_documents', $imported_documents_ids );
+            \Depicter::cache('base')->delete('_conditional_document_ids');
         }
 
         wp_send_json_success( array( 'step' => 'masterslider', 'next' => 'prepare', 'message' => __( 'Preparing Site ...', 'auxin-elements' ) ) );
@@ -2043,7 +2047,7 @@ class Auxin_Demo_Importer {
         $meta = is_array( $meta ) ? wp_json_encode( $meta ) : $meta;
 
         foreach ( $attach_keys as $attach_key ) {
-            preg_match_all('/\s*"\b\w*'.$attach_key.'\w*\"\s*:\{.*?\}/', $meta, $image );
+            preg_match_all('/\s*"\b[-\w]*'.$attach_key.'\w*\"\s*:\{.*?\}/', $meta, $image );
             if( isset( $image ) && ! empty( $image ) ){
                 $matches = array_merge( $matches, $image );
             }
@@ -2079,7 +2083,8 @@ class Auxin_Demo_Importer {
             'prev_icon',
             'next_icon',
             'aux_new_icon',
-            'social_icon'
+            'social_icon',
+            'play_icon'
         ];
 
         foreach( $svg_icon_patterns as $key => $pattern ) {
@@ -2194,6 +2199,28 @@ class Auxin_Demo_Importer {
             }
         }
 
+        preg_match_all( '/"editor":".+?(?<!\\\\)\s?"/', $meta, $editor, PREG_SET_ORDER );
+        if ( ! empty( $editor ) ) {
+            foreach ( $editor as $key => $editor_data ) {
+                preg_match_all( '#[\w\\\/\-\.\:]+?([\w\-]+?)\\\/wp-content#', $editor_data[0], $matches, PREG_SET_ORDER );
+                if ( ! empty( $matches ) ) {
+                    $new_editor_data = $editor_data[0];
+                    foreach( $matches as $key => $match ) {
+                        if ( !empty( $match[1] ) ) {
+                            $new_url = str_replace( '\/' . $match[1], '', $match[0] );
+                            $new_url = str_replace( "https:\/\/demo.phlox.pro\/", $site_url, $new_url );
+                            if ( strpos( 'http', $new_url ) === false ) {
+                                $new_url = $site_url . ltrim( $new_url, "\/" );
+                            }
+                            $new_editor_data = str_replace( $match[0], $new_url, $new_editor_data );
+                        }
+                    }
+                    $new_editor_data = preg_replace( "#sites\\\/\d*\\\/#", '', $new_editor_data );
+                    $meta = str_replace( $editor_data[0], $new_editor_data, $meta );
+                }
+            }
+        }
+
         // change all site urls to imported url
         preg_match_all( '#https:\\\/\\\/demo.phlox.pro\\\/.*?\\\/#', $meta, $urls, PREG_SET_ORDER );
         if ( ! empty( $urls ) ) {
@@ -2233,11 +2260,11 @@ class Auxin_Demo_Importer {
             }
 
             if ( !empty( $shortcodes ) ) {
+                $imported_documents_ids = get_option( 'auxin_imported_depicter_documents', []);
                 foreach ( $shortcodes as $shortcode ) {
-                    if ( !empty( $shortcode[1] ) ) {
+                    if ( !empty( $shortcode[1] && isset( $imported_documents_ids[ $shortcode[1] ] ) ) ) {
                         $shortcode[1] = trim( $shortcode[1], '#' );
-                        $imported_slider_id = get_transient( 'auxin_depicter_' . $shortcode[1] . '_to', $shortcode[1] );
-                        $elementor_data = str_replace( $shortcode[0], '"slider_id":"#'.$imported_slider_id.'"', $elementor_data );
+                        $elementor_data = str_replace( $shortcode[0], '"slider_id":"#'. $imported_documents_ids[ $shortcode[1] ] .'"', $elementor_data );
                     }
                 }
                 $elementor_data = wp_slash( $elementor_data );

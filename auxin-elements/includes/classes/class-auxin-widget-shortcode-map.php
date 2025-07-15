@@ -42,7 +42,7 @@ class Auxin_Widget_Shortcode_Map {
 
 
     public function __construct(){
-        add_action('auxin_loaded', array( $this, 'auxin_framework_loaded' ) );
+        add_action('init', array( $this, 'auxin_framework_loaded' ) );
     }
 
 
@@ -107,6 +107,11 @@ class Auxin_Widget_Shortcode_Map {
      * Adds all collected shortcodes
      */
     private function add_shortcodes() {
+
+        if ( defined('WP_CLI') && WP_CLI ) {
+            return; 
+        }
+
 
         $shortcode_array_list = $this->get_master_shortcode_array();
 

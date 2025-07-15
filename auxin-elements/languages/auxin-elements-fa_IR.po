@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Auxin Essential Elements\n"
 "Report-Msgid-Bugs-To: http://averta.net/phlox/wordpress-theme/\n"
-"POT-Creation-Date: 2025-04-13 08:02:05+00:00\n"
+"POT-Creation-Date: 2025-07-15 07:46:10+00:00\n"
 "PO-Revision-Date: 2016-11-09 12:50+0330\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -68,7 +68,7 @@ msgstr ""
 #: admin/includes/admin-ajax.php:270
 #: includes/classes/class-auxin-welcome.php:1207
 #: includes/classes/class-auxin-welcome.php:1212
-#: includes/classes/class-auxin-welcome.php:1375
+#: includes/classes/class-auxin-welcome.php:1390
 msgid "Security Token Error!"
 msgstr ""
 
@@ -104,9 +104,9 @@ msgstr ""
 #: includes/classes/class-auxin-demo-importer.php:115
 #: includes/classes/class-auxin-demo-importer.php:158
 #: includes/classes/class-auxin-demo-importer.php:193
-#: includes/classes/class-auxin-welcome.php:1354
-#: includes/classes/class-auxin-welcome.php:1389
-#: includes/classes/class-auxin-welcome.php:1817
+#: includes/classes/class-auxin-welcome.php:1369
+#: includes/classes/class-auxin-welcome.php:1404
+#: includes/classes/class-auxin-welcome.php:1832
 msgid "Close"
 msgstr ""
 
@@ -395,9 +395,9 @@ msgid "You need to enter a unique id for notice."
 msgstr ""
 
 #: admin/includes/classes/class-auxin-notices.php:186
-#: includes/classes/class-auxin-welcome.php:1869
-#: includes/classes/class-auxin-welcome.php:1892
-#: includes/classes/class-auxin-welcome.php:1932
+#: includes/classes/class-auxin-welcome.php:1884
+#: includes/classes/class-auxin-welcome.php:1907
+#: includes/classes/class-auxin-welcome.php:1947
 msgid "Skip"
 msgstr ""
 
@@ -1797,19 +1797,6 @@ msgid ""
 "Animoto, Wistia link or iFrame code."
 msgstr ""
 
-#: auxin-elements.php:55 includes/classes/class-auxin-welcome-sections.php:531
-#, fuzzy
-msgid "Phlox Pro"
-msgstr "[فلوکس] کد"
-
-#: auxin-elements.php:63
-msgid "Phlox"
-msgstr ""
-
-#. Plugin Name of the plugin/theme
-msgid "Phlox Core Elements"
-msgstr ""
-
 #: includes/classes/class-auxels-admin-assets.php:64
 msgid "This demo has been successfully imported."
 msgstr ""
@@ -1823,22 +1810,22 @@ msgid "Processing: Download"
 msgstr ""
 
 #: includes/classes/class-auxels-admin-assets.php:67
-#: includes/classes/class-auxin-welcome.php:1430
-#: includes/classes/class-auxin-welcome.php:1557
-#: includes/classes/class-auxin-welcome.php:1955
+#: includes/classes/class-auxin-welcome.php:1445
+#: includes/classes/class-auxin-welcome.php:1572
+#: includes/classes/class-auxin-welcome.php:1970
 #, fuzzy
 msgid "Continue"
 msgstr "دربرگیرنده"
 
 #: includes/classes/class-auxels-admin-assets.php:68
 #: includes/classes/class-auxin-welcome.php:527
-#: includes/classes/class-auxin-welcome.php:1637
+#: includes/classes/class-auxin-welcome.php:1652
 #, fuzzy
 msgid "Install Plugins"
 msgstr "افزونه های فعال"
 
 #: includes/classes/class-auxels-admin-assets.php:69
-#: includes/classes/class-auxin-welcome.php:1783
+#: includes/classes/class-auxin-welcome.php:1798
 #, fuzzy
 msgid "Import Content"
 msgstr "محتوای جعبه ای"
@@ -2022,11 +2009,11 @@ msgstr ""
 msgid "Importing Sliders"
 msgstr ""
 
-#: includes/classes/class-auxin-demo-importer.php:1480
+#: includes/classes/class-auxin-demo-importer.php:1484
 msgid "Preparing Site ..."
 msgstr ""
 
-#: includes/classes/class-auxin-demo-importer.php:1524
+#: includes/classes/class-auxin-demo-importer.php:1528
 msgid "All steps are successful"
 msgstr ""
 
@@ -2278,12 +2265,12 @@ msgid "Remove"
 msgstr ""
 
 #: includes/classes/class-auxin-walker-nav-menu-back.php:381
-#: includes/classes/class-auxin-welcome.php:1433
-#: includes/classes/class-auxin-welcome.php:1461
-#: includes/classes/class-auxin-welcome.php:1560
-#: includes/classes/class-auxin-welcome.php:1639
-#: includes/classes/class-auxin-welcome.php:1687
-#: includes/classes/class-auxin-welcome.php:1785
+#: includes/classes/class-auxin-welcome.php:1448
+#: includes/classes/class-auxin-welcome.php:1476
+#: includes/classes/class-auxin-welcome.php:1575
+#: includes/classes/class-auxin-welcome.php:1654
+#: includes/classes/class-auxin-welcome.php:1702
+#: includes/classes/class-auxin-welcome.php:1800
 msgid "Cancel"
 msgstr ""
 
@@ -2408,6 +2395,11 @@ msgstr ""
 msgid "I already did :)"
 msgstr ""
 
+#: includes/classes/class-auxin-welcome-sections.php:531
+#, fuzzy
+msgid "Phlox Pro"
+msgstr "[فلوکس] کد"
+
 #: includes/classes/class-auxin-welcome.php:267
 #, fuzzy
 msgid "Dashboard"
@@ -2521,8 +2513,8 @@ msgstr ""
 
 #: includes/classes/class-auxin-welcome.php:834
 #: includes/classes/class-auxin-welcome.php:1010
-#: includes/classes/class-auxin-welcome.php:1351
-#: includes/classes/class-auxin-welcome.php:1814
+#: includes/classes/class-auxin-welcome.php:1366
+#: includes/classes/class-auxin-welcome.php:1829
 msgid "Preview"
 msgstr ""
 
@@ -2547,12 +2539,12 @@ msgid ""
 msgstr "خطایی رخ داده است. بازخورد قابل تحویل نیست، لطفا دوباره تلاش کنید."
 
 #: includes/classes/class-auxin-welcome.php:994
-#: includes/classes/class-auxin-welcome.php:1458
+#: includes/classes/class-auxin-welcome.php:1473
 msgid "Uninstall"
 msgstr ""
 
 #: includes/classes/class-auxin-welcome.php:994
-#: includes/classes/class-auxin-welcome.php:1362
+#: includes/classes/class-auxin-welcome.php:1377
 msgid "Import"
 msgstr ""
 
@@ -2580,7 +2572,7 @@ msgstr ""
 
 #: includes/classes/class-auxin-welcome.php:1133
 #: includes/classes/class-auxin-welcome.php:1163
-#: includes/classes/class-auxin-welcome.php:1613
+#: includes/classes/class-auxin-welcome.php:1628
 msgid "Ready to update"
 msgstr ""
 
@@ -2596,234 +2588,234 @@ msgstr ""
 msgid "You can't remove this demo."
 msgstr ""
 
-#: includes/classes/class-auxin-welcome.php:1345
+#: includes/classes/class-auxin-welcome.php:1360
 msgid "Done!"
 msgstr ""
 
-#: includes/classes/class-auxin-welcome.php:1346
+#: includes/classes/class-auxin-welcome.php:1361
 msgid "Demo has been successfully uninstalled."
 msgstr ""
 
-#: includes/classes/class-auxin-welcome.php:1408
+#: includes/classes/class-auxin-welcome.php:1423
 #: public/includes/frontend-ajax.php:186 public/includes/frontend-ajax.php:251
 msgid "An Error Occurred!"
 msgstr ""
 
-#: includes/classes/class-auxin-welcome.php:1422
+#: includes/classes/class-auxin-welcome.php:1437
 #, fuzzy
 msgid "Notice"
 msgstr "نکته"
 
-#: includes/classes/class-auxin-welcome.php:1424
+#: includes/classes/class-auxin-welcome.php:1439
 msgid ""
 "For better and faster result, it's recommended to install the demo on a "
 "clean WordPress website."
 msgstr ""
 
-#: includes/classes/class-auxin-welcome.php:1450
+#: includes/classes/class-auxin-welcome.php:1465
 msgid "Warning!"
 msgstr ""
 
-#: includes/classes/class-auxin-welcome.php:1452
+#: includes/classes/class-auxin-welcome.php:1467
 msgid "This process will erase all images, posts and settings of this demo..."
 msgstr ""
 
-#: includes/classes/class-auxin-welcome.php:1457
+#: includes/classes/class-auxin-welcome.php:1472
 msgid "Are you sure you want to uninstall this demo?"
 msgstr ""
 
-#: includes/classes/class-auxin-welcome.php:1467
-#: includes/classes/class-auxin-welcome.php:1693
-#: includes/classes/class-auxin-welcome.php:1791
+#: includes/classes/class-auxin-welcome.php:1482
+#: includes/classes/class-auxin-welcome.php:1708
+#: includes/classes/class-auxin-welcome.php:1806
 msgid "Please wait, this may take several minutes .."
 msgstr ""
 
-#: includes/classes/class-auxin-welcome.php:1533
+#: includes/classes/class-auxin-welcome.php:1548
 msgid "An error occurred!"
 msgstr ""
 
-#: includes/classes/class-auxin-welcome.php:1535
+#: includes/classes/class-auxin-welcome.php:1550
 msgid "Method not exist!"
 msgstr ""
 
-#: includes/classes/class-auxin-welcome.php:1549
-#: includes/classes/class-auxin-welcome.php:1590
+#: includes/classes/class-auxin-welcome.php:1564
+#: includes/classes/class-auxin-welcome.php:1605
 msgid "Required Plugins for this demo."
 msgstr ""
 
-#: includes/classes/class-auxin-welcome.php:1551
+#: includes/classes/class-auxin-welcome.php:1566
 msgid ""
 "For better and faster install process it's recommended to install demo on a "
 "clean WordPress website."
 msgstr ""
 
-#: includes/classes/class-auxin-welcome.php:1591
+#: includes/classes/class-auxin-welcome.php:1606
 msgid "The following plugins are required to be installed for this demo."
 msgstr ""
 
-#: includes/classes/class-auxin-welcome.php:1605
+#: includes/classes/class-auxin-welcome.php:1620
 #, fuzzy
 msgid "Ready to install"
 msgstr "تکرار افقی"
 
-#: includes/classes/class-auxin-welcome.php:1609
+#: includes/classes/class-auxin-welcome.php:1624
 #, fuzzy
 msgid "Not activated"
 msgstr "اصلا"
 
-#: includes/classes/class-auxin-welcome.php:1670
+#: includes/classes/class-auxin-welcome.php:1685
 msgid "You already have installed template!"
 msgstr ""
 
-#: includes/classes/class-auxin-welcome.php:1672
+#: includes/classes/class-auxin-welcome.php:1687
 msgid ""
 "For better and faster install proccess it's recommanded to install demo on a "
 "clean wordpress website."
 msgstr ""
 
-#: includes/classes/class-auxin-welcome.php:1684
+#: includes/classes/class-auxin-welcome.php:1699
 msgid "Unistall Template"
 msgstr ""
 
-#: includes/classes/class-auxin-welcome.php:1710
+#: includes/classes/class-auxin-welcome.php:1725
 msgid "Import Demo Content of Phlox Theme."
 msgstr ""
 
-#: includes/classes/class-auxin-welcome.php:1715
+#: includes/classes/class-auxin-welcome.php:1730
 msgid "Complete pre-build Website"
 msgstr ""
 
-#: includes/classes/class-auxin-welcome.php:1720
+#: includes/classes/class-auxin-welcome.php:1735
 #, fuzzy
 msgid "Import media (images, videos, etc.)"
 msgstr "نمایش رسانه های نوشته (تصویر، ویدیو، غیره)"
 
-#: includes/classes/class-auxin-welcome.php:1727
+#: includes/classes/class-auxin-welcome.php:1742
 msgid "Selected Data Only"
 msgstr ""
 
-#: includes/classes/class-auxin-welcome.php:1733
+#: includes/classes/class-auxin-welcome.php:1748
 #, fuzzy
 msgid "Posts/Pages"
 msgstr "نوشته ها"
 
-#: includes/classes/class-auxin-welcome.php:1738
+#: includes/classes/class-auxin-welcome.php:1753
 #, fuzzy
 msgid "Media"
 msgstr "متوسط"
 
-#: includes/classes/class-auxin-welcome.php:1743
+#: includes/classes/class-auxin-welcome.php:1758
 #, fuzzy
 msgid "Widgets"
 msgstr "عنوان ابزارک"
 
-#: includes/classes/class-auxin-welcome.php:1750
+#: includes/classes/class-auxin-welcome.php:1765
 msgid "Menus"
 msgstr ""
 
-#: includes/classes/class-auxin-welcome.php:1755
+#: includes/classes/class-auxin-welcome.php:1770
 #, fuzzy
 msgid "Theme Options"
 msgstr "تنظیمات طراحی"
 
-#: includes/classes/class-auxin-welcome.php:1760
+#: includes/classes/class-auxin-welcome.php:1775
 msgid "MasterSlider (If Available)"
 msgstr ""
 
-#: includes/classes/class-auxin-welcome.php:1770
+#: includes/classes/class-auxin-welcome.php:1785
 msgid "Importing Demo Content is in Progress..."
 msgstr ""
 
-#: includes/classes/class-auxin-welcome.php:1771
+#: includes/classes/class-auxin-welcome.php:1786
 msgid ""
 "This process may take 5 to 10 minutes to complete, please do not close or "
 "refresh this page."
 msgstr ""
 
-#: includes/classes/class-auxin-welcome.php:1805
+#: includes/classes/class-auxin-welcome.php:1820
 msgid "Congratulations!"
 msgstr ""
 
-#: includes/classes/class-auxin-welcome.php:1806
+#: includes/classes/class-auxin-welcome.php:1821
 msgid "Demo has been successfully imported."
 msgstr ""
 
-#: includes/classes/class-auxin-welcome.php:1811
+#: includes/classes/class-auxin-welcome.php:1826
 #, fuzzy
 msgid "Customize"
 msgstr "تصویر دلخواه"
 
-#: includes/classes/class-auxin-welcome.php:1828
+#: includes/classes/class-auxin-welcome.php:1843
 #, fuzzy
 msgid "Importing page content ..."
 msgstr "تراز تصویر در محتوا."
 
-#: includes/classes/class-auxin-welcome.php:1852
+#: includes/classes/class-auxin-welcome.php:1867
 msgid "Remove Watermarks?"
 msgstr ""
 
-#: includes/classes/class-auxin-welcome.php:1853
+#: includes/classes/class-auxin-welcome.php:1868
 msgid ""
 "Some images in this demo are copyrighted and watermarked, you can remove "
 "watermarks by authorizing your Envato Elements subscription."
 msgstr ""
 
-#: includes/classes/class-auxin-welcome.php:1867
+#: includes/classes/class-auxin-welcome.php:1882
 msgid "Remove Watermarks"
 msgstr ""
 
-#: includes/classes/class-auxin-welcome.php:1882
+#: includes/classes/class-auxin-welcome.php:1897
 msgid "Remove watermarks by authorizing your Envato Elements subscription"
 msgstr ""
 
-#: includes/classes/class-auxin-welcome.php:1883
+#: includes/classes/class-auxin-welcome.php:1898
 msgid ""
 "By subscribing to Envato Elements you will have access to unlimited premium "
 "stock images, icons, graphical assets, videos and more."
 msgstr ""
 
-#: includes/classes/class-auxin-welcome.php:1885
+#: includes/classes/class-auxin-welcome.php:1900
 msgid "Explore and Subscribe"
 msgstr ""
 
-#: includes/classes/class-auxin-welcome.php:1887
+#: includes/classes/class-auxin-welcome.php:1902
 msgid "Already an Envato Elements member?"
 msgstr ""
 
-#: includes/classes/class-auxin-welcome.php:1887
+#: includes/classes/class-auxin-welcome.php:1902
 msgid "Activate here"
 msgstr ""
 
-#: includes/classes/class-auxin-welcome.php:1905
+#: includes/classes/class-auxin-welcome.php:1920
 msgid "Verify Your Envato Elements Subscription"
 msgstr ""
 
-#: includes/classes/class-auxin-welcome.php:1906
+#: includes/classes/class-auxin-welcome.php:1921
 msgid "Enter your token below to verify your Subscription"
 msgstr ""
 
-#: includes/classes/class-auxin-welcome.php:1908
+#: includes/classes/class-auxin-welcome.php:1923
 #, fuzzy
 msgid "Enter token here"
 msgstr "برچسب دکمه را وارد کنید."
 
-#: includes/classes/class-auxin-welcome.php:1915
+#: includes/classes/class-auxin-welcome.php:1930
 msgid "How to generate a token ?"
 msgstr ""
 
-#: includes/classes/class-auxin-welcome.php:1916
+#: includes/classes/class-auxin-welcome.php:1931
 msgid "Don't have subscription?"
 msgstr ""
 
-#: includes/classes/class-auxin-welcome.php:1926
+#: includes/classes/class-auxin-welcome.php:1941
 msgid "Verify Token"
 msgstr ""
 
-#: includes/classes/class-auxin-welcome.php:1945
+#: includes/classes/class-auxin-welcome.php:1960
 msgid "Succeed"
 msgstr ""
 
-#: includes/classes/class-auxin-welcome.php:1946
+#: includes/classes/class-auxin-welcome.php:1961
 msgid ""
 "Congratulations! you have successfully authorized your Envato Elements "
 "subscription."
@@ -2922,6 +2914,10 @@ msgstr ""
 #: includes/elementor/class-auxin-elementor-core-elements.php:729
 #: includes/elementor/class-auxin-elementor-core-elements.php:753
 msgid "\"%1$s\" requires \"%2$s\" version %3$s or greater."
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "Phlox Core Elements"
 msgstr ""
 
 #: includes/elementor/class-auxin-elementor-core-elements.php:731
@@ -12836,12 +12832,12 @@ msgstr "تنظیمات نوشته صوتی"
 msgid "Page %s"
 msgstr "برگه ها"
 
-#: includes/general-hooks.php:3210
+#: includes/general-hooks.php:3195
 #, fuzzy
 msgid "current "
 msgstr "صفحه جاری"
 
-#: includes/general-hooks.php:3240
+#: includes/general-hooks.php:3225
 msgid "Edit Header & Footer"
 msgstr ""
 
