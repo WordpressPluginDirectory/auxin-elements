@@ -6,8 +6,8 @@ License URI: http://www.gnu.org/licenses/gpl.html
 Tags: phlox, elementor, auxin, averta, fullwidth
 Requires PHP: 5.4
 Requires at least: 5.0
-Tested up to: 6.8.1
-Stable tag: 2.17.9
+Tested up to: 6.8.2
+Stable tag: 2.17.12
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 
@@ -154,13 +154,20 @@ Bugs can be reported in our [support forums](https://docs.phlox.pro).
 
 == Changelog ==
 
+= Version 2.17.12 / (31.08.2025) =
+- [Improvement]: Improved the import of sliders while importing a demo.
+- [Improvement]: Style generation improvement for footer and header sections.
+
+= Version 2.17.10 / (21.07.2025) =
+- [Improvement]: Compatibility for Elementor 3.31 added.
+
 = Version 2.17.9 / (15.07.2025) =
-- [Fix] Fixed an issue with cropped image size on search result page.
+- [Fix]: Fixed an issue with cropped image size on search result page.
 
 = Version 2.17.8 / (07.06.2025) =
-- [Fix] Fixed missing GIF placeholder causing 404 errors.
-- [Fix] Fixed accordion element title color not applying correctly.
-- [Fix] Fixed issue with importing popup template by Depicter.
+- [Fix]: Fixed missing GIF placeholder causing 404 errors.
+- [Fix]: Fixed accordion element title color not applying correctly.
+- [Fix]: Fixed issue with importing popup template by Depicter.
 
 = Version 2.17.6 / (13.04.2025) =
 - [Improvement]: Security improvements applied.

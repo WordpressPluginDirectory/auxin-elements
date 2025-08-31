@@ -46,6 +46,8 @@ class Video extends Widget_Base {
         return __('Video Player', 'auxin-elements' );
     }
 
+
+
     /**
      * Get widget icon.
      *

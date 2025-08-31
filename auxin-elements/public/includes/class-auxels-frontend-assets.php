@@ -49,11 +49,24 @@ class AUXELS_Frontend_Assets {
             if( $header_template_style = auxin_get_option( 'site_elementor_header_template' ) ){
                 $css_file = new \Elementor\Core\Files\CSS\Post( $header_template_style );
                 $css_file->enqueue();
+
+                // Enqueue any additional JS/CSS required for the document
+                $page_assets = get_post_meta( $header_template_style, \Elementor\Core\Base\Elements_Iteration_Actions\Assets::ASSETS_META_KEY, true );
+                if ( ! empty( $page_assets ) ) {
+                    \Elementor\Plugin::$instance->assets_loader->enable_assets( $page_assets );
+                }
+                
             }
 
             if( $footer_template_style = auxin_get_option( 'site_elementor_footer_template' ) ){
                 $css_file = new \Elementor\Core\Files\CSS\Post( $footer_template_style );
                 $css_file->enqueue();
+
+                // Enqueue any additional JS/CSS required for the document
+                $page_assets = get_post_meta( $footer_template_style, \Elementor\Core\Base\Elements_Iteration_Actions\Assets::ASSETS_META_KEY, true );
+                if ( ! empty( $page_assets ) ) {
+                    \Elementor\Plugin::$instance->assets_loader->enable_assets( $page_assets );
+                }
             }
         }
     }

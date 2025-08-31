@@ -47,6 +47,8 @@ class CircleChart extends Widget_Base {
         return __('Circle Chart', 'auxin-elements' );
     }
 
+
+
     /**
      * Get widget icon.
      *

@@ -52,6 +52,8 @@ class Simple__SVG extends Widget_Base {
         return __('Simple SVG', 'auxin-elements' );
     }
 
+
+
     /**
      * Get widget icon.
      *

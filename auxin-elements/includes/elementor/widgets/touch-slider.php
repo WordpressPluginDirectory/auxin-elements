@@ -49,6 +49,8 @@ class TouchSlider extends Widget_Base {
         return __( 'Simple Image Slider', 'auxin-elements' );
     }
 
+
+
     /**
      * Get widget icon.
      *

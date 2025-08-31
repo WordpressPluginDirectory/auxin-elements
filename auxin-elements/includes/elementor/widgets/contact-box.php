@@ -47,6 +47,8 @@ class ContactBox extends Widget_Base {
         return __('Contact Box', 'auxin-elements' );
     }
 
+
+
     /**
      * Get widget icon.
      *

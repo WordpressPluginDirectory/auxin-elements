@@ -49,6 +49,8 @@ class RecentProducts extends Widget_Base {
         return __('Recent Products', 'auxin-elements' );
     }
 
+
+
     /**
      * Get widget icon.
      *

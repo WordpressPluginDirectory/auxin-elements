@@ -52,6 +52,8 @@ class ContactForm extends Widget_Base {
         return __('Contact Form', 'auxin-elements' );
     }
 
+
+
     /**
      * Get widget icon.
      *

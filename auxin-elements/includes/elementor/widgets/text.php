@@ -54,6 +54,8 @@ class Text extends Widget_Base {
         return __('Info Box', 'auxin-elements' );
     }
 
+
+
     /**
      * Get widget icon.
      *

@@ -25,58 +25,59 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 class Breadcrumbs extends Widget_Base {
 
-  /**
-   * Get widget name.
-   *
-   * Retrieve 'Breadcrumbs' widget name.
-   *
-   * @since 1.0.0
-   * @access public
-   *
-   * @return string Widget name.
-   */
-  public function get_name() {
-      return 'aux_breadcrumbs';
-  }
+  	/**
+	 * Get widget name.
+	 *
+	 * Retrieve 'Breadcrumbs' widget name.
+	 *
+	 * @since 1.0.0
+	 * @access public
+	 *
+	 * @return string Widget name.
+	 */
+	public function get_name() {
+		return 'aux_breadcrumbs';
+	}
 
-  /**
-   * Get widget title.
-   *
-   * Retrieve 'Breadcrumbs' widget title.
-   *
-   * @since 1.0.0
-   * @access public
-   *
-   * @return string Widget title.
-   */
-  public function get_title() {
-      return __( 'Breadcrumbs', 'auxin-elements' );
-  }
+	/**
+	 * Get widget title.
+	 *
+	 * Retrieve 'Breadcrumbs' widget title.
+	 *
+	 * @since 1.0.0
+	 * @access public
+	 *
+	 * @return string Widget title.
+	 */
+	public function get_title() {
+		return __( 'Breadcrumbs', 'auxin-elements' );
+	}
 
-  /**
-   * Get widget icon.
-   *
-   * Retrieve 'Breadcrumbs' widget icon.
-   *
-   * @since 1.0.0
-   * @access public
-   *
-   * @return string Widget icon.
-   */
-  public function get_icon() {
-      return 'eicon-product-breadcrumbs auxin-badge';
-  }
 
-  /**
-   * Get widget categories.
-   *
-   * Retrieve 'Breadcrumbs' widget icon.
-   *
-   * @since 1.0.0
-   * @access public
-   *
-   * @return string Widget icon.
-   */
+	/**
+	 * Get widget icon.
+	 *
+	 * Retrieve 'Breadcrumbs' widget icon.
+	 *
+	 * @since 1.0.0
+	 * @access public
+	 *
+	 * @return string Widget icon.
+	 */
+	public function get_icon() {
+		return 'eicon-product-breadcrumbs auxin-badge';
+	}
+
+	/**
+	 * Get widget categories.
+	 *
+	 * Retrieve 'Breadcrumbs' widget icon.
+	 *
+	 * @since 1.0.0
+	 * @access public
+	 *
+	 * @return string Widget icon.
+	 */
 	public function get_categories() {
 		return array( 'auxin-core', 'auxin-theme-elements-single' );
 	}

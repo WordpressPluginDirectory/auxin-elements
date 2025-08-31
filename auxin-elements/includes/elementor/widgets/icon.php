@@ -47,6 +47,8 @@ class Icon extends Widget_Base {
         return __( 'Icon Picker', 'auxin-elements' );
     }
 
+
+
     /**
      * Get widget icon.
      *

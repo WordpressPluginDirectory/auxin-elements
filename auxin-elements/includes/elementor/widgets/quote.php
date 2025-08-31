@@ -50,6 +50,8 @@ class Quote extends Widget_Base {
         return __('Blockquote', 'auxin-elements' );
     }
 
+
+
     /**
      * Get widget icon.
      *

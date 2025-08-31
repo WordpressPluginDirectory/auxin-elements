@@ -54,6 +54,8 @@ class Testimonial extends Widget_Base {
         return __('Testimonial', 'auxin-elements' );
     }
 
+
+
     /**
      * Get widget icon.
      *

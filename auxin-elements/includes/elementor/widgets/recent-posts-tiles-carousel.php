@@ -49,6 +49,8 @@ class RecentPostsTilesCarousel extends Widget_Base {
         return __('Tiles Carousel Posts', 'auxin-elements' );
     }
 
+
+
     /**
      * Get widget icon.
      *

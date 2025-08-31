@@ -52,6 +52,8 @@ class Accordion extends Widget_Base {
         return __('Accordion', 'auxin-elements' );
     }
 
+
+
     /**
      * Get widget icon.
      *

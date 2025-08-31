@@ -1273,16 +1273,13 @@ class Auxin_Welcome extends Auxin_Welcome_Base {
             }
         }
 
-        //removed imported depicter documents
+        //setting the status of imported depicter documents to draft
         $imported_documents_ids = get_option( 'auxin_imported_depicter_documents', []);
         if ( ! empty( $imported_documents_ids ) && class_exists( '\Depicter' ) ) {
             foreach ( $imported_documents_ids as $old_id => $imported_id ) {
-                $isDeleted = \Depicter::app()->documentRepository()->delete( $imported_id );
-                if ( $isDeleted ) {
-                    \Depicter::metaRepository()->deleteAllMetaByDocumentID( $imported_id );
-                    wp_delete_file( \Depicter::storage()->getPluginUploadsDirectory() . '/preview-images/' . $imported_id . '.png' );
-                    do_action( 'depicter/dashboard/after/delete', $imported_id );
-                }
+                \Depicter::documentRepository()->update( $imported_id, [
+                    'status' => 'draft'
+                ] );
             }
 
             \Depicter::cache('base')->delete('_conditional_document_ids');

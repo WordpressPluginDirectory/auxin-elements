@@ -54,6 +54,8 @@ class Logo extends Widget_Base {
         return __('Logo', 'auxin-elements' );
     }
 
+
+
     /**
      * Get widget icon.
      *

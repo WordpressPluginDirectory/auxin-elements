@@ -53,6 +53,8 @@ class ModernHeading extends Widget_Base {
         return __('Modern Heading', 'auxin-elements' );
     }
 
+
+
     /**
      * Get widget icon.
      *

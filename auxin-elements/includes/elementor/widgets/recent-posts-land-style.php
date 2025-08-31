@@ -49,6 +49,8 @@ class RecentPostsLand extends Widget_Base {
         return __('Land Style Posts', 'auxin-elements' );
     }
 
+
+
     /**
      * Get widget icon.
      *

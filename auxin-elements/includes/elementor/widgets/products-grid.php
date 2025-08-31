@@ -50,6 +50,8 @@ class ProductsGrid extends Widget_Base {
         return __('Products Grid', 'auxin-elements' );
     }
 
+
+
     /**
      * Get widget icon.
      *

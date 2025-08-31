@@ -52,6 +52,8 @@ class RecentPostsMasonry extends Widget_Base {
         return __('Masonry Posts', 'auxin-elements' );
     }
 
+
+
     /**
      * Get widget icon.
      *

@@ -47,6 +47,8 @@ class Divider extends Widget_Base {
         return __('Divider', 'auxin-elements' );
     }
 
+
+
     /**
      * Get widget icon.
      *

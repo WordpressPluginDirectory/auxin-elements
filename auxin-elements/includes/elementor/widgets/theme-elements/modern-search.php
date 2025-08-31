@@ -52,6 +52,8 @@ class ModernSearch extends Widget_Base {
         return __('Modern Search', 'auxin-elements' );
     }
 
+
+
     /**
      * Get widget icon.
      *

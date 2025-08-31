@@ -49,6 +49,8 @@ class RecentPostsTimeline extends Widget_Base {
         return __('Timeline Posts', 'auxin-elements' );
     }
 
+
+
     /**
      * Get widget icon.
      *

@@ -49,6 +49,8 @@ class RecentComments extends Widget_Base {
         return __('Recent Commented Posts', 'auxin-elements' );
     }
 
+
+
     /**
      * Get widget icon.
      *

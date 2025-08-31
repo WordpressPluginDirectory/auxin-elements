@@ -320,6 +320,22 @@ class Auxin_Demo_Importer {
                     $index++;
                     if( is_array( $data['contents'] ) && $posts_number = count( $data['contents'] ) ){
                         if( $index <= $posts_number ){
+                            // Define the desired order to import posts
+							$priority = [
+								'product' => 1,
+								'product_variation' => 2,
+                                'portfolio' => 3, 
+                                'news' => 4,
+								'post' => 5,
+								'page' => 6,
+							];
+
+							usort( $data['contents'], function ($a, $b) use ($priority) {
+								$a_priority = $priority[$a['post_type']] ?? 999;
+								$b_priority = $priority[$b['post_type']] ?? 999;
+								return $a_priority <=> $b_priority;
+							});
+
                             $this->import_posts( array_slice( $data['contents'], $index - 1, 1 ) );
                             if( $index < $posts_number ){
                                 wp_send_json_success( array( 'message' => __( 'Importing Contents', 'auxin-elements' ). ' '. $index . '/' . $posts_number, 'next' => 'content', 'index' => $index ) );
@@ -1474,6 +1490,13 @@ class Auxin_Demo_Importer {
 
                 // Download media
 				\Depicter::media()->importDocumentAssets( $slider['content'] );
+
+                if ( isset( $slider['meta'] ) ) {
+                    foreach( $slider['meta'] as $key => $meta ) {
+                        \Depicter::metaRepository()->update( $document->getID(), $meta['meta_key'], $meta['meta_value'] );
+                    }
+                    unset( $slider['meta'] );
+                }
                 \Depicter::documentRepository()->update( $document->getID(), $slider );
             }
 
@@ -1502,6 +1525,22 @@ class Auxin_Demo_Importer {
                 }
             }
         }
+
+        preg_match_all( '/"(src|source)"\s*:\s*\{([^{}]*)\}/', $data, $assets, PREG_SET_ORDER );
+        if ( ! empty( $assets ) ) {
+            foreach( $assets as $asset ) {
+                if ( !empty( $asset[2] ) ) {
+                    preg_match_all( '/"(\w+)"\s*:\s*"(\d+)"/', $asset[2], $IDs, PREG_SET_ORDER );
+                    if ( ! empty( $IDs ) ) {
+                        foreach( $IDs as $ID ) {
+                            $new_id = str_replace( $ID[0], '"' . $ID[1] . '":"' . $this->get_attachment_id( 'auxin_import_id', $ID[2] ) . '"', $asset[0] );
+                            $data = str_replace( $asset[0], $new_id, $data );
+                        }
+                    }
+                }
+            }
+        }
+
         return $data;
     }
 
@@ -1790,8 +1829,8 @@ class Auxin_Demo_Importer {
 
         $meta = $wpdb->get_results( $wpdb->prepare("SELECT post_id FROM $wpdb->postmeta WHERE meta_key=%s AND meta_value=%s", [ $key, $value ] ) );
 
-        if ( is_array($meta) && !empty($meta) && isset($meta[0]) ) {
-            $meta   =   $meta[0];
+        if ( is_array($meta) && !empty($meta) ) {
+            $meta   =   end($meta);
         }
 
         if ( is_object( $meta ) ) {
@@ -2146,6 +2185,24 @@ class Auxin_Demo_Importer {
                     }
                     $new_image = str_replace( '"url":"'. $image_url, '"url":"'. str_replace( '/', '\/', $new_image_url), $new_image );
                     $meta = str_replace( $image , $new_image, $meta );
+                }
+            }
+        }
+
+        // Replace old playlist shortcode ID's
+        preg_match_all('#\[playlist.+?\]#', $meta, $playlists, PREG_SET_ORDER );
+        if ( ! empty( $playlists ) ) {
+            foreach( $playlists as $key => $playlist ) {
+                preg_match_all( '#ids=\\\"(.+)\\\"#', $playlist[0], $ids, PREG_SET_ORDER );
+                if ( !empty( $ids ) && ! empty( $ids[0][1] ) ) {
+                    $oldIDs = explode( ',', $ids[0][1] );
+                    $newIDs = [];
+                    foreach ( $oldIDs as $oldID ) {
+                        $newIDs[] = $new_image_id  = $this->get_attachment_id( 'auxin_import_id', $oldID );
+                    }
+
+                    $newPlaylist = str_replace( $ids[0][1], implode( ',', $newIDs), $playlist[0] );
+                    $meta = str_replace( $playlist[0], $newPlaylist, $meta );
                 }
             }
         }

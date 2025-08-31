@@ -49,6 +49,8 @@ class RecentPostsTiles extends Widget_Base {
         return __('Tiles Posts', 'auxin-elements' );
     }
 
+
+
     /**
      * Get widget icon.
      *

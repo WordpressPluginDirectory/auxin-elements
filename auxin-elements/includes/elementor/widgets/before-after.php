@@ -48,6 +48,8 @@ class BeforeAfter extends Widget_Base {
         return __( 'Before After Slider', 'auxin-elements' );
     }
 
+
+
     /**
      * Get widget icon.
      *

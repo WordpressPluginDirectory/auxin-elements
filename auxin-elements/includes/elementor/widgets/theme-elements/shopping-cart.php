@@ -53,6 +53,8 @@ class Shopping_Cart extends Widget_Base {
         return __('Shopping Cart', 'auxin-elements' );
     }
 
+
+
     /**
      * Get widget icon.
      *

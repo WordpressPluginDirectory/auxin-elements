@@ -48,6 +48,8 @@ class CarouselNavigation extends Widget_Base {
         return __('Carousel Navigation', 'auxin-elements' );
     }
 
+
+
     /**
      * Get widget icon.
      *

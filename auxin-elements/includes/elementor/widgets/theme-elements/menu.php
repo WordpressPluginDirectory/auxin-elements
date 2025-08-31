@@ -53,6 +53,8 @@ class MenuBox extends Widget_Base {
         return __('Navigation Menu', 'auxin-elements' );
     }
 
+
+
     /**
      * Get widget icon.
      *

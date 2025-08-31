@@ -52,6 +52,8 @@ class Tabs extends Widget_Base {
         return __('Tabs', 'auxin-elements' );
     }
 
+
+
     /**
      * Get widget icon.
      *

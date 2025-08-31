@@ -47,6 +47,8 @@ class Search extends Widget_Base {
         return __('Search', 'auxin-elements' );
     }
 
+
+
     /**
      * Get widget icon.
      *

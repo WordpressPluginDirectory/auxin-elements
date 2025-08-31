@@ -50,6 +50,8 @@ class Copyright extends Widget_Base {
 		return __( 'Copyright', 'auxin-elements' );
 	}
 
+
+
 	/**
 	 * Get widget icon.
 	 *

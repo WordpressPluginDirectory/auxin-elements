@@ -50,6 +50,8 @@ class Current_Time extends Widget_Base {
         return __('Current Time', 'auxin-elements' );
     }
 
+
+
     /**
      * Get widget icon.
      *

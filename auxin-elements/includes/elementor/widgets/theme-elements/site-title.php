@@ -50,6 +50,8 @@ class SiteTitle extends Widget_Base {
         return __('Site Title', 'auxin-elements' );
     }
 
+
+
     /**
      * Get widget icon.
      *

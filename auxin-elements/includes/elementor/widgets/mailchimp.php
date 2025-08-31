@@ -52,6 +52,8 @@ class MailChimp extends Widget_Base {
         return __('MailChimp', 'auxin-elements' );
     }
 
+
+
     /**
      * Get widget icon.
      *

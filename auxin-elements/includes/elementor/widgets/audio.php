@@ -47,6 +47,8 @@ class Audio extends Widget_Base {
         return __('Audio Player', 'auxin-elements' );
     }
 
+
+
     /**
      * Get widget icon.
      *

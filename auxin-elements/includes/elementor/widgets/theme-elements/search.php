@@ -50,6 +50,8 @@ class SearchBox extends Widget_Base {
         return __('Search Form', 'auxin-elements' );
     }
 
+
+
     /**
      * Get widget icon.
      *

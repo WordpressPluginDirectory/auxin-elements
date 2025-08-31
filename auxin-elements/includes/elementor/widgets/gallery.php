@@ -48,6 +48,8 @@ class Gallery extends Widget_Base {
         return __( 'Modern Gallery', 'auxin-elements' );
     }
 
+
+
     /**
      * Get widget icon.
      *

@@ -46,6 +46,8 @@ class Gmap extends Widget_Base {
         return __( 'Map', 'auxin-elements' );
     }
 
+
+
     /**
      * Get widget icon.
      *

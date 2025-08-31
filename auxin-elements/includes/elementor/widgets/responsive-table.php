@@ -50,6 +50,8 @@ class ResponsiveTable extends Widget_Base {
         return __('Responsive Table', 'auxin-elements' );
     }
 
+
+
     /**
      * Get widget icon.
      *

@@ -52,6 +52,8 @@ class RecentPostsGridCarousel extends Widget_Base {
         return __('Grid & Carousel Posts', 'auxin-elements' );
     }
 
+
+
     /**
      * Get widget icon.
      *

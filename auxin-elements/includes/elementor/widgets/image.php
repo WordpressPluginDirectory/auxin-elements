@@ -55,6 +55,8 @@ class Image extends Widget_Base {
         return __('Advanced Image', 'auxin-elements' );
     }
 
+
+
     /**
      * Get widget icon.
      *

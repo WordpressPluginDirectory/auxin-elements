@@ -52,6 +52,8 @@ class Staff extends Widget_Base {
         return __('Staff', 'auxin-elements' );
     }
 
+
+
     /**
      * Get widget icon.
      *

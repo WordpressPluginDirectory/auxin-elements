@@ -47,6 +47,8 @@ class Select extends Widget_Base {
 		return esc_html__( 'Select Box', 'auxin-elements' );
 	}
 
+
+
 	/**
 	 * Get widget icon.
 	 *
