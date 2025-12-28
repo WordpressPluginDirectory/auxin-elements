@@ -6,8 +6,8 @@ License URI: http://www.gnu.org/licenses/gpl.html
 Tags: phlox, elementor, auxin, averta, fullwidth
 Requires PHP: 5.4
 Requires at least: 5.0
-Tested up to: 6.8.2
-Stable tag: 2.17.12
+Tested up to: 6.9
+Stable tag: 2.17.13
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 
@@ -154,8 +154,10 @@ Bugs can be reported in our [support forums](https://docs.phlox.pro).
 
 == Changelog ==
 
-= Version 2.17.12 / (31.08.2025) =
+= Version 2.17.13 / (27.12.2025) =
 - [Improvement]: Improved the import of sliders while importing a demo.
+
+= Version 2.17.12 / (31.08.2025) =
 - [Improvement]: Style generation improvement for footer and header sections.
 
 = Version 2.17.10 / (21.07.2025) =

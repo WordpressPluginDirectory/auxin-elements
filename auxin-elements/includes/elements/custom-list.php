@@ -292,7 +292,11 @@ function auxin_widget_list_callback( $atts, $shortcode_content = null ){
             // a fix to prevent unwanted default value 'check-1' which is set in elementor
             if( ( ! empty( $list_item['icon'] ) && 'check-1' != $list_item['icon'] ) || is_array( $list_item['icon'] ) ){
                 if ( is_array( $list_item['icon'] ) ) {
-                    $output .= \Elementor\Icons_Manager::render_font_icon( $list_item['icon'], [ 'aria-hidden' => 'true', 'class' => 'aux-icon-list-icon' ] );
+                    if ( $list_item['icon']['library'] == 'svg') {
+                        $output .= '<div class="aux-icon-list-icon">' . \Elementor\Icons_Manager::render_uploaded_svg_icon( $list_item['icon']['value']) . '</div>';
+                    } else {
+                        $output .= \Elementor\Icons_Manager::render_font_icon( $list_item['icon'], [ 'aria-hidden' => 'true', 'class' => 'aux-icon-list-icon' ] );
+                    }
                 } else {
                     $output .= '<span '. auxin_make_html_attributes( array( 'class' => array( 'aux-icon-list-icon', esc_attr( $list_item['icon'] ) ) ) ) .'></span>';
                 }

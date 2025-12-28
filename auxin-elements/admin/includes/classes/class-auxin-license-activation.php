@@ -16,7 +16,7 @@ class Auxin_License_Activation {
 	 */
 	protected static $instance  = null;
 
-	protected $api           = 'https://support.averta.net/en/api/?branch=envato&group=items&cat=verify-purchase';
+	protected $api           = 'https://env.averta.net/en/api/?branch=envato&group=items&cat=verify-purchase';
     protected $usermail      = '';
     protected $purchase_code = '';
 	protected $option_prefix = '';

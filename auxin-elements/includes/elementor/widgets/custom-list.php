@@ -53,6 +53,9 @@ class CustomList extends Widget_Base {
         return __('Flexible List', 'auxin-elements' );
     }
 
+    public function has_widget_inner_wrapper(): bool {
+        return ! \Elementor\Plugin::$instance->experiments->is_feature_active( 'e_optimized_markup' ); 
+    }
 
 
     /**
@@ -907,7 +910,8 @@ class CustomList extends Widget_Base {
                 'type'      => Controls_Manager::COLOR,
                 'default'   => '#24af29',
                 'selectors' => array(
-                    '{{WRAPPER}} .aux-icon-list-icon' => 'color: {{VALUE}};fill: {{VALUE}};'
+                    '{{WRAPPER}} .aux-icon-list-icon' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .aux-icon-list-icon path' => 'fill: {{VALUE}};'
                 )
             )
         );
@@ -935,7 +939,8 @@ class CustomList extends Widget_Base {
                 'label'     => __( 'Color', 'auxin-elements' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => array(
-                    '{{WRAPPER}} .aux-icon-list-item:hover .aux-icon-list-icon' => 'color: {{VALUE}};fill: {{VALUE}};',
+                    '{{WRAPPER}} .aux-icon-list-item:hover .aux-icon-list-icon' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .aux-icon-list-item:hover .aux-icon-list-icon path' => 'fill: {{VALUE}};'
                 )
             )
         );
@@ -968,7 +973,8 @@ class CustomList extends Widget_Base {
                     )
                 ),
                 'selectors' => array(
-                    '{{WRAPPER}} .aux-icon-list-icon' => 'font-size: {{SIZE}}{{UNIT}};height: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .aux-icon-list-icon' => 'font-size: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} svg' => 'height: {{SIZE}}{{UNIT}};width: auto;',
                 ),
                 'separator' => 'before'
             )

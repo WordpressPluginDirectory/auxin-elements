@@ -46,6 +46,9 @@ class Gmap extends Widget_Base {
         return __( 'Map', 'auxin-elements' );
     }
 
+    public function has_widget_inner_wrapper(): bool {
+        return ! \Elementor\Plugin::$instance->experiments->is_feature_active( 'e_optimized_markup' ); 
+    }
 
 
     /**

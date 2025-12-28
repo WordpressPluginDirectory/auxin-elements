@@ -52,6 +52,9 @@ class ModernSearch extends Widget_Base {
         return __('Modern Search', 'auxin-elements' );
     }
 
+    public function has_widget_inner_wrapper(): bool {
+        return ! \Elementor\Plugin::$instance->experiments->is_feature_active( 'e_optimized_markup' ); 
+    }
 
 
     /**
@@ -255,7 +258,8 @@ class ModernSearch extends Widget_Base {
                 'label'     => __( 'Color', 'auxin-elements' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .aux-search-submit svg' => 'color: {{VALUE}}; fill: {{VALUE}};'
+                    '{{WRAPPER}} .aux-search-submit svg' => 'color: {{VALUE}}; fill: {{VALUE}};',
+                    '{{WRAPPER}} .aux-search-submit i' => 'color: {{VALUE}};'
                 ]
             ]
         );
@@ -303,7 +307,8 @@ class ModernSearch extends Widget_Base {
                 'label'     => __( 'Color', 'auxin-elements' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .aux-search-submit:hover svg' => 'color: {{VALUE}};fill: {{VALUE}};'
+                    '{{WRAPPER}} .aux-search-submit:hover svg' => 'color: {{VALUE}};fill: {{VALUE}};',
+                    '{{WRAPPER}} .aux-search-submit:hover i' => 'color: {{VALUE}};'
                 ]
             ]
         );
@@ -327,6 +332,7 @@ class ModernSearch extends Widget_Base {
                 ],
                 'selectors'  => [
                     '{{WRAPPER}} .aux-search-submit:hover svg' => 'font-size: {{SIZE}}{{UNIT}};height: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .aux-search-submit:hover i' => 'font-size: {{SIZE}}{{UNIT}};height: {{SIZE}}{{UNIT}};',
                 ],
             ]
         );

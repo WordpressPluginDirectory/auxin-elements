@@ -2123,7 +2123,9 @@ class Auxin_Demo_Importer {
             'next_icon',
             'aux_new_icon',
             'social_icon',
-            'play_icon'
+            'play_icon',
+            'accordion_item_title_icon',
+            'accordion_item_title_icon_active'
         ];
 
         foreach( $svg_icon_patterns as $key => $pattern ) {

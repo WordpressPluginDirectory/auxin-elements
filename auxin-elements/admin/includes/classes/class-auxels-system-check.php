@@ -84,6 +84,10 @@ class Auxels_System_Check {
      */
     public function get_num_of_notices() {
 
+        if ( empty($_GET['page'] ) || $_GET['page'] !== 'auxin-welcome' ) {
+            return 0;
+        }
+
         $system_notices = ! $this->check_maximum_execution_time() ? 1 : 0;
 
         if ( ! extension_loaded( 'imagick' ) ) {

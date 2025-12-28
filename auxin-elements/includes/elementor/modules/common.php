@@ -1070,6 +1070,10 @@ selector .child-element{ margin: 10px; }
         if ( empty( $css ) ) {
             return;
         }
+
+        if ( \Elementor\Plugin::$instance->experiments->is_feature_active( 'e_optimized_markup' ) ) {
+            $css = str_replace( 'selector .elementor-widget-container', 'selector', $css );
+        }
         $css = str_replace( 'selector', $post_css->get_element_unique_selector( $element ), $css );
 
         // Add a css comment

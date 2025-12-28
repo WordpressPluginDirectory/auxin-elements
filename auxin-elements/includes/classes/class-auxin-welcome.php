@@ -896,6 +896,9 @@ class Auxin_Welcome extends Auxin_Welcome_Base {
         $demo_list          = $this->get_demo_list();
         // Get last imported demo data
         $last_demo_imported = get_option( 'auxin_last_imported_demo' );
+        if ( empty($demo_list ) ) {
+            return;
+        }
 
 	?>
         <div class="aux-setup-content">
@@ -1237,30 +1240,19 @@ class Auxin_Welcome extends Auxin_Welcome_Base {
         }
 
         // Remove Posts
-        $posts = get_posts( array(
-            'post_type'      => 'any',
-            'posts_per_page' => -1,
-            'post_status'    => 'any',
-            'meta_key'       => 'auxin_import_post'
-        ) );
-        if ( $posts ) {
-            foreach ( $posts as $post ) {
-                wp_delete_post( $post->ID, true );
-            }
-        }
+        $posts = $wpdb->get_results( $wpdb->prepare(
+            "SELECT p.ID FROM {$wpdb->posts} p
+             INNER JOIN {$wpdb->postmeta} pm ON p.ID = pm.post_id
+             WHERE pm.meta_key = %s",
+            'auxin_import_post'
+        ), ARRAY_A );
 
-        // Remove imported templates
-        $posts = get_posts( array(
-            'post_type'      => 'elementor_library',
-            'posts_per_page' => -1,
-            'post_status'    => 'any',
-            'meta_key'      => 'auxin_import_post'
-        ) );
         if ( $posts ) {
             // bypass elementor confirm question for deleting imported kit
             $_GET['force_delete_kit'] = 1;
+
             foreach ( $posts as $post ) {
-                wp_delete_post( $post->ID );
+                wp_delete_post( $post['ID'], true );
             }
 
             $kit = Elementor\Plugin::$instance->kits_manager->get_active_kit();

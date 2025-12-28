@@ -52,6 +52,9 @@ class ContactForm extends Widget_Base {
         return __('Contact Form', 'auxin-elements' );
     }
 
+    public function has_widget_inner_wrapper(): bool {
+        return ! \Elementor\Plugin::$instance->experiments->is_feature_active( 'e_optimized_markup' ); 
+    }
 
 
     /**
