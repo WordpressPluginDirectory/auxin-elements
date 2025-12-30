@@ -1,9 +1,9 @@
 # Averta Copyright (c) {2025}
 msgid ""
 msgstr ""
-"Project-Id-Version: Phlox Core Elements 2.17.13\n"
+"Project-Id-Version: Phlox Core Elements 2.17.14\n"
 "Report-Msgid-Bugs-To: http://averta.net/phlox/wordpress-theme/\n"
-"POT-Creation-Date: 2025-12-27 09:25:38+00:00\n"
+"POT-Creation-Date: 2025-12-29 12:55:13+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -1091,7 +1091,7 @@ msgstr ""
 #: includes/elementor/widgets/custom-list.php:518
 #: includes/elementor/widgets/divider.php:207
 #: includes/elementor/widgets/divider.php:246
-#: includes/elementor/widgets/heading-modern.php:169
+#: includes/elementor/widgets/heading-modern.php:171
 #: includes/elementor/widgets/icon.php:178
 #: includes/elementor/widgets/image.php:328
 #: includes/elementor/widgets/modern-button.php:148
@@ -1134,7 +1134,7 @@ msgstr ""
 #: includes/elementor/widgets/custom-list.php:514
 #: includes/elementor/widgets/divider.php:203
 #: includes/elementor/widgets/divider.php:242
-#: includes/elementor/widgets/heading-modern.php:165
+#: includes/elementor/widgets/heading-modern.php:167
 #: includes/elementor/widgets/icon.php:174
 #: includes/elementor/widgets/image.php:324
 #: includes/elementor/widgets/modern-button.php:189
@@ -1334,9 +1334,9 @@ msgstr ""
 #: includes/elementor/widgets/contact-form.php:1722
 #: includes/elementor/widgets/custom-list.php:932
 #: includes/elementor/widgets/custom-list.php:1091
-#: includes/elementor/widgets/heading-modern.php:415
-#: includes/elementor/widgets/heading-modern.php:602
-#: includes/elementor/widgets/heading-modern.php:775
+#: includes/elementor/widgets/heading-modern.php:407
+#: includes/elementor/widgets/heading-modern.php:594
+#: includes/elementor/widgets/heading-modern.php:767
 #: includes/elementor/widgets/icon.php:249
 #: includes/elementor/widgets/image.php:541
 #: includes/elementor/widgets/mailchimp.php:359
@@ -2081,9 +2081,9 @@ msgstr ""
 #: includes/classes/class-auxin-welcome.php:432
 #: includes/elementor/modules/dynamic-tags/contact-url.php:181
 #: includes/elementor/modules/dynamic-tags/featured-image-data.php:90
-#: includes/elementor/widgets/heading-modern.php:315
-#: includes/elementor/widgets/heading-modern.php:322
-#: includes/elementor/widgets/heading-modern.php:984
+#: includes/elementor/widgets/heading-modern.php:307
+#: includes/elementor/widgets/heading-modern.php:314
+#: includes/elementor/widgets/heading-modern.php:976
 #: includes/elementor/widgets/products-grid.php:597
 #: includes/elementor/widgets/theme-elements/logo.php:553
 #: includes/elements/custom-list.php:135
@@ -2924,7 +2924,7 @@ msgstr ""
 #: includes/elementor/widgets/custom-list.php:522
 #: includes/elementor/widgets/divider.php:211
 #: includes/elementor/widgets/divider.php:250
-#: includes/elementor/widgets/heading-modern.php:173
+#: includes/elementor/widgets/heading-modern.php:175
 #: includes/elementor/widgets/icon.php:182
 #: includes/elementor/widgets/image.php:332
 #: includes/elementor/widgets/modern-button.php:197
@@ -2988,10 +2988,10 @@ msgstr ""
 #: includes/elementor/widgets/contact-form.php:987
 #: includes/elementor/widgets/contact-form.php:1232
 #: includes/elementor/widgets/contact-form.php:1591
-#: includes/elementor/widgets/heading-modern.php:493
-#: includes/elementor/widgets/heading-modern.php:680
-#: includes/elementor/widgets/heading-modern.php:853
-#: includes/elementor/widgets/heading-modern.php:1028
+#: includes/elementor/widgets/heading-modern.php:485
+#: includes/elementor/widgets/heading-modern.php:672
+#: includes/elementor/widgets/heading-modern.php:845
+#: includes/elementor/widgets/heading-modern.php:1020
 #: includes/elementor/widgets/image.php:431
 #: includes/elementor/widgets/mailchimp.php:241
 #: includes/elementor/widgets/mailchimp.php:492
@@ -3029,7 +3029,7 @@ msgstr ""
 #: includes/elementor/widgets/contact-form.php:1618
 #: includes/elementor/widgets/custom-list.php:405
 #: includes/elementor/widgets/gmap.php:173
-#: includes/elementor/widgets/heading-modern.php:1099
+#: includes/elementor/widgets/heading-modern.php:1091
 #: includes/elementor/widgets/mailchimp.php:268
 #: includes/elementor/widgets/mailchimp.php:519
 #: includes/elementor/widgets/mailchimp.php:747
@@ -3183,8 +3183,8 @@ msgstr ""
 #: includes/elementor/modules/dynamic-tags/comments-number.php:58
 #: includes/elementor/widgets/button.php:121
 #: includes/elementor/widgets/custom-list.php:143
-#: includes/elementor/widgets/heading-modern.php:126
-#: includes/elementor/widgets/heading-modern.php:276
+#: includes/elementor/widgets/heading-modern.php:138
+#: includes/elementor/widgets/heading-modern.php:278
 #: includes/elementor/widgets/icon.php:158
 #: includes/elementor/widgets/modern-button.php:215
 #: includes/elementor/widgets/recent-posts-grid-carousel.php:779
@@ -3371,7 +3371,7 @@ msgstr ""
 #: includes/elementor/modules/query-control/controls/group-control-query.php:346
 #: includes/elementor/widgets/accordion.php:539
 #: includes/elementor/widgets/circle-chart.php:129
-#: includes/elementor/widgets/heading-modern.php:113
+#: includes/elementor/widgets/heading-modern.php:125
 #: includes/elementor/widgets/products-grid.php:237
 #: includes/elementor/widgets/products-grid.php:388
 #: includes/elementor/widgets/recent-comments.php:176
@@ -4290,12 +4290,12 @@ msgstr ""
 #: includes/elementor/widgets/custom-list.php:265
 #: includes/elementor/widgets/custom-list.php:986
 #: includes/elementor/widgets/custom-list.php:1038
-#: includes/elementor/widgets/heading-modern.php:455
-#: includes/elementor/widgets/heading-modern.php:642
-#: includes/elementor/widgets/heading-modern.php:815
-#: includes/elementor/widgets/heading-modern.php:937
-#: includes/elementor/widgets/heading-modern.php:1015
-#: includes/elementor/widgets/heading-modern.php:1129
+#: includes/elementor/widgets/heading-modern.php:447
+#: includes/elementor/widgets/heading-modern.php:634
+#: includes/elementor/widgets/heading-modern.php:807
+#: includes/elementor/widgets/heading-modern.php:929
+#: includes/elementor/widgets/heading-modern.php:1007
+#: includes/elementor/widgets/heading-modern.php:1121
 #: includes/elementor/widgets/modern-button.php:681
 #: includes/elementor/widgets/modern-button.php:797
 #: includes/elementor/widgets/modern-button.php:903
@@ -4378,9 +4378,9 @@ msgstr ""
 #: includes/elementor/widgets/contact-form.php:1696
 #: includes/elementor/widgets/custom-list.php:902
 #: includes/elementor/widgets/custom-list.php:1054
-#: includes/elementor/widgets/heading-modern.php:377
-#: includes/elementor/widgets/heading-modern.php:564
-#: includes/elementor/widgets/heading-modern.php:737
+#: includes/elementor/widgets/heading-modern.php:369
+#: includes/elementor/widgets/heading-modern.php:556
+#: includes/elementor/widgets/heading-modern.php:729
 #: includes/elementor/widgets/icon.php:208
 #: includes/elementor/widgets/image.php:504
 #: includes/elementor/widgets/mailchimp.php:333
@@ -4527,10 +4527,10 @@ msgstr ""
 #: includes/elementor/widgets/contact-form.php:1667
 #: includes/elementor/widgets/custom-list.php:999
 #: includes/elementor/widgets/custom-list.php:1025
-#: includes/elementor/widgets/heading-modern.php:468
-#: includes/elementor/widgets/heading-modern.php:655
-#: includes/elementor/widgets/heading-modern.php:828
-#: includes/elementor/widgets/heading-modern.php:1142
+#: includes/elementor/widgets/heading-modern.php:460
+#: includes/elementor/widgets/heading-modern.php:647
+#: includes/elementor/widgets/heading-modern.php:820
+#: includes/elementor/widgets/heading-modern.php:1134
 #: includes/elementor/widgets/icon.php:314
 #: includes/elementor/widgets/mailchimp.php:317
 #: includes/elementor/widgets/mailchimp.php:567
@@ -4603,14 +4603,14 @@ msgstr ""
 #: includes/elementor/widgets/custom-list.php:909
 #: includes/elementor/widgets/custom-list.php:939
 #: includes/elementor/widgets/divider.php:381
-#: includes/elementor/widgets/heading-modern.php:384
-#: includes/elementor/widgets/heading-modern.php:422
-#: includes/elementor/widgets/heading-modern.php:571
-#: includes/elementor/widgets/heading-modern.php:609
-#: includes/elementor/widgets/heading-modern.php:744
-#: includes/elementor/widgets/heading-modern.php:782
-#: includes/elementor/widgets/heading-modern.php:950
-#: includes/elementor/widgets/heading-modern.php:993
+#: includes/elementor/widgets/heading-modern.php:376
+#: includes/elementor/widgets/heading-modern.php:414
+#: includes/elementor/widgets/heading-modern.php:563
+#: includes/elementor/widgets/heading-modern.php:601
+#: includes/elementor/widgets/heading-modern.php:736
+#: includes/elementor/widgets/heading-modern.php:774
+#: includes/elementor/widgets/heading-modern.php:942
+#: includes/elementor/widgets/heading-modern.php:985
 #: includes/elementor/widgets/mailchimp.php:203
 #: includes/elementor/widgets/mailchimp.php:432
 #: includes/elementor/widgets/mailchimp.php:589
@@ -4780,7 +4780,7 @@ msgstr ""
 #: includes/elementor/widgets/gallery.php:276
 #: includes/elementor/widgets/gmap.php:198
 #: includes/elementor/widgets/gmap.php:219
-#: includes/elementor/widgets/heading-modern.php:196
+#: includes/elementor/widgets/heading-modern.php:198
 #: includes/elementor/widgets/image.php:160
 #: includes/elementor/widgets/image.php:193
 #: includes/elementor/widgets/image.php:293
@@ -4926,7 +4926,7 @@ msgstr ""
 #: includes/elementor/widgets/gallery.php:277
 #: includes/elementor/widgets/gmap.php:199
 #: includes/elementor/widgets/gmap.php:220
-#: includes/elementor/widgets/heading-modern.php:197
+#: includes/elementor/widgets/heading-modern.php:199
 #: includes/elementor/widgets/image.php:161
 #: includes/elementor/widgets/image.php:194
 #: includes/elementor/widgets/image.php:294
@@ -5157,8 +5157,8 @@ msgstr ""
 #: includes/elementor/widgets/custom-list.php:428
 #: includes/elementor/widgets/custom-list.php:716
 #: includes/elementor/widgets/divider.php:143
-#: includes/elementor/widgets/heading-modern.php:915
-#: includes/elementor/widgets/heading-modern.php:1070
+#: includes/elementor/widgets/heading-modern.php:907
+#: includes/elementor/widgets/heading-modern.php:1062
 #: includes/elementor/widgets/mailchimp.php:214
 #: includes/elementor/widgets/mailchimp.php:465
 #: includes/elementor/widgets/mailchimp.php:693
@@ -5213,7 +5213,7 @@ msgid "Open Video in Lightbox"
 msgstr ""
 
 #: includes/elementor/widgets/button.php:153
-#: includes/elementor/widgets/heading-modern.php:1062
+#: includes/elementor/widgets/heading-modern.php:1054
 #: includes/elementor/widgets/recent-posts-grid-carousel.php:1578
 #: includes/elementor/widgets/recent-posts-masonry.php:1117
 #: includes/elementor/widgets/text.php:1444
@@ -5307,7 +5307,7 @@ msgstr ""
 #: includes/elementor/widgets/button.php:367
 #: includes/elementor/widgets/carousel-navigation.php:297
 #: includes/elementor/widgets/carousel-navigation.php:404
-#: includes/elementor/widgets/heading-modern.php:971
+#: includes/elementor/widgets/heading-modern.php:963
 #: includes/elementor/widgets/modern-button.php:377
 #: includes/elementor/widgets/modern-button.php:430
 #: includes/elementor/widgets/modern-button.php:886
@@ -5442,12 +5442,12 @@ msgstr ""
 
 #: includes/elementor/widgets/button.php:556
 #: includes/elementor/widgets/button.php:596
-#: includes/elementor/widgets/heading-modern.php:396
-#: includes/elementor/widgets/heading-modern.php:434
-#: includes/elementor/widgets/heading-modern.php:583
-#: includes/elementor/widgets/heading-modern.php:621
-#: includes/elementor/widgets/heading-modern.php:756
-#: includes/elementor/widgets/heading-modern.php:794
+#: includes/elementor/widgets/heading-modern.php:388
+#: includes/elementor/widgets/heading-modern.php:426
+#: includes/elementor/widgets/heading-modern.php:575
+#: includes/elementor/widgets/heading-modern.php:613
+#: includes/elementor/widgets/heading-modern.php:748
+#: includes/elementor/widgets/heading-modern.php:786
 #: includes/elementor/widgets/image.php:687
 #: includes/elementor/widgets/modern-button.php:525
 #: includes/elementor/widgets/modern-button.php:565
@@ -5595,7 +5595,7 @@ msgstr ""
 
 #: includes/elementor/widgets/circle-chart.php:145
 #: includes/elementor/widgets/divider.php:198
-#: includes/elementor/widgets/heading-modern.php:160
+#: includes/elementor/widgets/heading-modern.php:162
 #: includes/elementor/widgets/icon.php:170
 #: includes/elementor/widgets/image.php:319
 #: includes/elementor/widgets/modern-button.php:185
@@ -6072,7 +6072,7 @@ msgstr ""
 
 #: includes/elementor/widgets/custom-list.php:608
 #: includes/elementor/widgets/custom-list.php:695
-#: includes/elementor/widgets/heading-modern.php:898
+#: includes/elementor/widgets/heading-modern.php:890
 msgid "Weight"
 msgstr ""
 
@@ -6081,7 +6081,7 @@ msgid "Left Space"
 msgstr ""
 
 #: includes/elementor/widgets/custom-list.php:660
-#: includes/elementor/widgets/heading-modern.php:194
+#: includes/elementor/widgets/heading-modern.php:196
 #: includes/elements/custom-list.php:169
 msgid "Display Divider"
 msgstr ""
@@ -6111,7 +6111,7 @@ msgstr ""
 
 #: includes/elementor/widgets/divider.php:47
 #: includes/elementor/widgets/divider.php:100
-#: includes/elementor/widgets/heading-modern.php:887
+#: includes/elementor/widgets/heading-modern.php:879
 #: includes/elements/divider.php:16
 msgid "Divider"
 msgstr ""
@@ -6416,65 +6416,65 @@ msgid ""
 "and insert it in customizer \"Google Maps API Key\" field."
 msgstr ""
 
-#: includes/elementor/widgets/heading-modern.php:53
+#: includes/elementor/widgets/heading-modern.php:65
 msgid "Modern Heading"
 msgstr ""
 
-#: includes/elementor/widgets/heading-modern.php:106
-#: includes/elementor/widgets/heading-modern.php:345
+#: includes/elementor/widgets/heading-modern.php:118
+#: includes/elementor/widgets/heading-modern.php:337
 msgid "Heading"
 msgstr ""
 
-#: includes/elementor/widgets/heading-modern.php:118
+#: includes/elementor/widgets/heading-modern.php:130
 msgid "Add your heading text here .."
 msgstr ""
 
-#: includes/elementor/widgets/heading-modern.php:140
-#: includes/elementor/widgets/heading-modern.php:290
+#: includes/elementor/widgets/heading-modern.php:152
+#: includes/elementor/widgets/heading-modern.php:292
 msgid "HTML Tag"
 msgstr ""
 
-#: includes/elementor/widgets/heading-modern.php:207
+#: includes/elementor/widgets/heading-modern.php:209
 msgid "Divider Position"
 msgstr ""
 
-#: includes/elementor/widgets/heading-modern.php:210
+#: includes/elementor/widgets/heading-modern.php:212
 msgid "Before Heading"
 msgstr ""
 
-#: includes/elementor/widgets/heading-modern.php:211
+#: includes/elementor/widgets/heading-modern.php:213
 msgid "Between Headings"
 msgstr ""
 
-#: includes/elementor/widgets/heading-modern.php:212
+#: includes/elementor/widgets/heading-modern.php:214
 msgid "After Headings"
 msgstr ""
 
-#: includes/elementor/widgets/heading-modern.php:230
-#: includes/elementor/widgets/heading-modern.php:527
+#: includes/elementor/widgets/heading-modern.php:232
+#: includes/elementor/widgets/heading-modern.php:519
 msgid "Secondary Heading"
 msgstr ""
 
-#: includes/elementor/widgets/heading-modern.php:237
+#: includes/elementor/widgets/heading-modern.php:239
 msgid "Before Text"
 msgstr ""
 
-#: includes/elementor/widgets/heading-modern.php:250
+#: includes/elementor/widgets/heading-modern.php:252
 #: includes/elementor/widgets/modern-button.php:122
 #: includes/elementor/widgets/modern-button.php:584
 #: includes/elements/highlight.php:18
 msgid "Highlighted Text"
 msgstr ""
 
-#: includes/elementor/widgets/heading-modern.php:263
+#: includes/elementor/widgets/heading-modern.php:265
 #: includes/elementor/widgets/modern-button.php:131
 #: includes/elementor/widgets/modern-button.php:700
 msgid "After Text"
 msgstr ""
 
-#: includes/elementor/widgets/heading-modern.php:480
-#: includes/elementor/widgets/heading-modern.php:667
-#: includes/elementor/widgets/heading-modern.php:840
+#: includes/elementor/widgets/heading-modern.php:472
+#: includes/elementor/widgets/heading-modern.php:659
+#: includes/elementor/widgets/heading-modern.php:832
 #: includes/elementor/widgets/image.php:489
 #: includes/elementor/widgets/svg.php:310
 #: includes/elementor/widgets/testimonial.php:311
@@ -6483,7 +6483,7 @@ msgstr ""
 msgid "Border radius"
 msgstr ""
 
-#: includes/elementor/widgets/heading-modern.php:715
+#: includes/elementor/widgets/heading-modern.php:707
 msgid "Secondary Heading - Highlighted"
 msgstr ""
 

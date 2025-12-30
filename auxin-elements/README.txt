@@ -4,10 +4,10 @@ Donate link: http://phlox.pro/go/?utm_medium=donate-phlox&ref=averta&utm_source=
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 Tags: phlox, elementor, auxin, averta, fullwidth
-Requires PHP: 5.4
+Requires PHP: 7.0
 Requires at least: 5.0
 Tested up to: 6.9
-Stable tag: 2.17.13
+Stable tag: 2.17.14
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 
