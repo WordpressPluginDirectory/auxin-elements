@@ -12,7 +12,7 @@ namespace Auxin\Plugin\CoreElements\Elementor;
  * @license    LICENSE.txt
  * @author     averta
  * @link       http://phlox.pro/
- * @copyright  (c) 2010-2025 averta
+ * @copyright  (c) 2010-2026 averta
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

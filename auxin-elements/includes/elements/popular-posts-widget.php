@@ -7,7 +7,7 @@
  * @license    LICENSE.txt
  * @author     averta
  * @link       http://phlox.pro/
- * @copyright  (c) 2010-2025 averta
+ * @copyright  (c) 2010-2026 averta
  */
 
 function auxin_get_popular_post_widget_master_array( $master_array ) {

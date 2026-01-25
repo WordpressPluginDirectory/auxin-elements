@@ -1156,9 +1156,9 @@ class ModernHeading extends Widget_Base {
 
         $settings = $this->get_settings_for_display();
 
-        $settings['title_tag'] = in_array( $settings['title_tag'], $this->allowed_tags ) ? $settings['title_tag'] : 'h2';
+        $settings['title_tag'] = in_array( $settings['title_tag'], array_keys( $this->allowed_tags ) ) ? $settings['title_tag'] : 'h2';
 
-        $settings['title_tag_secondary'] = in_array( $settings['title_tag_secondary'], $this->allowed_tags ) ? $settings['title_tag_secondary'] : 'h3';
+        $settings['title_tag_secondary'] = in_array( $settings['title_tag_secondary'], array_keys( $this->allowed_tags ) ) ? $settings['title_tag_secondary'] : 'h3';
 
         $divider_markup  = auxin_is_true( $settings['divider'] ) ? '<div class="aux-modern-heading-divider"></div>' : '';
 

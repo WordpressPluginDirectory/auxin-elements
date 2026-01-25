@@ -7,7 +7,7 @@
  * @license    LICENSE.txt
  * @author     averta
  * @link       http://phlox.pro/
- * @copyright  (c) 2010-2025 averta
+ * @copyright  (c) 2010-2026 averta
  */
 
 function  get_auxin_contact_box( $master_array ) {

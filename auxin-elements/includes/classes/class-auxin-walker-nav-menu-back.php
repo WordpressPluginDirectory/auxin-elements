@@ -7,7 +7,7 @@
  * @license    LICENSE.txt
  * @author     averta
  * @link       http://phlox.pro/
- * @copyright  (c) 2010-2025 averta
+ * @copyright  (c) 2010-2026 averta
  */
 class Auxin_Walker_Nav_Menu_Back extends Walker_Nav_Menu {
 
@@ -156,7 +156,7 @@ class Auxin_Walker_Nav_Menu_Back extends Walker_Nav_Menu {
                         </span>
                         <a class="item-edit" id="edit-<?php echo esc_attr( $item_id ); ?>" title="<?php esc_attr_e('Edit Menu Item', 'auxin-elements'); ?>" href="<?php
                             echo ( isset( $_GET['edit-menu-item'] ) && $item_id == $_GET['edit-menu-item'] ) ? esc_url( admin_url( 'nav-menus.php' ) ) : esc_url( add_query_arg( 'edit-menu-item', $item_id, remove_query_arg( $removed_args, admin_url( 'nav-menus.php#menu-item-settings-' . $item_id ) ) ) );
-                        ?>"><?php esc_html_e( 'Edit Menu Item', 'auxin-elements' ); ?></a>
+                        ?>"><span class="screen-reader-text"><?php esc_html_e( 'Edit Menu Item', 'auxin-elements' ); ?></span></a>
                     </span>
                 </div>
             </div>
